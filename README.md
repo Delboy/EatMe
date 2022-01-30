@@ -63,5 +63,5 @@ Wireframes for each page are linked here:
 
 ### Database Schema 
 
-![Database Schemas can be found here](assets/images/eat-me-schemas.png)
+![Database Schemas can be found here](assets/images/eat-me-schema.png)
 
