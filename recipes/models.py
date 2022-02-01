@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 
 
 class Recipe(models.Model):
-    title = models.CharField(max_length=200, unique=True)
+    title = models.CharField(max_length=200, null=True, blank=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipes", null=True
@@ -19,7 +19,7 @@ class Recipe(models.Model):
     vegetarian = models.BooleanField(default=False)
     image = CloudinaryField('image', default='placeholder')
     image_url = models.URLField()
-    likes = models.ManyToManyField(User, related_name='post_likes', blank=True)
+    likes = models.ManyToManyField(User, related_name='recipe_likes', blank=True)
 
     class Meta:
         ordering = ['-published_on']
