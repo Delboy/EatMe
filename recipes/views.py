@@ -10,3 +10,9 @@ class HomeView(generic.ListView):
             "recipes": recipes
         }
         return render(request, 'index.html', context)
+
+
+class RecipeList(generic.ListView):
+    model = Recipe
+    template_name = "recipes.html"
+    paginate_by = 6
