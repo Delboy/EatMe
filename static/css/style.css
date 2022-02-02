@@ -13,3 +13,12 @@
 
     position: relative;
 }
+
+.no-deco {
+    text-decoration: none;
+    
+}
+
+.img-fit {
+    object-fit: cover;
+}
