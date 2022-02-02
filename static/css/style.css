@@ -1,0 +1,15 @@
+.callout-container {
+    height: 100vh;
+
+    background: url("https://images.ctfassets.net/qu53tdnhexvd/4Sk39p2rxsw2nGb7T7X4P2/39b2a55631dec2ce20dcae988ed9f1f8/earl_grey_poached_pears_with_ice_cream.jpg") no-repeat bottom right fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}

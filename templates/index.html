@@ -2,6 +2,22 @@
 
 {% block content %}
 
-<h1>TEST</h1>
+<div class="container-fluid callout-container">
+    <div class="row">
+        <div class="col-12">
+            <section class="text-center">
+                <h1 class="text-light">A place to create and share your most loved recipes.</h1>
+                <hr>
+                {% if user.is_authenticated %}
+                <p class="lead text-light"> Welcome back {{ user | title }}
+                <a class="nav-link" href="#"><button class="btn btn-dark">View Recipes</button></a>
+                {% else %}
+                <p class="lead text-light">Sign up today to start sharing your creations with the world!</p>
+                <a class="nav-link" href="#"><button class="btn btn-dark">Sign up!</button></a>
+                <p class="text-muted"><small>By signing up you agree to our terms and service.</small></p>
+                {% endif %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}

@@ -43,15 +43,22 @@
                 </ul>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        
+                        {% if user.is_authenticated %}
+                        <li>
+                            <a class="nav-link" href="#"><em>Logged in as {{ user|title }} </em></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">| Log Out</a>
+                        </li>
+                        {% else %}
                         <li>
                             <a class="nav-link" href="#">Register</a>
                         </li>
                         <li>
                             <a class="nav-link" href="#">Log In</a>
                         </li>
-                        <li>
-                            <a class="nav-link" href="#">Log Out</a>
-                        </li>
+                        {% endif %}
                     </ul>
 
                     </div>
