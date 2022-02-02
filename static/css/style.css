@@ -22,3 +22,20 @@
 .img-fit {
     object-fit: cover;
 }
+
+.recipe-card-head {
+    background-color: slategray;
+}
+
+.recipe-title {
+    margin-left: 5%;
+}
+
+.recipe-subtitle {
+    margin-left: 5%;
+    color: lightgray;
+}
+
+.card {
+    border: none;
+}

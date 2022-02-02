@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row g-0 recipe-card-head">
+        <div class="col-md-6 my-auto">
+            <h1 class="recipe-title text-light"> {{ recipe.title }}</h1>
+            <p class="recipe-subtitle">by {{ recipe.author }} | <em>{{ recipe.published_on }}</em></p>
+        </div>
+        <div class="d-md-block col-md-6">
+            {% if "placeholder" not in recipe.image.url %}
+            <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" width="100%">
+            {% elif recipe.image_url %}
+            <img class="card-img-top img-fit" src="{{ recipe.image_url}}" width="100%">
+            {% else %}
+            <img class="card-img-top img-fit" src="https://www.fiin.co.uk/sites/default/files/styles/banner_homepage/public/carousels/fiin-site-05-opt.jpg?itok=Olg7ZyBE" width="100%">
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left top">
+            <div class="card-body">
+                <p>{{ recipe.description|striptags }}</p>
+                <hr/>
+                <h3>Ingredients:</h3>
+                <p class="card-text ">{{ recipe.ingredients | safe }}</p>
+                <hr/>
+                <h3>Method:</h3>
+                <p class="card-text ">{{ recipe.method | safe }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock content %}

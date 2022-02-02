@@ -26,7 +26,7 @@
                                 <img class="card-img-top img-fit" src="https://www.fiin.co.uk/sites/default/files/styles/banner_homepage/public/carousels/fiin-site-05-opt.jpg?itok=Olg7ZyBE" height="300px">
                                 {% endif %}
                             </div>
-                            <a href="#" class="no-deco text-black">
+                            <a href="{% url 'recipe_detail' recipe.slug %}" class="no-deco text-black">
                                 <h2 class="card-title">{{ recipe.title }}</h2>
                                 <p class="text-muted">by {{ recipe.author }}</p>
                                 <p class="card-text">{{ recipe.description|safe }}</p>
