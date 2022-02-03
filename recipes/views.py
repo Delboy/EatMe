@@ -68,7 +68,7 @@ class RecipeDetail(View):
                 "comments": comments,
                 "liked": liked,
                 "comment_form": CommentForm()
-            },
+            }
         )
 
 class RecipeLike(View):

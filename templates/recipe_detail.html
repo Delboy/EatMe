@@ -41,11 +41,42 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-1">
+            <strong>
+                {% if user.is_authenticated %}
+                <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="POST">
+                    {% csrf_token %}
+                    {% if liked %}
+                    <button type="submit" value="{{ recipe.slug }}" class="btn-like">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    {% else %}
+                    <button type="submit" value="{{ post.slug }}" class="btn-like">
+                        <i class="far fa-heart"></i></button>
+                    {% endif %}
+                </form>
+                {% else %}
+                <span class="text-secondary"><i class="far fa-heart"></i></span>
+                {% endif %}
+                {{ recipe.number_of_likes }}
+            </strong>
+        </div>
+        <div class="col-1">
+            {% with comments.count as total_comments %}
+            <strong class="text-secondary"><i class="far fa-comments"></i>
+                {{ total_comments }}
+            </strong>
+            {% endwith %}
+        </div>
+    </div>
 </div>
 
 <div class="container">
     <div class="row">
-        <hr>
+        <hr class="mt-2">
     </div>
 </div>
 
