@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+<div class="container log-box">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6 mt-4">
+
+      <h1>{% trans "Sign In" %}</h1>
+
+      <p>{% blocktrans %}Welcome back to Eat Me! To start sharing your recipes with the world please log in. If you have not created an account yet, then please
+        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+
+
+      <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+
+        <button class="btn btn-secondary" type="submit">{% trans "Sign In" %}</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

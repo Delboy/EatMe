@@ -39,3 +39,12 @@
 .card {
     border: none;
 }
+
+a {
+    text-decoration: none;
+    color: grey;
+}
+
+a:hover {
+    color: darkgray;
+}
