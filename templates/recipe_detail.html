@@ -1,6 +1,8 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
+
+{% load crispy_forms_tags %}
 
 
 <div class="container">
@@ -15,7 +17,9 @@
             {% elif recipe.image_url %}
             <img class="card-img-top img-fit" src="{{ recipe.image_url}}" width="100%">
             {% else %}
-            <img class="card-img-top img-fit" src="https://www.fiin.co.uk/sites/default/files/styles/banner_homepage/public/carousels/fiin-site-05-opt.jpg?itok=Olg7ZyBE" width="100%">
+            <img class="card-img-top img-fit"
+                src="https://www.fiin.co.uk/sites/default/files/styles/banner_homepage/public/carousels/fiin-site-05-opt.jpg?itok=Olg7ZyBE"
+                width="100%">
             {% endif %}
         </div>
     </div>
@@ -27,13 +31,53 @@
         <div class="col card mb-4  mt-3 left top">
             <div class="card-body">
                 <p>{{ recipe.description|striptags }}</p>
-                <hr/>
+                <hr />
                 <h3>Ingredients:</h3>
                 <p class="card-text ">{{ recipe.ingredients | safe }}</p>
-                <hr/>
+                <hr />
                 <h3>Method:</h3>
                 <p class="card-text ">{{ recipe.method | safe }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <hr>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 ">
+            <h3>Comments:</h3>
+            <div class="card-body">
+                {% for comment in comments %}
+                <div class="comments" style="padding: 10px;">
+                    <p class="font-weight-bold">
+                        {{ comment.name }}
+                        <span class=" text-muted font-weight-normal">
+                            {{ comment.created_on }}
+                        </span> wrote:
+                    </p>
+                    {{ comment.body | linebreaks }}
                 </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <div class="card-body pt-0">
+                {% if user.is_authenticated %}
+                <h3> Leave a comment: </h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-secondary btn-lg mt-2">Submit</button>
+                </form>
+                {% endif %}
             </div>
         </div>
     </div>
