@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+{% load cloudinary %}
+
+{% if user.is_authenticated and user.id == recipe.author.id %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="display-2 text-center mt-2">Edit Recipe</h1>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+        <form class="signup" id="add_recipe_form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-secondary right mb-2" type="submit" value="Save">Edit Recipe</button>
+        </form>
+    </div>
+</div>
+
+
+{% else %}
+<div class="container log-box">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 mt-4">
+            <h2>Whoops!</h2>
+            <p>To view this content you need to have an account. Sign in <a href="{% url 'account_login' %}">here</a> or
+                register an account <a href="{% url 'account_signup' %}">here</a>.</p>
+        </div>
+    </div>
+</div>
+
+
+{% endif %}
+
+{% endblock %}

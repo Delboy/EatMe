@@ -44,6 +44,7 @@
                             <hr />
                             <p class="card-text text-muted h6">{{ recipe.published_on}} <i class="far fa-heart"></i>
                                 {{ recipe.number_of_likes }}</p>
+                                <a href="{% url 'edit_recipe' recipe.id %}"><button class="btn btn-success">Edit</button></a>
                         </div>
                     </div>
                 </div>
