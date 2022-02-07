@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views import generic, View
+from django.views.generic import CreateView
 from .models import Recipe
-from .forms import CommentForm
+from .forms import CommentForm, RecipeForm
 
 
 class HomeView(generic.ListView):
@@ -95,3 +96,11 @@ class UsersRecipeList(generic.ListView):
             return render(request, 'your_recipes.html')
             
 
+class AddRecipe(CreateView):
+    model = Recipe
+    form_class = RecipeForm
+    template_name = 'add_recipe.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
