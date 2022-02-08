@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView
@@ -112,3 +112,7 @@ class EditRecipe(UpdateView):
     form_class = RecipeForm
 
 
+def delete_recipe(request, pk):
+    recipe = get_object_or_404(Recipe, id=pk)
+    recipe.delete()
+    return redirect(reverse('your_recipes'))
