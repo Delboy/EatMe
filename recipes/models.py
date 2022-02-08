@@ -33,7 +33,8 @@ class Recipe(models.Model):
         return self.likes.count()
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = '-'.join((slugify(self.author.id), slugify(self.title)))
+        # self.slug = slugify(self.author.id, self.title)
         super(Recipe, self).save(*args, **kwargs)
     
     def get_absolute_url(self):

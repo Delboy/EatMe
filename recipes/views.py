@@ -110,3 +110,5 @@ class EditRecipe(UpdateView):
     model = Recipe
     template_name = 'edit_recipe.html'
     form_class = RecipeForm
+
+
