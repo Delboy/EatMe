@@ -137,3 +137,19 @@ class UsersFavRecipes(generic.ListView):
             return render(request, 'favourite_recipes.html', context)
         else:
             return render(request, 'favourite_recipes.html')
+
+
+def search_recipes(request):
+    if request.method == "POST":
+        searched = request.POST.get('searched')
+        if searched.lower() == 'vegan':
+            recipes = Recipe.objects.filter(vegan=True)
+            return render(request, 'search_recipes.html', {'searched': searched, 'recipes':recipes})
+        elif searched.lower() == 'vegetarian':
+            recipes = Recipe.objects.filter(vegetarian=True)
+            return render(request, 'search_recipes.html', {'searched': searched, 'recipes':recipes})
+        else:
+            recipes = Recipe.objects.filter(title__icontains=searched)
+            return render(request, 'search_recipes.html', {'searched': searched, 'recipes':recipes})
+    else:
+        return render(request, 'search_recipes.html')
