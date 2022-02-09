@@ -19,5 +19,123 @@
         </div>
     </div>
 </div>
+<br>
+
+<div class="container">
+    <div class="row gx-5">
+        <div class="col-sm-7">
+            <!-- Carousel -->
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <h3 class="h3 display-6">Featured Recipes</h3>
+                <br>
+                <div class="carousel-inner">
+                    {% for recipe in recipes %}
+                    {% if forloop.first %}
+                    <div class="carousel-item active">
+                    {% else %}
+                    <div class="carousel-item">
+                    {% endif %}
+                        <a href="{% url 'recipe_detail' recipe.slug %}">
+                            {% if "placeholder" not in recipe.image.url %}
+                            <img class="img-fit card-img-top" src=" {{ recipe.image.url }}" height="400px" width="600px">
+                            {% elif recipe.image_url %}
+                            <img class="img-fit card-img-top" src="{{ recipe.image_url}}" height="400px" width="600px">
+                            {% else %}
+                            <img class="img-fit card-img-top"
+                                src="https://www.fiin.co.uk/sites/default/files/styles/banner_homepage/public/carousels/fiin-site-05-opt.jpg?itok=Olg7ZyBE"
+                                height="400px" width="600px">
+                            {% endif %}
+                            <div class="carousel-caption d-md-block">
+                                <h5>{{ recipe.title }}</h5>
+                                <p> by {{ recipe.author }}</p>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <!-- Top Recipes -->
+            <div class="col-sm-5">
+                <h3 class="h3 display-6">Most loved Recipes</h3><br>
+                <div class="lead">
+                    <ol>
+                        {% for top_recipe in top_recipes|slice:":5" %}
+                        <a href="{% url 'recipe_detail' top_recipe.slug %}" class="recipe-link">
+                            <li>{{ top_recipe.title}} by {{ top_recipe.author }}</li>
+                        </a>
+                        <hr />
+                        {% endfor %}
+                    </ol>
+                    <p class="lead text-center">
+                        <a href="{% url 'recipes' %}" class="recipe-link">View all recipes</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<!-- Features -->
+<div class="container-wrapper container-wrapper--red">
+    <div class="container features-container content-container">
+        <section class="features">
+            <div class="row">
+                <div class="col-12 page-header">
+                    <h3 class="h3 display-6">Features:</h2>
+                        <hr class="block-divider block-divider--short block-divider--white">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="feature">
+                        <h2 class="feature-head"><i class="fas fa-globe"></i> Discover</h2>
+                        <p>Explore and discover delicious new recipes from users all across the globe.</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <img src="https://ichef.bbci.co.uk//food/ic/food_16x9_1600/recipes/great_sausage_casserole_73010_16x9.jpg"
+                        class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/teriyakichicken_85358_16x9.jpg"
+                            class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="col-6">
+                        <div class="feature">
+                            <h2 class="feature-head"><i class="fas fa-heart"></i> Love</h2>
+                            <p>Once you've found your favourite recipes, love them to keep them stored forever to come
+                                back to time and time again.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="feature">
+                            <h2 class="feature-head"><i class="fas fa-apple-alt"></i> Create</h2>
+                            <p>Create and share your own something recipes with the world!
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <img src="https://ichef.bbci.co.uk//food/ic/food_16x9_1600/recipes/darkcherryandhazelnu_92470_16x9.jpg"
+                            class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </section>
 
 {% endblock %}

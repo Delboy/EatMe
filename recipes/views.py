@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView
+from django.db.models import Count
 from .models import Recipe
 from .forms import CommentForm, RecipeForm
 
@@ -9,8 +10,10 @@ from .forms import CommentForm, RecipeForm
 class HomeView(generic.ListView):
     def get(self, request):
         recipes = Recipe.objects.filter(featured=True)
+        top_recipes = Recipe.objects.annotate(like_count=Count('likes')).order_by('-like_count')
         context = {
-            "recipes": recipes
+            "recipes": recipes,
+            "top_recipes": top_recipes
         }
         return render(request, 'index.html', context)
 
