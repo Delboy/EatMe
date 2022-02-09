@@ -16,9 +16,16 @@ class HomeView(generic.ListView):
 
 
 class RecipeList(generic.ListView):
-    model = Recipe
-    template_name = "recipes.html"
-    paginate_by = 6
+    def get(self, request):
+        if request.user.is_authenticated:
+            recipes = Recipe.objects.all()
+            context = {
+                "recipes": recipes,
+            }
+            paginate_by = 6
+            return render(request, 'recipes.html', context)
+        else:
+            return render(request, 'recipes.html')
 
 
 class RecipeDetail(View):
@@ -118,3 +125,15 @@ def delete_recipe(request, pk):
     return redirect(reverse('your_recipes'))
 
     
+class UsersFavRecipes(generic.ListView):
+    def get(self, request):
+        if request.user.is_authenticated:
+            recipes = Recipe.objects.filter(likes=request.user.id)
+            
+            context = {
+                "recipes": recipes,
+            }
+            paginate_by = 6
+            return render(request, 'favourite_recipes.html', context)
+        else:
+            return render(request, 'favourite_recipes.html')

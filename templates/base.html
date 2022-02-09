@@ -34,7 +34,7 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Favourite Recipes</a>
+                        <a class="nav-link" href="{% url 'favourite_recipes' %}">Favourite Recipes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'your_recipes' %}">Your Recipes</a>
