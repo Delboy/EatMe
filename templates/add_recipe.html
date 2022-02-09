@@ -4,6 +4,8 @@
 
 {% load cloudinary %}
 
+{% if user.is_authenticated %}
+
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
@@ -35,5 +37,11 @@
         }
     })
 </script>
+
+{% else %}
+
+{% include "not_logged_in_error.html" %}
+
+{% endif %}
 
 {% endblock %}

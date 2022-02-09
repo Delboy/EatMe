@@ -2,13 +2,21 @@
 
 {% block content %}
 
-<div class="row">
-    <div class="col-8 offset-2">
-        <h1 class="h1 display-2 text-center">Favourite Recipes</h1>
-        <hr>
+{% if user.is_authenticated %}
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="h1 display-2 text-center">Favourite Recipes</h1>
+            <hr>
+        </div>
     </div>
-</div>
 
-{% include "base_recipe.html" %}
+    {% include "base_recipe.html" %}
+
+{% else %}
+
+    {% include "not_logged_in_error.html" %}
+
+{% endif %}
 
 {% endblock %}
+

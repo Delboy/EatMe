@@ -108,17 +108,7 @@
 
 {% else %}
 
-<div class="container log-box">
-    <div class="row justify-content-md-center">
-        <div class="col-md-6 mt-4">
-            <h2>Whoops!</h2>
-            <p>To view this content you need to have an account. Sign in <a href="{% url 'account_login' %}">here</a> or
-                register an account <a href="{% url 'account_signup' %}">here</a>.</p>
-        </div>
-    </div>
-</div>
-
-
+{% include "not_logged_in_error.html" %}
 
 {% endif %}
 
