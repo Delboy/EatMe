@@ -116,3 +116,5 @@ def delete_recipe(request, pk):
     recipe = get_object_or_404(Recipe, id=pk)
     recipe.delete()
     return redirect(reverse('your_recipes'))
+
+    
