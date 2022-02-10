@@ -56,3 +56,24 @@ a:hover {
     margin-left: 20px;
 }
 
+.feature-head {
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 1199px) {
+    .feature-head {
+        margin-top: 60px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .feature-head {
+        margin-top: 35px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .feature-head {
+        margin-top: 25px;
+    }
+}
