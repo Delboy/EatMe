@@ -36,6 +36,15 @@
                                     height="300px">
                                 {% endif %}
                             </div>
+                            {% if recipe.vegan %}
+                            <div class="dietry-box">
+                                <p class="vegan-icon">Ve</p>
+                            </div>
+                            {% elif recipe.vegetarian %}
+                            <div class="dietry-box">
+                                <p class="vegetarian-icon">V</p>
+                            </div>
+                            {% endif %}
                             <a href="{% url 'recipe_detail' recipe.slug %}" class="no-deco text-black">
                                 <h2 class="card-title">{{ recipe.title }}</h2>
                                 <p class="text-muted">by {{ recipe.author }}</p>
@@ -44,9 +53,10 @@
                             <hr />
                             <p class="card-text text-muted h6">{{ recipe.published_on}} <i class="far fa-heart"></i>
                                 {{ recipe.number_of_likes }}</p>
-                            <a href="{% url 'edit_recipe' recipe.id %}"><button class="btn btn-success">Edit</button></a>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button>
-                            
+                            <div class="recipe-buttons mt-1">
+                                <a href="{% url 'edit_recipe' recipe.id %}"><button class="btn btn-success">Edit</button></a>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button>
+                            </div>
                             <!-- Modal -->
                             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
                                 data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"

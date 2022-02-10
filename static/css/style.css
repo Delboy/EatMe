@@ -60,6 +60,36 @@ a:hover {
     margin-top: 100px;
 }
 
+.dietry-box {
+    position: absolute;
+    bottom: 40%;
+    left: 20px;
+    background-color: rgb(156, 224, 190);
+    opacity: 90%;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+
+.vegan-icon {
+    position: absolute;
+    bottom: -70%;
+    left: 15%;
+}
+
+.vegetarian-icon {
+    position: absolute;
+    bottom: -70%;
+    left: 25%;
+}
+
+.recipe-buttons {
+    position: absolute;
+}
+
 @media screen and (max-width: 1199px) {
     .feature-head {
         margin-top: 60px;
