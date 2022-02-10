@@ -10,6 +10,19 @@
         <div class="col-md-6 my-auto">
             <h1 class="recipe-title text-light"> {{ recipe.title }}</h1>
             <p class="recipe-subtitle">by {{ recipe.author }} | <em>{{ recipe.published_on }}</em></p>
+            {% if recipe.vegan %}
+            <br>
+            <div class="dietry-box-detail">
+            <p class="vegan-icon">Ve</p>
+            </div>
+            <p class="dietry-text"><em>- Suitable for vegans and vegetarians</em></p>
+            {% elif recipe.vegetarian %}
+            <br>
+            <div class="dietry-box-detail">
+            <p class="vegetarian-icon">V</p>
+            </div>
+            <p class="dietry-text"><em>- Suitable for vegetarians</em></p>
+            {% endif %}
         </div>
         <div class="d-md-block col-md-6">
             {% if "placeholder" not in recipe.image.url %}

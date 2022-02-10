@@ -74,6 +74,20 @@ a:hover {
     border-radius: 50%;
 }
 
+.dietry-box-detail {
+    position: relative;
+    top: 25px;
+    left: 20px;
+    background-color: rgb(156, 224, 190);
+    opacity: 90%;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+
 .vegan-icon {
     position: absolute;
     bottom: -70%;
@@ -83,7 +97,14 @@ a:hover {
 .vegetarian-icon {
     position: absolute;
     bottom: -70%;
-    left: 25%;
+    left: 28%;
+}
+
+.dietry-text {
+    position: relative;
+    bottom: 79%;
+    left: 10%;
+    color: lightgray;
 }
 
 .recipe-buttons {
