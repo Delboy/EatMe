@@ -132,6 +132,7 @@ class EditRecipe(SuccessMessageMixin, UpdateView):
 def delete_recipe(request, pk):
     recipe = get_object_or_404(Recipe, id=pk)
     recipe.delete()
+    messages.success(request, 'Recipe Deleted Successfully')
     return redirect(reverse('your_recipes'))
 
     
