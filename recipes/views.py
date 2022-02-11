@@ -3,6 +3,8 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView
 from django.db.models import Count
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Recipe
 from .forms import CommentForm, RecipeForm
 
@@ -67,6 +69,7 @@ class RecipeDetail(View):
             comment = comment_form.save(commit=False)
             comment.recipe = recipe
             comment.save()
+            messages.success(request, 'Comment added successfully')
         else:
             comment_form = CommentForm()
 
@@ -106,14 +109,17 @@ class UsersRecipeList(generic.ListView):
             return render(request, 'your_recipes.html')
             
 
-class AddRecipe(CreateView):
+class AddRecipe(SuccessMessageMixin, CreateView):
     model = Recipe
     form_class = RecipeForm
     template_name = 'add_recipe.html'
-
+    success_message = 'Recipe Successfully Added'
     def form_valid(self, form):
         form.instance.author = self.request.user
+        
         return super().form_valid(form)
+    
+    
 
 
 class EditRecipe(UpdateView):
