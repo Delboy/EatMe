@@ -122,10 +122,11 @@ class AddRecipe(SuccessMessageMixin, CreateView):
     
 
 
-class EditRecipe(UpdateView):
+class EditRecipe(SuccessMessageMixin, UpdateView):
     model = Recipe
     template_name = 'edit_recipe.html'
     form_class = RecipeForm
+    success_message = 'Recipe Successfully Updated'
 
 
 def delete_recipe(request, pk):
