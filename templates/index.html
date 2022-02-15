@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% load static %}
+
 <div class="container-fluid callout-container">
     <div class="row">
         <div class="col-12">
@@ -115,8 +117,8 @@
                     <p class="text-center">Explore and discover delicious new recipes from users all across the globe.</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="https://ichef.bbci.co.uk//food/ic/food_16x9_1600/recipes/great_sausage_casserole_73010_16x9.jpg"
-                        class="img-fluid" alt="Responsive image">
+                    <img src="{% static 'images/sausage_casserole.jpg' %}"
+                        class="img-fluid" alt="Sausage Casserole">
                 </div>
                 <div class="col-4 offset-4">
                     <br>
@@ -127,8 +129,8 @@
             </div>
                 <div class="row">
                     <div class="col-md-6 d-none d-sm-block d-sm-none d-md-block">
-                        <img src="https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/teriyakichicken_85358_16x9.jpg"
-                            class="img-fluid" alt="Responsive image">
+                        <img src="{% static 'images/teriyaki_chicken.jpg' %}"
+                            class="img-fluid" alt="Teriyaki Chicken">
                     </div>
                     <div class="col-md-6">
                         <h2 class="feature-head text-center"><i class="fas fa-heart"></i> Love</h2>
@@ -136,8 +138,8 @@
                             back to time and time again.</p>
                     </div>
                     <div class="col-md-6 d-xs-block d-md-none">
-                        <img src="https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/teriyakichicken_85358_16x9.jpg"
-                            class="img-fluid" alt="Responsive image">
+                        <img src="{% static 'images/teriyaki_chicken.jpg' %}"
+                            class="img-fluid" alt="Teriyaki Chicken">
                     </div>
                     <div class="col-4 offset-4">
                         <br>
@@ -152,8 +154,8 @@
                         <p class="text-center">Create and share your own unique recipes with the world!
                     </div>
                     <div class="col-md-6">
-                        <img src="https://ichef.bbci.co.uk//food/ic/food_16x9_1600/recipes/darkcherryandhazelnu_92470_16x9.jpg"
-                            class="img-fluid" alt="Responsive image">
+                        <img src="{% static 'images/tea_and_cake.jpg' %}"
+                            class="img-fluid" alt="Tea and Cake">
                     </div>
                 </div>
             </div>
