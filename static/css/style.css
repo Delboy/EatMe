@@ -1,3 +1,7 @@
+.active {
+    color: orange;
+}
+
 .callout-container {
     height: 100vh;
     background: url("../images/earl_grey_poached_pears_with_ice_cream.jpg") no-repeat bottom right fixed; 

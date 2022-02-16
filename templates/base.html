@@ -16,6 +16,18 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+    
+    <!-- Navigation -->
+
+    <!-- url's are defined here so that they can be used in 'if' statments -->
+    {% url 'home' as home %}
+    {% url 'recipes' as all_recipes %}
+    {% url 'favourite_recipes' as favourite_recipes %}
+    {% url 'your_recipes' as your_recipes %}
+    {% url 'account_signup' as signup %}
+    {% url 'account_login' as login %}
+    {% url 'account_logout' as logout %}
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">Eat Me!</a>
@@ -27,17 +39,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link {% if request.path == home %} active {% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'recipes' %}">All Recipes</a>
+                        <a class="nav-link {% if request.path == all_recipes %} active {% endif %}" href="{% url 'recipes' %}">All Recipes</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'favourite_recipes' %}">Favourite Recipes</a>
+                        <a class="nav-link {% if request.path == favourite_recipes %} active {% endif %}" href="{% url 'favourite_recipes' %}">Favourite Recipes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'your_recipes' %}">Your Recipes</a>
+                        <a class="nav-link {% if request.path == your_recipes %} active {% endif %}" href="{% url 'your_recipes' %}">Your Recipes</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -49,14 +61,14 @@
                             <a class="nav-link" href="{% url 'your_recipes' %}"><em>Logged in as {{ user|title }} </em></a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{% url 'account_logout' %}">| Log Out</a>
+                            <a class="nav-link {% if request.path == logout %} active {% endif %}" href="{% url 'account_logout' %}">| Log Out</a>
                         </li>
                         {% else %}
                         <li>
-                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link {% if request.path == signup %} active {% endif %}" href="{% url 'account_signup' %}">Register</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
+                            <a class="nav-link {% if request.path == login %} active {% endif %}" href="{% url 'account_login' %}">Log In</a>
                         </li>
                         {% endif %}
                     </ul>
