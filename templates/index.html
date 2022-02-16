@@ -12,7 +12,7 @@
                 <hr>
                 {% if user.is_authenticated %}
                 <p class="lead text-light"> Welcome back {{ user | title }}
-                    <a class="nav-link" href="#"><button class="btn btn-dark">View Recipes</button></a>
+                    <a class="nav-link" href="{% url 'recipes' %}"><button class="btn btn-dark">View Recipes</button></a>
                     {% else %}
                     <p class="lead text-light">Sign up today to start sharing your creations with the world!</p>
                     <a class="nav-link" href="#"><button class="btn btn-dark">Sign up!</button></a>
