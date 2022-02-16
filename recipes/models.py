@@ -3,19 +3,20 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
 from django.utils.text import slugify
+from profanity.validators import validate_is_profane
 
 
 class Recipe(models.Model):
-    title = models.CharField(max_length=200, null=False, blank=False)
+    title = models.CharField(max_length=200, null=False, blank=False, validators=[validate_is_profane])
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipes", null=True
         )
     published_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
-    description = models.TextField()
-    ingredients = models.TextField()
-    method = models.TextField()
+    description = models.TextField(validators=[validate_is_profane])
+    ingredients = models.TextField(validators=[validate_is_profane])
+    method = models.TextField(validators=[validate_is_profane])
     featured = models.BooleanField(default=False)
     vegan = models.BooleanField(default=False)
     vegetarian = models.BooleanField(default=False)
@@ -46,7 +47,7 @@ class Comment(models.Model):
         )
     name = models.CharField(max_length=80)
     email = models.EmailField()
-    body = models.TextField()
+    body = models.TextField(validators=[validate_is_profane])
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:

@@ -5,8 +5,10 @@ dj3-cloudinary-storage==0.0.6
 Django==3.2
 django-allauth==0.47.0
 django-crispy-forms==1.14.0
+django-profanity-filter==0.2.1
 django-summernote==0.8.20.0
 gunicorn==20.1.0
+inflection==0.5.1
 oauthlib==3.2.0
 psycopg2==2.9.3
 PyJWT==2.3.0
