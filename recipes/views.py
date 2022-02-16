@@ -22,15 +22,13 @@ class HomeView(generic.ListView):
 
 class RecipeList(generic.ListView):
     def get(self, request):
-        if request.user.is_authenticated:
-            recipes = Recipe.objects.all()
-            context = {
-                "recipes": recipes,
-            }
-            paginate_by = 6
-            return render(request, 'recipes.html', context)
-        else:
-            return render(request, 'recipes.html')
+        recipes = Recipe.objects.all()
+        context = {
+            "recipes": recipes,
+        }
+        paginate_by = 6
+        return render(request, 'recipes.html', context)
+        
 
 
 class RecipeDetail(View):
