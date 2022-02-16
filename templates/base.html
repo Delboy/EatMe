@@ -46,7 +46,7 @@
                         
                         {% if user.is_authenticated %}
                         <li>
-                            <a class="nav-link" href="#"><em>Logged in as {{ user|title }} </em></a>
+                            <a class="nav-link" href="{% url 'your_recipes' %}"><em>Logged in as {{ user|title }} </em></a>
                         </li>
                         <li>
                             <a class="nav-link" href="{% url 'account_logout' %}">| Log Out</a>
