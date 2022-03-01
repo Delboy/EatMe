@@ -4,12 +4,12 @@
 
 {% load cloudinary %}
 
-{% if user.is_authenticated and user.id == recipe.author.id %}
+{% if user.is_authenticated and user.username == comment.name %}
 
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <h1 class="display-2 text-center mt-2">Edit Recipe</h1>
+            <h1 class="display-2 text-center mt-2">Edit Comment</h1>
             <hr>
         </div>
     </div>
@@ -25,7 +25,6 @@
         </form>
     </div>
 </div>
-
 
 {% elif user.is_authenticated %}
 

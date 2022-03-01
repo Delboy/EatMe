@@ -5,7 +5,7 @@ from django.views.generic import CreateView, UpdateView
 from django.db.models import Count
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from .models import Recipe
+from .models import Recipe, Comment
 from .forms import CommentForm, RecipeForm
 from django.core.paginator import Paginator
 
@@ -131,6 +131,13 @@ def delete_recipe(request, pk):
     recipe.delete()
     messages.success(request, 'Recipe Deleted Successfully')
     return redirect(reverse('your_recipes'))
+
+
+class EditComment(SuccessMessageMixin, UpdateView):
+    model = Comment
+    template_name = 'edit_comment.html'
+    form_class = CommentForm
+    success_message = 'Comment Successfully Updated'
 
     
 class UsersFavRecipes(generic.ListView):

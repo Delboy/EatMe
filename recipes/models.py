@@ -4,6 +4,8 @@ from cloudinary.models import CloudinaryField
 from django.urls import reverse
 from django.utils.text import slugify
 from profanity.validators import validate_is_profane
+from django.shortcuts import redirect, render
+from django.http import HttpResponseRedirect
 
 
 class Recipe(models.Model):
@@ -55,4 +57,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+    def get_absolute_url(self):
+        return reverse('recipe_detail', args=[self.recipe.slug])
     
