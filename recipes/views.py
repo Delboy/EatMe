@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Recipe
 from .forms import CommentForm, RecipeForm
+from django.core.paginator import Paginator
 
 
 class HomeView(generic.ListView):
@@ -23,11 +24,10 @@ class HomeView(generic.ListView):
 class RecipeList(generic.ListView):
     def get(self, request):
         recipes = Recipe.objects.all()
-        context = {
-            "recipes": recipes,
-        }
-        paginate_by = 6
-        return render(request, 'recipes.html', context)
+        paginator = Paginator(recipes, 6) # Show 6 Recipes per page.
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        return render(request, 'recipes.html', {'page_obj': page_obj})
         
 
 
@@ -98,11 +98,10 @@ class UsersRecipeList(generic.ListView):
     def get(self, request):
         if request.user.is_authenticated:
             recipes = Recipe.objects.filter(author=request.user)
-            context = {
-                "recipes": recipes,
-            }
-            paginate_by = 6
-            return render(request, 'your_recipes.html', context)
+            paginator = Paginator(recipes, 6) # Show 6 Recipes per page.
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+            return render(request, 'your_recipes.html', {'page_obj': page_obj})
         else:
             return render(request, 'your_recipes.html')
             
@@ -138,12 +137,10 @@ class UsersFavRecipes(generic.ListView):
     def get(self, request):
         if request.user.is_authenticated:
             recipes = Recipe.objects.filter(likes=request.user.id)
-            
-            context = {
-                "recipes": recipes,
-            }
-            paginate_by = 6
-            return render(request, 'favourite_recipes.html', context)
+            paginator = Paginator(recipes, 6) # Show 6 Recipes per page.
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+            return render(request, 'favourite_recipes.html', {'page_obj': page_obj})
         else:
             return render(request, 'favourite_recipes.html')
 

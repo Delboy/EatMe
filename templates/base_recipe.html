@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for recipe in recipes %}
+                {% for recipe in page_obj %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -12,7 +12,9 @@
                                 {% elif recipe.image_url %}
                                 <img class="card-img-top img-fit" src="{{ recipe.image_url}}" height="300px">
                                 {% else %}
-                                <img class="card-img-top img-fit" src="https://www.fiin.co.uk/sites/default/files/styles/banner_homepage/public/carousels/fiin-site-05-opt.jpg?itok=Olg7ZyBE" height="300px">
+                                <img class="card-img-top img-fit"
+                                    src="https://www.fiin.co.uk/sites/default/files/styles/banner_homepage/public/carousels/fiin-site-05-opt.jpg?itok=Olg7ZyBE"
+                                    height="300px">
                                 {% endif %}
                             </div>
                             {% if recipe.vegan %}
@@ -43,16 +45,30 @@
             </div>
         </div>
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+    
+
+    <!-- Pagination -->
+    <div class="container">
+        <div class="row">
+            <div class="col-2 offset-5 mb-2">
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                        {% endif %}
+
+                        <span class="current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </span>
+
+                        {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
