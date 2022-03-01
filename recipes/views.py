@@ -139,6 +139,14 @@ class EditComment(SuccessMessageMixin, UpdateView):
     form_class = CommentForm
     success_message = 'Comment Successfully Updated'
 
+
+def delete_comment(request, pk):
+    comment = get_object_or_404(Comment, id=pk)
+    comment.delete()
+    messages.success(request, 'Comment Deleted Successfully')
+    return HttpResponseRedirect(reverse('recipe_detail', args=[comment.recipe.slug]))
+    
+
     
 class UsersFavRecipes(generic.ListView):
     def get(self, request):

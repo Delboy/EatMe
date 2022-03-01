@@ -15,13 +15,13 @@
             {% if recipe.vegan %}
             <br>
             <div class="dietry-box-detail">
-            <p class="vegan-icon">Ve</p>
+                <p class="vegan-icon">Ve</p>
             </div>
             <p class="dietry-text"><em>- Suitable for vegans and vegetarians</em></p>
             {% elif recipe.vegetarian %}
             <br>
             <div class="dietry-box-detail">
-            <p class="vegetarian-icon">V</p>
+                <p class="vegetarian-icon">V</p>
             </div>
             <p class="dietry-text"><em>- Suitable for vegetarians</em></p>
             {% endif %}
@@ -69,7 +69,7 @@
                         <i class="fas fa-heart"></i>
                     </button>
                     {% else %}
-                    <button type="submit" value="{{ post.slug }}" class="btn-like">
+                    <button type="submit" value="{{ recipe.slug }}" class="btn-like">
                         <i class="far fa-heart"></i></button>
                     {% endif %}
                 </form>
@@ -111,8 +111,34 @@
                     {{ comment.body | linebreaks }}
                 </div>
                 {% if user.is_authenticated and user.username == comment.name %}
-                
+
                 <a href="{% url 'edit_comment' comment.id %}"><button class="btn-sm btn-secondary ">Edit</button></a>
+                <button type="button" class="btn-sm btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">Delete</button>
+                    {{ comment.id }}
+                    {{ comment.recipe.slug }}
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Delete Comment</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete your comment?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <a href="{% url 'delete_comment' comment.id %}"><button type="submit"
+                                        class="btn btn-danger">Delete</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 {% endif %}
                 {% endfor %}
             </div>
@@ -133,5 +159,5 @@
     </div>
 </div>
 
-{% endblock content %}
 
+{% endblock content %}
