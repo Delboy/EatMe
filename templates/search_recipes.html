@@ -26,6 +26,15 @@
                                 <img class="card-img-top img-fit" src="https://www.fiin.co.uk/sites/default/files/styles/banner_homepage/public/carousels/fiin-site-05-opt.jpg?itok=Olg7ZyBE" height="300px">
                                 {% endif %}
                             </div>
+                            {% if recipe.vegan %}
+                            <div class="dietry-box">
+                                <p class="vegan-icon">Ve</p>
+                            </div>
+                            {% elif recipe.vegetarian %}
+                            <div class="dietry-box">
+                                <p class="vegetarian-icon">V</p>
+                            </div>
+                            {% endif %}
                             <a href="{% url 'recipe_detail' recipe.slug %}" class="no-deco text-black">
                                 <h2 class="card-title">{{ recipe.title }}</h2>
                                 <p class="text-muted">by {{ recipe.author }}</p>
