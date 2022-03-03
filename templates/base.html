@@ -16,7 +16,7 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    
+
     <!-- Navigation -->
 
     <!-- url's are defined here so that they can be used in 'if' statments -->
@@ -39,43 +39,52 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == home %} active {% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link {% if request.path == home %} active {% endif %}" aria-current="page"
+                            href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == all_recipes %} active {% endif %}" href="{% url 'recipes' %}">All Recipes</a>
+                        <a class="nav-link {% if request.path == all_recipes %} active {% endif %}"
+                            href="{% url 'recipes' %}">All Recipes</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == favourite_recipes %} active {% endif %}" href="{% url 'favourite_recipes' %}">Favourite Recipes</a>
+                        <a class="nav-link {% if request.path == favourite_recipes %} active {% endif %}"
+                            href="{% url 'favourite_recipes' %}">Favourite Recipes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == your_recipes %} active {% endif %}" href="{% url 'your_recipes' %}">Your Recipes</a>
+                        <a class="nav-link {% if request.path == your_recipes %} active {% endif %}"
+                            href="{% url 'your_recipes' %}">Your Recipes</a>
                     </li>
                     {% endif %}
                 </ul>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        
+
                         {% if user.is_authenticated %}
                         <li>
-                            <a class="nav-link" href="{% url 'your_recipes' %}"><em>Logged in as {{ user|title }} </em></a>
+                            <a class="nav-link" href="{% url 'your_recipes' %}"><em>Logged in as {{ user|title }}
+                                </em></a>
                         </li>
                         <li>
-                            <a class="nav-link {% if request.path == logout %} active {% endif %}" href="{% url 'account_logout' %}">| Log Out</a>
+                            <a class="nav-link {% if request.path == logout %} active {% endif %}"
+                                href="{% url 'account_logout' %}">| Log Out</a>
                         </li>
                         {% else %}
                         <li>
-                            <a class="nav-link {% if request.path == signup %} active {% endif %}" href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link {% if request.path == signup %} active {% endif %}"
+                                href="{% url 'account_signup' %}">Register</a>
                         </li>
                         <li>
-                            <a class="nav-link {% if request.path == login %} active {% endif %}" href="{% url 'account_login' %}">Log In</a>
+                            <a class="nav-link {% if request.path == login %} active {% endif %}"
+                                href="{% url 'account_login' %}">Log In</a>
                         </li>
                         {% endif %}
                     </ul>
                 </div>
                 <form class="d-flex" method="POST" action="{% url 'search_recipes' %}">
                     {% csrf_token %}
-                    <input class="form-control me-2" type="search" placeholder="Search Recipes" aria-label="Search" name="searched">
+                    <input class="form-control me-2" type="search" placeholder="Search Recipes" aria-label="Search"
+                        name="searched">
                     <button class="btn btn-outline-secondary" type="submit">Go</button>
                 </form>
             </div>
@@ -86,10 +95,10 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
                     {{ message | safe }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                </div>
                 {% endfor %}
             </div>
         </div>
@@ -100,17 +109,31 @@
     {% endblock %}
 
     <footer class="footer mt-auto py-3 bg-light">
-        <p class="m-0 text-center text-black">Made by <a href='https://github.com/Delboy' class="link-secondary"
-                target="_onblank">Derek de Goey</a></p>
-        <p class="m-0 text-center text-black">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
+        <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="text-center fw-bold">Eat Me!</p>
+            </div>
+            <div class="col-sm-8">
+                <p class="text-center">Created by <a href='https://github.com/Delboy'
+                        class="link-secondary" target="_onblank">Derek de Goey</a></p>
+                <p class="text-center">Follow us: 
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square ms-3"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square ms-3"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram-square ms-3"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square ms-3"></i></a>
+                </p>
+            </div>
+            <div class="col">
+                <p class="text-center">Copyright 2022</p>
+            </div>
+            </div>
+        </div>
     </footer>
 
     <!-- script to manage alerts -->
     <script>
-        setTimeout(function() {
+        setTimeout(function () {
             let messages = document.getElementById("msg");
             let alert = new bootstrap.Alert(messages);
             alert.close();
@@ -121,22 +144,28 @@
     <script>
         let veganBox = document.getElementById('id_vegan');
         let vegBox = document.getElementById('id_vegetarian');
-        veganBox.addEventListener('click', function() {
-            if(vegBox.checked == false){
+        veganBox.addEventListener('click', function () {
+            if (vegBox.checked == false) {
                 vegBox.checked = true
             }
         })
-        vegBox.addEventListener('click', function() {
-            if(veganBox.checked == true){
+        vegBox.addEventListener('click', function () {
+            if (veganBox.checked == true) {
                 veganBox.checked = false
             }
         })
     </script>
 
     <!-- Bootstrap scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
 </body>
+
 </html>
