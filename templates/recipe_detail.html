@@ -115,8 +115,6 @@
                 <a href="{% url 'edit_comment' comment.id %}"><button class="btn-sm btn-secondary ">Edit</button></a>
                 <button type="button" class="btn-sm btn-danger" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">Delete</button>
-                    {{ comment.id }}
-                    {{ comment.recipe.slug }}
                 <!-- Modal -->
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
