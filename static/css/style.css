@@ -124,6 +124,10 @@ a:hover {
     .feature-head {
         margin-top: 60px;
     }
+
+    .dietry-text {
+        margin-left: 5px;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -143,10 +147,16 @@ a:hover {
         justify-content: center;
         position: relative;
     }
+
+    .dietry-text {
+        margin-left: 15px;
+    }
 }
 
 @media screen and (max-width: 767px) {
     .feature-head {
         margin-top: 25px;
     }
+
+    
 }
