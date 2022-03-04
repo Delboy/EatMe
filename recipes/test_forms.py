@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .forms import RecipeForm
+from .forms import RecipeForm, CommentForm
 
 
 class TestRecipeForm(TestCase):
@@ -110,5 +110,43 @@ class TestRecipeForm(TestCase):
         self.assertIn('method', form.errors.keys())
         self.assertEqual(
             form.errors['method'][0],
+            'Please remove any profanity/swear words.'
+            )
+
+    # Other tests
+
+    def test_fields_are_explicit_in_form_metaclass(self):
+        '''
+        Test to make sure the fields listed in the meta class are present
+        '''
+        form = RecipeForm()
+        self.assertEqual(form.Meta.fields, (
+            'title', 'description', 'ingredients', 'method',
+            'vegetarian', 'vegan', 'image', 'image_url'
+        ))
+
+
+class TestCommentForm(TestCase):
+    '''
+    Testing for Comment Form
+    '''
+    def test_body_field_is_required(self):
+        '''
+        Test to check body field is present
+        '''
+        form = CommentForm({'body': ''})
+        self.assertFalse(form.is_valid())
+        self.assertIn('body', form.errors.keys())
+        self.assertEqual(form.errors['body'][0], 'This field is required.')
+    
+    def test_recipe_title_has_no_profanity(self):
+        '''
+        Test to insure body contains no profanity
+        '''
+        form = CommentForm({'body': 'bitch'})
+        self.assertFalse(form.is_valid())
+        self.assertIn('body', form.errors.keys())
+        self.assertEqual(
+            form.errors['body'][0],
             'Please remove any profanity/swear words.'
             )
