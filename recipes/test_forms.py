@@ -49,6 +49,20 @@ class TestRecipeForm(TestCase):
         self.assertIn('method', form.errors.keys())
         self.assertEqual(form.errors['method'][0], 'This field is required.')
 
+    # Test to check non required fields do not have to be present
+
+    def test_non_required_fields_are_not_required(self):
+        '''
+        Test to ensure non-required fields are not required
+        '''
+        form = RecipeForm(
+            {
+                'title': 'Test', 'description': 'Test',
+                'ingredients': 'Test', 'method': 'Test'
+                }
+            )
+        self.assertTrue(form.is_valid())
+
     # Tests to check no profanity used
 
     def test_recipe_title_has_no_profanity(self):
