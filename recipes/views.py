@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponseRedirect
-from django.views import generic, View
+from django.views import View
 from django.views.generic import CreateView, UpdateView
 from django.db.models import Count
 from django.contrib import messages
@@ -10,7 +10,7 @@ from .models import Recipe, Comment
 from .forms import CommentForm, RecipeForm
 
 
-class HomeView(generic.ListView):
+class HomeView(View):
     """ Renders the home page"""
     def get(self, request):
         """What happens for a GET request"""
@@ -24,7 +24,7 @@ class HomeView(generic.ListView):
         return render(request, 'index.html', context)
 
 
-class RecipeList(generic.ListView):
+class RecipeList(View):
     """Renders all recipes"""
     def get(self, request):
         """What happens for a GET request"""
@@ -103,7 +103,7 @@ class RecipeLike(View):
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
-class UsersRecipeList(generic.ListView):
+class UsersRecipeList(View):
     """Renders users recipes"""
     def get(self, request):
         """What happens for a GET request"""
@@ -162,7 +162,7 @@ def delete_comment(request, pk):
         'recipe_detail', args=[comment.recipe.slug]))
 
 
-class UsersFavRecipes(generic.ListView):
+class UsersFavRecipes(View):
     """Renders users liked recipes"""
     def get(self, request):
         """What happens for a GET request"""
