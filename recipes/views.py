@@ -137,9 +137,9 @@ class EditRecipe(SuccessMessageMixin, UpdateView):
     success_message = 'Recipe Successfully Updated'
 
 
-def delete_recipe(request, pk):
+def delete_recipe(request, recipe_id):
     """Deletes recipe"""
-    recipe = get_object_or_404(Recipe, id=pk)
+    recipe = get_object_or_404(Recipe, id=recipe_id)
     recipe.delete()
     messages.success(request, 'Recipe Deleted Successfully')
     return redirect(reverse('your_recipes'))
@@ -153,9 +153,9 @@ class EditComment(SuccessMessageMixin, UpdateView):
     success_message = 'Comment Successfully Updated'
 
 
-def delete_comment(request, pk):
+def delete_comment(request, comment_id):
     """Deletes comment"""
-    comment = get_object_or_404(Comment, id=pk)
+    comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
     messages.success(request, 'Comment Deleted Successfully')
     return HttpResponseRedirect(reverse(
