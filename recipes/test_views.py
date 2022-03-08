@@ -102,23 +102,6 @@ class TestViews(TestCase):
         })
         self.assertEqual(Recipe.objects.last().title, "Test Title")
 
-    # def test_display_post(self):
-    # post = Post.objects.create(...whatever...)
-    # response = self.client.get(reverse('blog:post_detail', pk=post.pk))
-    # self.assertContains(response, "really important")
-
-    # def test_can_add_recipe(self):
-    #     """
-    #     Testing Add Recipes
-    #     """
-    #     response = self.client.post('/add_recipe', {
-    #         'title': 'Test Title 2',
-    #         'description': 'Test Desc',
-    #         'ingredients': 'Test Ing',
-    #         'method': 'Test method',
-    #         })
-    #     self.assertRedirects(response, 'add_recipe')
-
     def test_can_delete_recipe(self):
         """
         Testing Delete Recipes
@@ -132,7 +115,17 @@ class TestViews(TestCase):
         existing_recipes = Recipe.objects.filter(id=recipe.id)
         self.assertEqual(len(existing_recipes), 0)
 
-    # def test_can_add_comment(self):
+    def test_can_add_comment(self):
+        '''
+        Testing comments can be added to database
+        '''
+        test_user = User.objects.create_user(
+            username='testuser', password='testpw'
+            )
+        recipe = Recipe.objects.create(title='Test', author=test_user)
+        self.client.login(username='testuser', password='testpw')
+        self.client.post(f'/{recipe.slug}/', {'body': 'Test Comment'})
+        self.assertEqual(Comment.objects.last().body, "Test Comment")
 
     # def test_can_edit_comment(self):
 
