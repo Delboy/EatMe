@@ -38,9 +38,6 @@ class Recipe(models.Model):
     def save(self, *args, **kwargs):
         self.slug = '-'.join((slugify(self.author.id), slugify(self.title)))
         super(Recipe, self).save(*args, **kwargs)
-    
-    def get_absolute_url(self):
-        return reverse('your_recipes')
 
 
 class Comment(models.Model):

@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from .models import Recipe
+from django.urls import reverse
+from django.test import Client
 
 
 class TestViews(TestCase):
@@ -85,8 +87,29 @@ class TestViews(TestCase):
     # Testing page functionality
 
     # def test_can_add_recipe(self):
-     
-    # def test_can_delete_recipe(self):
+    #     """
+    #     Testing Add Recipes
+    #     """
+    #     response = self.client.post('/add_recipe', {
+    #         'title': 'Test Title 2',
+    #         'description': 'Test Desc',
+    #         'ingredients': 'Test Ing',
+    #         'method': 'Test method',
+    #         })
+    #     self.assertRedirects(response, 'add_recipe')
+
+    def test_can_delete_recipe(self):
+        """
+        Testing Delete Recipes
+        """
+        test_user = User.objects.create_user(
+            username='testuser', password='testpw'
+            )
+        recipe = Recipe.objects.create(title='Test', author=test_user)
+        response = self.client.get(f'/delete_recipe/{recipe.id}')
+        self.assertRedirects(response, '/your_recipes/')
+        existing_recipes = Recipe.objects.filter(id=recipe.id)
+        self.assertEqual(len(existing_recipes), 0)
 
     # def test_can_add_comment(self):
 

@@ -8,7 +8,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.core.paginator import Paginator
 from .models import Recipe, Comment
 from .forms import CommentForm, RecipeForm
-
+from django.urls import reverse_lazy
 
 class HomeView(View):
     """ Renders the home page"""
@@ -123,6 +123,7 @@ class AddRecipe(SuccessMessageMixin, CreateView):
     form_class = RecipeForm
     template_name = 'add_recipe.html'
     success_message = 'Recipe Successfully Added'
+    success_url = reverse_lazy('your_recipes')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -135,6 +136,8 @@ class EditRecipe(SuccessMessageMixin, UpdateView):
     template_name = 'edit_recipe.html'
     form_class = RecipeForm
     success_message = 'Recipe Successfully Updated'
+    success_url = reverse_lazy('your_recipes')
+
 
 
 def delete_recipe(request, recipe_id):
