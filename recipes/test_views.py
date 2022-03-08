@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from .models import Recipe
+from .models import Recipe, Comment
 from django.urls import reverse
 from django.test import Client
 
@@ -85,6 +85,27 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'edit_recipe.html')
 
     # Testing page functionality
+
+    def test_can_add_recipe(self):
+        '''
+        Testing recipes can be added to database
+        '''
+        test_user = User.objects.create_user(
+            username='testuser', password='testpw'
+            )
+        self.client.login(username='testuser', password='testpw')
+        self.client.post('/add_recipe/', {
+            'title': 'Test Title',
+            'description': 'Test Desc',
+            'ingredients': 'Test Ing',
+            'method': 'Test method'
+        })
+        self.assertEqual(Recipe.objects.last().title, "Test Title")
+
+    # def test_display_post(self):
+    # post = Post.objects.create(...whatever...)
+    # response = self.client.get(reverse('blog:post_detail', pk=post.pk))
+    # self.assertContains(response, "really important")
 
     # def test_can_add_recipe(self):
     #     """
