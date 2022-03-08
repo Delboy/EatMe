@@ -18,6 +18,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
+                                <a href="{% url 'recipe_detail' recipe.slug %}" class="no-deco text-black">
                                 {% if "placeholder" not in recipe.image.url %}
                                 <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" height="300px">
                                 {% elif recipe.image_url %}
@@ -35,7 +36,6 @@
                                 <p class="vegetarian-icon">V</p>
                             </div>
                             {% endif %}
-                            <a href="{% url 'recipe_detail' recipe.slug %}" class="no-deco text-black">
                                 <h2 class="card-title">{{ recipe.title }}</h2>
                                 <p class="text-muted">by {{ recipe.author }}</p>
                                 <p class="card-text">{{ recipe.description|safe }}</p>
