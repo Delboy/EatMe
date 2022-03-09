@@ -6,6 +6,7 @@ from django.utils.text import slugify
 from profanity.validators import validate_is_profane
 from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
+import datetime
 
 
 class Recipe(models.Model):
@@ -36,7 +37,10 @@ class Recipe(models.Model):
         return self.likes.count()
 
     def save(self, *args, **kwargs):
-        self.slug = '-'.join((slugify(self.author.id), slugify(self.title)))
+        dt = datetime.datetime.now()
+        d_truncated_date = datetime.date(dt.year, dt.month, dt.day)
+        d_truncated_time = datetime.time(dt.hour, dt.minute, dt.second)
+        self.slug = slugify(f'{self.author}-{self.title}-{d_truncated_date}-{d_truncated_time}')
         super(Recipe, self).save(*args, **kwargs)
 
 
