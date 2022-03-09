@@ -145,7 +145,21 @@ class TestViews(TestCase):
         self.client.post(f'/{recipe.slug}/', {'body': 'Test Comment'})
         self.assertEqual(Comment.objects.last().body, "Test Comment")
 
-    # def test_can_edit_comment(self):
+    def test_can_edit_comment(self):
+        """
+        Testing editing Comments
+        """
+        test_user = User.objects.create_user(
+            username='testuser', password='testpw'
+            )
+        recipe = Recipe.objects.create(title='Test', author=test_user)
+        comment = Comment.objects.create(body='Test Comment', recipe=recipe)
+        response = self.client.post(f'/edit_comment/{comment.id}', {
+            'body': 'Edited Comment'
+        })
+        self.assertRedirects(response, f'/{comment.recipe.slug}/')
+        edited_comment = Comment.objects.last().body
+        self.assertEqual(edited_comment, "Edited Comment")
 
     def test_can_delete_comment(self):
         """
