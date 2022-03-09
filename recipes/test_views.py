@@ -1,8 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from .models import Recipe, Comment
-from django.urls import reverse
-from django.test import Client
 
 
 class TestViews(TestCase):
@@ -174,5 +172,20 @@ class TestViews(TestCase):
         self.assertRedirects(response, f'/{comment.recipe.slug}/')
         existing_comments = Comment.objects.filter(id=comment.id)
         self.assertEqual(len(existing_comments), 0)
-    
-    # def test_can_toggle_like(self):
+
+    def test_can_toggle_like_button(self):
+        '''
+        Testing like button toggle
+        '''
+        test_user = User.objects.create_user(
+            username='testuser', password='testpw'
+            )
+        self.client.login(username='testuser', password='testpw')
+        recipe = Recipe.objects.create(title='Test Title')
+        response = self.client.post(f'/like/{recipe.slug}')
+        self.assertRedirects(response, f'/{recipe.slug}/')
+        is_user_present = recipe.likes.filter(id=1).exists()
+        self.assertTrue(is_user_present)
+        response = self.client.post(f'/like/{recipe.slug}')
+        is_user_present = recipe.likes.filter(id=1).exists()
+        self.assertFalse(is_user_present)
