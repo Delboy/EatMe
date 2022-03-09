@@ -102,6 +102,24 @@ class TestViews(TestCase):
         })
         self.assertEqual(Recipe.objects.last().title, "Test Title")
 
+    def test_can_edit_recipe(self):
+        '''
+        Testing editing a recipe
+        '''
+        test_user = User.objects.create_user(
+            username='testuser', password='testpw'
+            )
+        self.client.login(username='testuser', password='testpw')
+        recipe = Recipe.objects.create(title='Test Title', author=test_user)
+        self.client.post(f'/edit_recipe/{recipe.id}', {
+            'title': 'Edited Title',
+            'description': 'Test Desc',
+            'ingredients': 'Test Ing',
+            'method': 'Test method'
+        })
+        edited_recipe = Recipe.objects.last().title
+        self.assertEqual(edited_recipe, "Edited Title")
+
     def test_can_delete_recipe(self):
         """
         Testing Delete Recipes
