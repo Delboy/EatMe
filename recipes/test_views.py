@@ -129,6 +129,18 @@ class TestViews(TestCase):
 
     # def test_can_edit_comment(self):
 
-    # def test_can_delete_comment(self):
+    def test_can_delete_comment(self):
+        """
+        Testing Deleting Comments
+        """
+        test_user = User.objects.create_user(
+            username='testuser', password='testpw'
+            )
+        recipe = Recipe.objects.create(title='Test', author=test_user)
+        comment = Comment.objects.create(body='Test Comment', recipe=recipe)
+        response = self.client.get(f'/delete_comment/{comment.id}')
+        self.assertRedirects(response, f'/{comment.recipe.slug}/')
+        existing_comments = Comment.objects.filter(id=comment.id)
+        self.assertEqual(len(existing_comments), 0)
     
     # def test_can_toggle_like(self):
