@@ -43,6 +43,15 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'your_recipes.html')
 
+    def test_get_your_recipes_page_if_user_logged_out(self):
+        """
+        Test to check your recipes page loads if user signed out
+        """
+        self.client.logout()
+        response = self.client.get('/your_recipes/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'your_recipes.html')
+
     def test_get_add_recipes_page(self):
         """
         Test to ensure add recipes page is displayed
@@ -86,9 +95,9 @@ class TestViews(TestCase):
     # Testing page functionality
 
     def test_can_add_recipe(self):
-        '''
+        """
         Testing recipes can be added to database
-        '''
+        """
         self.client.post('/add_recipe/', {
             'title': 'Test Title',
             'description': 'Test Desc',
@@ -98,9 +107,9 @@ class TestViews(TestCase):
         self.assertEqual(len(Recipe.objects.all()), 2)
 
     def test_can_edit_recipe(self):
-        '''
+        """
         Testing editing a recipe
-        '''
+        """
         self.client.post(f'/edit_recipe/{self.recipe.id}', {
             'title': 'Edited Title',
             'description': 'Test Desc',
@@ -120,9 +129,9 @@ class TestViews(TestCase):
         self.assertEqual(len(existing_recipes), 0)
 
     def test_can_add_comment(self):
-        '''
+        """
         Testing comments can be added to database
-        '''
+        """
         self.client.post(f'/{self.recipe.slug}/', {'body': 'Test Comment'})
         self.assertEqual(Comment.objects.last().body, "Test Comment")
 
@@ -147,9 +156,9 @@ class TestViews(TestCase):
         self.assertEqual(len(existing_comments), 0)
 
     def test_can_toggle_like_button(self):
-        '''
+        """
         Testing like button toggle
-        '''
+        """
         response = self.client.post(f'/like/{self.recipe.slug}')
         self.assertRedirects(response, f'/{self.recipe.slug}/')
         is_user_present = self.recipe.likes.filter(id=1).exists()
@@ -159,9 +168,9 @@ class TestViews(TestCase):
         self.assertFalse(is_user_present)
 
     def test_liked_is_true_if_users_id_exists_in_recipes_liked_field(self):
-        '''
+        """
         Testing that the recipe shows as liked if the user has liked the recipe
-        '''
+        """
         response = self.client.post(f'/{self.recipe.slug}/')
         self.assertFalse(response.context['liked'])
         self.client.post(f'/like/{self.recipe.slug}')
