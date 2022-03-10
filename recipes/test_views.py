@@ -12,6 +12,12 @@ class TestViews(TestCase):
             username='testuser', password='testpw'
             )
         self.recipe = Recipe.objects.create(title='Test', author=test_user)
+        self.vegan_recipe = Recipe.objects.create(
+            title='Vegan Recipe', vegan=True
+            )
+        self.vegetarian_recipe = Recipe.objects.create(
+            title='Vegetarian Recipe', vegetarian=True
+            )
         self.comment = Comment.objects.create(
             body='Test Comment', recipe=self.recipe
             )
@@ -68,6 +74,15 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'favourite_recipes.html')
 
+    def test_get_favourite_recipes_page_if_user_logged_out(self):
+        """
+        Test to check favourite recipes page loads if user signed out
+        """
+        self.client.logout()
+        response = self.client.get('/favourite_recipes/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'favourite_recipes.html')
+
     def test_get_searched_recipes_page(self):
         """
         Test to ensure searched results page is displayed
@@ -104,7 +119,8 @@ class TestViews(TestCase):
             'ingredients': 'Test Ing',
             'method': 'Test method'
         })
-        self.assertEqual(len(Recipe.objects.all()), 2)
+        new_recipe = Recipe.objects.filter(title='Test Title')
+        self.assertEqual(len(new_recipe), 1)
 
     def test_can_edit_recipe(self):
         """
@@ -116,7 +132,7 @@ class TestViews(TestCase):
             'ingredients': 'Test Ing',
             'method': 'Test method'
         })
-        edited_recipe = Recipe.objects.last().title
+        edited_recipe = Recipe.objects.first().title
         self.assertEqual(edited_recipe, "Edited Title")
 
     def test_can_delete_recipe(self):
@@ -178,3 +194,42 @@ class TestViews(TestCase):
         self.assertTrue(response.context['liked'])
         user_present = self.recipe.likes.filter(id=1).exists()
         self.assertTrue(user_present)
+
+    def test_using_search_bar_returns_searched_word_results(self):
+        """
+        Testing that the search bar returns results for the word searched
+        """
+        searched = 'Test'
+        recipes = Recipe.objects.filter(title__icontains=searched)
+        response = self.client.post('/search_recipes/', {
+            'searched': searched,
+            'recipes': recipes
+        })
+        self.assertEqual(response.context['searched'], 'Test')
+        self.assertEqual(len(response.context['recipes']), 1)
+
+    def test_searching_vegan_results_only_vegan_recipes(self):
+        """
+        Testing that searching the word vegan results in only vegan recipes
+        """
+        recipes = Recipe.objects.filter(vegan=True)
+        response = self.client.post('/search_recipes/', {
+            'searched': 'vegan',
+            'recipes': recipes
+        })
+        self.assertEqual(response.context['searched'], 'vegan')
+        self.assertEqual(len(response.context['recipes']), 1)
+
+    def test_searching_vegetarian_results_only_vegetarian_recipes(
+            self):
+        """
+        Testing that searching the word vegetarian
+        results in only vegetarian recipes
+        """
+        recipes = Recipe.objects.filter(vegetarian=True)
+        response = self.client.post('/search_recipes/', {
+            'searched': 'vegetarian',
+            'recipes': recipes
+        })
+        self.assertEqual(response.context['searched'], 'vegetarian')
+        self.assertEqual(len(response.context['recipes']), 1)
