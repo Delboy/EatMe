@@ -157,3 +157,15 @@ class TestViews(TestCase):
         response = self.client.post(f'/like/{self.recipe.slug}')
         is_user_present = self.recipe.likes.filter(id=1).exists()
         self.assertFalse(is_user_present)
+
+    def test_liked_is_true_if_users_id_exists_in_recipes_liked_field(self):
+        '''
+        Testing that the recipe shows as liked if the user has liked the recipe
+        '''
+        response = self.client.post(f'/{self.recipe.slug}/')
+        self.assertFalse(response.context['liked'])
+        self.client.post(f'/like/{self.recipe.slug}')
+        response = self.client.post(f'/{self.recipe.slug}/')
+        self.assertTrue(response.context['liked'])
+        user_present = self.recipe.likes.filter(id=1).exists()
+        self.assertTrue(user_present)
