@@ -7,6 +7,15 @@ class TestViews(TestCase):
     """
     Testing for Views
     """
+    def setUp(self):
+        test_user = User.objects.create_user(
+            username='testuser', password='testpw'
+            )
+        self.recipe = Recipe.objects.create(title='Test', author=test_user)
+        self.comment = Comment.objects.create(
+            body='Test Comment', recipe=self.recipe
+            )
+        self.client.login(username='testuser', password='testpw')
 
     # Testing page displays
 
@@ -62,11 +71,7 @@ class TestViews(TestCase):
         """
         Test to ensure recipe detail page is displayed
         """
-        test_user = User.objects.create_user(
-            username='testuser', password='testpw'
-            )
-        recipe = Recipe.objects.create(title='Test', author=test_user)
-        response = self.client.get(f'/{recipe.slug}/')
+        response = self.client.get(f'/{self.recipe.slug}/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'recipe_detail.html')
 
@@ -74,11 +79,7 @@ class TestViews(TestCase):
         """
         Test to ensure edit recipe page is displayed
         """
-        test_user = User.objects.create_user(
-            username='testuser', password='testpw'
-            )
-        recipe = Recipe.objects.create(title='Test', author=test_user)
-        response = self.client.get(f'/edit_recipe/{recipe.id}')
+        response = self.client.get(f'/edit_recipe/{self.recipe.id}')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'edit_recipe.html')
 
@@ -88,28 +89,19 @@ class TestViews(TestCase):
         '''
         Testing recipes can be added to database
         '''
-        test_user = User.objects.create_user(
-            username='testuser', password='testpw'
-            )
-        self.client.login(username='testuser', password='testpw')
         self.client.post('/add_recipe/', {
             'title': 'Test Title',
             'description': 'Test Desc',
             'ingredients': 'Test Ing',
             'method': 'Test method'
         })
-        self.assertEqual(Recipe.objects.last().title, "Test Title")
+        self.assertEqual(len(Recipe.objects.all()), 2)
 
     def test_can_edit_recipe(self):
         '''
         Testing editing a recipe
         '''
-        test_user = User.objects.create_user(
-            username='testuser', password='testpw'
-            )
-        self.client.login(username='testuser', password='testpw')
-        recipe = Recipe.objects.create(title='Test Title', author=test_user)
-        self.client.post(f'/edit_recipe/{recipe.id}', {
+        self.client.post(f'/edit_recipe/{self.recipe.id}', {
             'title': 'Edited Title',
             'description': 'Test Desc',
             'ingredients': 'Test Ing',
@@ -122,40 +114,26 @@ class TestViews(TestCase):
         """
         Testing Delete Recipes
         """
-        test_user = User.objects.create_user(
-            username='testuser', password='testpw'
-            )
-        recipe = Recipe.objects.create(title='Test', author=test_user)
-        response = self.client.get(f'/delete_recipe/{recipe.id}')
+        response = self.client.get(f'/delete_recipe/{self.recipe.id}')
         self.assertRedirects(response, '/your_recipes/')
-        existing_recipes = Recipe.objects.filter(id=recipe.id)
+        existing_recipes = Recipe.objects.filter(id=self.recipe.id)
         self.assertEqual(len(existing_recipes), 0)
 
     def test_can_add_comment(self):
         '''
         Testing comments can be added to database
         '''
-        test_user = User.objects.create_user(
-            username='testuser', password='testpw'
-            )
-        recipe = Recipe.objects.create(title='Test', author=test_user)
-        self.client.login(username='testuser', password='testpw')
-        self.client.post(f'/{recipe.slug}/', {'body': 'Test Comment'})
+        self.client.post(f'/{self.recipe.slug}/', {'body': 'Test Comment'})
         self.assertEqual(Comment.objects.last().body, "Test Comment")
 
     def test_can_edit_comment(self):
         """
         Testing editing Comments
         """
-        test_user = User.objects.create_user(
-            username='testuser', password='testpw'
-            )
-        recipe = Recipe.objects.create(title='Test', author=test_user)
-        comment = Comment.objects.create(body='Test Comment', recipe=recipe)
-        response = self.client.post(f'/edit_comment/{comment.id}', {
+        response = self.client.post(f'/edit_comment/{self.comment.id}', {
             'body': 'Edited Comment'
         })
-        self.assertRedirects(response, f'/{comment.recipe.slug}/')
+        self.assertRedirects(response, f'/{self.comment.recipe.slug}/')
         edited_comment = Comment.objects.last().body
         self.assertEqual(edited_comment, "Edited Comment")
 
@@ -163,29 +141,19 @@ class TestViews(TestCase):
         """
         Testing Deleting Comments
         """
-        test_user = User.objects.create_user(
-            username='testuser', password='testpw'
-            )
-        recipe = Recipe.objects.create(title='Test', author=test_user)
-        comment = Comment.objects.create(body='Test Comment', recipe=recipe)
-        response = self.client.get(f'/delete_comment/{comment.id}')
-        self.assertRedirects(response, f'/{comment.recipe.slug}/')
-        existing_comments = Comment.objects.filter(id=comment.id)
+        response = self.client.get(f'/delete_comment/{self.comment.id}')
+        self.assertRedirects(response, f'/{self.comment.recipe.slug}/')
+        existing_comments = Comment.objects.filter(id=self.comment.id)
         self.assertEqual(len(existing_comments), 0)
 
     def test_can_toggle_like_button(self):
         '''
         Testing like button toggle
         '''
-        test_user = User.objects.create_user(
-            username='testuser', password='testpw'
-            )
-        self.client.login(username='testuser', password='testpw')
-        recipe = Recipe.objects.create(title='Test Title')
-        response = self.client.post(f'/like/{recipe.slug}')
-        self.assertRedirects(response, f'/{recipe.slug}/')
-        is_user_present = recipe.likes.filter(id=1).exists()
+        response = self.client.post(f'/like/{self.recipe.slug}')
+        self.assertRedirects(response, f'/{self.recipe.slug}/')
+        is_user_present = self.recipe.likes.filter(id=1).exists()
         self.assertTrue(is_user_present)
-        response = self.client.post(f'/like/{recipe.slug}')
-        is_user_present = recipe.likes.filter(id=1).exists()
+        response = self.client.post(f'/like/{self.recipe.slug}')
+        is_user_present = self.recipe.likes.filter(id=1).exists()
         self.assertFalse(is_user_present)
