@@ -6,9 +6,10 @@ from django.db.models import Count
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.core.paginator import Paginator
+from django.urls import reverse_lazy
 from .models import Recipe, Comment
 from .forms import CommentForm, RecipeForm
-from django.urls import reverse_lazy
+
 
 class HomeView(View):
     """ Renders the home page"""
@@ -137,7 +138,6 @@ class EditRecipe(SuccessMessageMixin, UpdateView):
     form_class = RecipeForm
     success_message = 'Recipe Successfully Updated'
     success_url = reverse_lazy('your_recipes')
-
 
 
 def delete_recipe(request, recipe_id):
