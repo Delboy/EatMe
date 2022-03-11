@@ -20,7 +20,7 @@ class TestModels(TestCase):
         recipe = Recipe.objects.create(title='Test Recipe')
         comment = Comment.objects.create(
             body='Test',
-            recipe=recipe, 
+            recipe=recipe,
             name='Test_user'
             )
         self.assertEqual(str(comment), 'Comment Test by Test_user')
