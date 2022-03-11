@@ -138,7 +138,7 @@ class TestCommentForm(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('body', form.errors.keys())
         self.assertEqual(form.errors['body'][0], 'This field is required.')
-    
+
     def test_recipe_title_has_no_profanity(self):
         '''
         Test to insure body contains no profanity
