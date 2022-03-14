@@ -28,11 +28,11 @@
 
 {% elif user.is_authenticated %}
 
-{% include "forbidden_access.html" %}
+    {% include "forbidden_access.html" %}
 
 {% else %}
 
-{% include "not_logged_in_error.html" %}
+    {% include "not_logged_in_error.html" %}
 
 {% endif %}
 
