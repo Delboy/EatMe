@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Imbue
+- Font Author: Copyright 2020 The Imbue Project Authors (https://github.com/Etcetera-Type-Co/Imbue)
+- Font Source: http://fonts.gstatic.com/s/imbue/v9/RLpXK5P16Ki3fXhj5cvGrqjocPk4n-gVX3M93TnrnvhoP2GQfOsNNK-Q4xY.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
