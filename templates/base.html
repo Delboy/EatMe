@@ -46,6 +46,8 @@
                         <a class="nav-link {% if request.path == all_recipes %} active {% endif %}"
                             href="{% url 'recipes' %}">All Recipes</a>
                     </li>
+                    
+                    <!-- Navbar options for signed in users -->
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == favourite_recipes %} active {% endif %}"
@@ -81,6 +83,8 @@
                         {% endif %}
                     </ul>
                 </div>
+
+                <!-- Search Bar -->
                 <form class="d-flex" method="POST" action="{% url 'search_recipes' %}">
                     {% csrf_token %}
                     <input class="form-control me-2" type="search" placeholder="Search Recipes" aria-label="Search"
@@ -91,6 +95,7 @@
         </div>
     </nav>
 
+    <!-- Messages container -->
     <container>
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -105,9 +110,10 @@
     </container>
 
     {% block content %}
-
+    <!-- Content Goes here -->
     {% endblock %}
 
+    <!-- Footer -->
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container">
         <div class="row">
@@ -131,7 +137,7 @@
         </div>
     </footer>
 
-    <!-- script to manage alerts -->
+    <!-- Script to manage alerts -->
     <script>
         setTimeout(function () {
             let messages = document.getElementById("msg");
@@ -140,7 +146,7 @@
         }, 3000);
     </script>
 
-    <!-- script to manage checkboxes when adding or editing recipes -->
+    <!-- Script to manage checkboxes when adding or editing recipes -->
     <script>
         let veganBox = document.getElementById('id_vegan');
         let vegBox = document.getElementById('id_vegetarian');
