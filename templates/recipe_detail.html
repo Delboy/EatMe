@@ -2,16 +2,17 @@
 
 {% block content %}
 
+{% load static %}
+
 {% load crispy_forms_tags %}
 
-
-
-
+<!-- Recipe Card Header w/ image-->
 <div class="container">
     <div class="row g-0 recipe-card-head">
         <div class="col-md-6 my-auto">
             <h1 class="recipe-title text-light"> {{ recipe.title }}</h1>
             <p class="recipe-subtitle">by {{ recipe.author }} | <em>{{ recipe.published_on }}</em></p>
+            <!-- Dietry labels if any -->
             {% if recipe.vegan %}
             <br>
             <div class="dietry-box-detail">
@@ -27,20 +28,21 @@
             {% endif %}
         </div>
         <div class="d-md-block col-md-6">
+            <!-- Chooses image to display. User uploaded pic takes priority over URL link. 
+                If niether added then the default image will be displayed. -->
             {% if "placeholder" not in recipe.image.url %}
             <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" width="100%">
             {% elif recipe.image_url %}
             <img class="card-img-top img-fit" src="{{ recipe.image_url}}" width="100%">
             {% else %}
             <img class="card-img-top img-fit"
-                src="https://www.fiin.co.uk/sites/default/files/styles/banner_homepage/public/carousels/fiin-site-05-opt.jpg?itok=Olg7ZyBE"
-                width="100%">
+                src="{% static 'images/food_default.jpg' %}" width="100%">
             {% endif %}
         </div>
     </div>
 </div>
 
-
+<!-- Main Recipe Content -->
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left top">
@@ -57,6 +59,7 @@
     </div>
 </div>
 
+<!-- Recipe likes and Comments Counter -->
 <div class="container">
     <div class="row">
         <div class="col-1">
@@ -95,6 +98,7 @@
     </div>
 </div>
 
+<!-- Comments section -->
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 ">
@@ -115,7 +119,8 @@
                 <a href="{% url 'edit_comment' comment.id %}"><button class="btn-sm btn-secondary ">Edit</button></a>
                 <button type="button" class="btn-sm btn-danger" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">Delete</button>
-                <!-- Modal -->
+                
+                <!-- Modal For Comment Deletion-->
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -136,7 +141,6 @@
                         </div>
                     </div>
                 </div>
-
                 {% endif %}
                 {% endfor %}
             </div>
@@ -156,6 +160,5 @@
         </div>
     </div>
 </div>
-
 
 {% endblock content %}
