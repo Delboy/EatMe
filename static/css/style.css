@@ -1,6 +1,22 @@
 /* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@100&family=Imbue:wght@700&display=swap');
 
+/* Defaults */
+.no-deco {
+    text-decoration: none;
+    
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: darkgray;
+}
+
+/* Logo */
 .logo {
     font-family: 'Imbue', sans-serif;
     font-size: x-large;
@@ -13,6 +29,7 @@
     
 }
 
+/* Footer */
 .logo-footer {
     font-family: 'Imbue', sans-serif;
     font-size: 2em;
@@ -22,6 +39,7 @@
     font-size: 1.5em;
 }
 
+/* Index page */
 .callout-container {
     height: 100vh;
     background: url("../images/earl_grey_poached_pears_with_ice_cream.jpg") no-repeat bottom right fixed; 
@@ -35,11 +53,11 @@
     position: relative;
 }
 
-.no-deco {
-    text-decoration: none;
-    
+.feature-head {
+    margin-top: 100px;
 }
 
+/* Recipe Cards */
 .img-fit {
     object-fit: cover;
 }
@@ -61,15 +79,11 @@
     border: none;
 }
 
-a {
-    text-decoration: none;
-    color: black;
+.recipe-buttons {
+    position: absolute;
 }
 
-a:hover {
-    color: darkgray;
-}
-
+/* Like button */
 .btn-like {
     color: #ff0000;
     border: none;
@@ -77,10 +91,7 @@ a:hover {
     margin-left: 20px;
 }
 
-.feature-head {
-    margin-top: 100px;
-}
-
+/* Dietry Box's */
 .dietry-box {
     position: absolute;
     bottom: 40%;
@@ -128,10 +139,7 @@ a:hover {
     color: lightgray;
 }
 
-.recipe-buttons {
-    position: absolute;
-}
-
+/* Messages */
 .notification{
     position: absolute;
     top: 5rem;
