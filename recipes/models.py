@@ -63,7 +63,6 @@ class Comment(models.Model):
         Recipe, on_delete=models.CASCADE, related_name='comments'
         )
     name = models.CharField(max_length=80)
-    email = models.EmailField()
     body = models.TextField(validators=[validate_is_profane])
     created_on = models.DateTimeField(auto_now_add=True)
 
