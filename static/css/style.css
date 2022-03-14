@@ -13,6 +13,11 @@
     
 }
 
+.logo-footer {
+    font-family: 'Imbue', sans-serif;
+    font-size: 2em;
+}
+
 .social-links {
     font-size: 1.5em;
 }
@@ -168,6 +173,11 @@ a:hover {
     .dietry-text {
         margin-left: 15px;
     }
+
+    .copyright {
+        font-size: 14px;
+        padding-top: 5px;;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -175,5 +185,8 @@ a:hover {
         margin-top: 25px;
     }
 
-    
+    .logo-footer {
+        font-size: 1.25em;
+        padding-top: 5px;
+    }
 }
