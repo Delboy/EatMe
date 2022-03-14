@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% load static %}
+
 {% if user.is_authenticated %}
 
 <div class="row">
@@ -11,12 +13,14 @@
     </div>
 </div>
 
+<!-- Add Recipe Button -->
 <div class="row">
     <div class="col text-center">
         <a href="{% url 'add_recipe' %}" class="btn btn-secondary mt-2">Add Recipe</a>
     </div>
 </div>
 
+<!-- Recipe Card -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3 left">
@@ -27,16 +31,18 @@
                         <div class="card-body">
                             <div class="image-container">
                                 <a href="{% url 'recipe_detail' recipe.slug %}" class="no-deco text-black">
+                                <!-- Chooses image to display. User uploaded pic takes priority over URL link.
+                                    If niether added then the default image will be displayed. -->
                                 {% if "placeholder" not in recipe.image.url %}
                                 <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" height="300px">
                                 {% elif recipe.image_url %}
                                 <img class="card-img-top img-fit" src="{{ recipe.image_url}}" height="300px">
                                 {% else %}
                                 <img class="card-img-top img-fit"
-                                    src="https://www.fiin.co.uk/sites/default/files/styles/banner_homepage/public/carousels/fiin-site-05-opt.jpg?itok=Olg7ZyBE"
-                                    height="300px">
+                                    src="{% static 'images/food_default.jpg' %}" height="300px">
                                 {% endif %}
                             </div>
+                            <!-- Show dietry label if true -->
                             {% if recipe.vegan %}
                             <div class="dietry-box">
                                 <p class="vegan-icon">Ve</p>
@@ -53,11 +59,12 @@
                             <hr />
                             <p class="card-text text-muted h6">{{ recipe.published_on}} <i class="far fa-heart"></i>
                                 {{ recipe.number_of_likes }}</p>
+                            <!-- Edit and Delete buttons -->
                             <div class="recipe-buttons mt-1">
                                 <a href="{% url 'edit_recipe' recipe.id %}"><button class="btn btn-success">Edit</button></a>
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button>
                             </div>
-                            <!-- Modal -->
+                            <!-- Modal for Deleting Recipe -->
                             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
                                 data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                 aria-hidden="true">
@@ -87,8 +94,8 @@
             <div class="row">
                 {% endif %}
 
+                <!-- If user has no created recipes -->
                 {% empty %}
-
                 <div class="container log-box">
                     <div class="row justify-content-md-center">
                         <div class="col-md-12 mt-4">
@@ -97,7 +104,6 @@
                         </div>
                     </div>
                 </div>
-
                 {% endfor %}
             </div>
         </div>
@@ -113,11 +119,9 @@
                         <a href="?page=1">&laquo; first</a>
                         <a href="?page={{ page_obj.previous_page_number }}">previous</a>
                         {% endif %}
-
                         <span class="current">
                             Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
                         </span>
-
                         {% if page_obj.has_next %}
                         <a href="?page={{ page_obj.next_page_number }}">next</a>
                         <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
