@@ -6,6 +6,13 @@
     font-size: x-large;
 }
 
+.logo-hero {
+    font-family: 'Imbue', sans-serif;
+    font-size: 10em;
+    color: white;
+    
+}
+
 .active {
     color: orange;
 }
@@ -127,6 +134,8 @@ a:hover {
     height: 300px;
     width: 100px;
 }
+
+/* Media Queries */
 
 @media screen and (max-width: 1199px) {
     .feature-head {
