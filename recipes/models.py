@@ -12,7 +12,7 @@ from profanity.validators import validate_is_profane
 class Recipe(models.Model):
     """Model for Recipe"""
     title = models.CharField(
-        max_length=200,
+        max_length=100,
         null=False,
         blank=False,
         validators=[validate_is_profane]
