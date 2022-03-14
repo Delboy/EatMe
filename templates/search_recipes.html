@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% load static %}
+
 <div class="row">
     <div class="col-8 offset-2">
         <h1 class="h1 display-2 text-center">You searched for '{{ searched }}'</h1>
@@ -27,7 +29,7 @@
                                 {% elif recipe.image_url %}
                                 <img class="card-img-top img-fit" src="{{ recipe.image_url}}" height="300px">
                                 {% else %}
-                                <img class="card-img-top img-fit" src="https://www.fiin.co.uk/sites/default/files/styles/banner_homepage/public/carousels/fiin-site-05-opt.jpg?itok=Olg7ZyBE" height="300px">
+                                <img class="card-img-top img-fit" src="{% static 'images/food_default.jpg' %}" height="300px">
                                 {% endif %}
                             </div>
                             <!-- Show dietry label if true -->
