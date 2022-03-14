@@ -4,6 +4,7 @@
 
 {% load cloudinary %}
 
+<!-- Checks the user is signed in and the recipe they're trying to access is owned by them -->
 {% if user.is_authenticated and user.id == recipe.author.id %}
 
 <div class="container">
@@ -15,7 +16,6 @@
     </div>
 </div>
 
-
 <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
         <form class="signup" id="add_recipe_form" method="post" enctype="multipart/form-data">
@@ -25,7 +25,6 @@
         </form>
     </div>
 </div>
-
 
 {% elif user.is_authenticated %}
 
