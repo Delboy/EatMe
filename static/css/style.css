@@ -152,6 +152,10 @@ a:hover {
     .dietry-text {
         margin-left: 5px;
     }
+
+    .btn-like {
+        margin-left: -7px;
+    }
 }
 
 @media screen and (max-width: 991px) {
