@@ -8,18 +8,20 @@
 <div class="container-fluid callout-container">
     <div class="row">
         <div class="col-12">
-            <section class="text-center">
+            <div class="text-center">
                 <h1 class="text-center logo-hero">Eat Me!</h1>
                 <h2 class="display-6 text-light">A place to create and share your most loved recipes.</h2>
                 <hr>
                 {% if user.is_authenticated %}
-                <p class="lead text-light"> Welcome back {{ user | title }}
-                    <a class="nav-link" href="{% url 'recipes' %}"><button class="btn btn-dark">View Recipes</button></a>
-                    {% else %}
+                    <p class="lead text-light"> Welcome back {{ user | title }}
+                        <a class="nav-link" href="{% url 'recipes' %}"><button class="btn btn-dark">View Recipes</button></a>
+                    </p>
+                {% else %}
                     <p class="lead text-light">Sign up today to start sharing your creations with the world!</p>
                     <a class="nav-link" href="#"><button class="btn btn-dark">Sign up!</button></a>
                     <p class="text-muted"><small>By signing up you agree to our terms and service.</small></p>
-                    {% endif %}
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
@@ -130,38 +132,38 @@
                     <br>
                 </div>
             </div>
-                <div class="row">
-                    <div class="col-md-6 d-none d-sm-block d-sm-none d-md-block">
-                        <img src="{% static 'images/teriyaki_chicken.jpg' %}"
-                            class="img-fluid" alt="Teriyaki Chicken">
-                    </div>
-                    <div class="col-md-6">
-                        <h2 class="feature-head text-center"><i class="fas fa-heart"></i> Love</h2>
-                        <p class="text-center">Save your most loved recipes and come
-                            back to them time and time again.</p>
-                    </div>
-                    <div class="col-md-6 d-xs-block d-md-none">
-                        <img src="{% static 'images/teriyaki_chicken.jpg' %}"
-                            class="img-fluid" alt="Teriyaki Chicken">
-                    </div>
-                    <div class="col-4 offset-4">
-                        <br>
-                        <br>
-                        <hr class="d-xs-block d-md-none">
-                        <br>
-                    </div>
+            <div class="row">
+                <div class="col-md-6 d-none d-sm-block d-sm-none d-md-block">
+                    <img src="{% static 'images/teriyaki_chicken.jpg' %}"
+                        class="img-fluid" alt="Teriyaki Chicken">
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="feature-head text-center"><i class="fas fa-apple-alt"></i> Create</h2>
-                        <p class="text-center">Create and share your own unique recipes with the world!
-                    </div>
-                    <div class="col-md-6">
-                        <img src="{% static 'images/tea_and_cake.jpg' %}"
-                            class="img-fluid" alt="Tea and Cake">
-                    </div>
+                <div class="col-md-6">
+                    <h2 class="feature-head text-center"><i class="fas fa-heart"></i> Love</h2>
+                    <p class="text-center">Save your most loved recipes and come
+                        back to them time and time again.</p>
+                </div>
+                <div class="col-md-6 d-xs-block d-md-none">
+                    <img src="{% static 'images/teriyaki_chicken.jpg' %}"
+                        class="img-fluid" alt="Teriyaki Chicken">
+                </div>
+                <div class="col-4 offset-4">
+                    <br>
+                    <br>
+                    <hr class="d-xs-block d-md-none">
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="feature-head text-center"><i class="fas fa-apple-alt"></i> Create</h2>
+                    <p class="text-center">Create and share your own unique recipes with the world!
+                </div>
+                <div class="col-md-6">
+                    <img src="{% static 'images/tea_and_cake.jpg' %}"
+                        class="img-fluid" alt="Tea and Cake">
                 </div>
             </div>
         </section>
-
+    </div>
+</div>
         {% endblock %}
