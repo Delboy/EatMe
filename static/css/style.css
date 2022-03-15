@@ -66,6 +66,7 @@ a:hover {
 
 .recipe-subtitle {
     margin-left: 5%;
+    margin-bottom: 0;
     color: lightgray;
 }
 
@@ -155,6 +156,10 @@ a:hover {
 
     .btn-like {
         margin-left: -7px;
+    }
+
+    .recipe-title {
+        margin-top: 15px;
     }
 }
 
