@@ -32,7 +32,7 @@ a:hover {
 /* Footer */
 .logo-footer {
     font-family: 'Imbue', sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .social-links {
@@ -184,7 +184,8 @@ a:hover {
 
     .copyright {
         font-size: 14px;
-        padding-top: 5px;;
+        padding-top: 5px;
+        margin-top:5px;
     }
 }
 
