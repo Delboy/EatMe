@@ -27,8 +27,8 @@
 </div>
 <br>
 
-<div class="container">
-    <div class="row gx-5">
+<div class="container pe-0">
+    <div class="row ge-1">
         <div class="col-sm-7">
             <!-- Carousel -->
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -40,8 +40,12 @@
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
                 </div>
-                <h3 class="h3 display-6">Featured Recipes</h3>
+                <h3 class="h3 display-6 text-center">Featured Recipes</h3>
                 <br>
+                <div class="col-6 offset-3">
+                    <hr>
+                    <br>
+                </div>
                 <div class="carousel-inner">
                     {% for recipe in recipes %}
                     {% if forloop.first %}
@@ -83,8 +87,15 @@
                 </div>
             </div>
             <!-- Top Recipes -->
+            <div class="col d-sm-none">
+                <br>
+            </div>
             <div class="col-sm-5">
-                <h3 class="h3 display-6">Most loved Recipes</h3><br>
+                <h3 class="h3 display-6 text-center">Most loved Recipes</h3><br>
+                <div class="col-6 offset-3">
+                    <hr>
+                    <br>
+                </div>
                 <div class="lead">
                     <ol>
                         {% for top_recipe in top_recipes|slice:":5" %}
@@ -95,7 +106,7 @@
                         {% endfor %}
                     </ol>
                     <p class="lead text-center">
-                        <a href="{% url 'recipes' %}" class="recipe-link">View all recipes</a>
+                        <a href="{% url 'recipes' %}" class="recipe-link link-secondary">View all recipes</a>
                     </p>
                 </div>
             </div>
@@ -116,7 +127,7 @@
                     <br>
                 </div>
             </div>
-            <div class="row">
+            <div class="row g-0">
                 <div class="col-md-6">
                     <h2 class="feature-head text-center"><i class="fas fa-globe"></i> Discover</h2>
                     <p class="text-center">Explore and discover delicious new recipes from users all across the globe.</p>
@@ -132,7 +143,7 @@
                     <br>
                 </div>
             </div>
-            <div class="row">
+            <div class="row g-0">
                 <div class="col-md-6 d-none d-sm-block d-sm-none d-md-block">
                     <img src="{% static 'images/teriyaki_chicken.jpg' %}"
                         class="img-fluid" alt="Teriyaki Chicken">
@@ -153,7 +164,7 @@
                     <br>
                 </div>
             </div>
-            <div class="row">
+            <div class="row g-0">
                 <div class="col-md-6">
                     <h2 class="feature-head text-center"><i class="fas fa-apple-alt"></i> Create</h2>
                     <p class="text-center">Create and share your own unique recipes with the world!
