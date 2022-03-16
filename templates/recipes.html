@@ -45,7 +45,7 @@
                             {% endif %}
                             <h2 class="card-title">{{ recipe.title }}</h2>
                             <p class="text-muted">by {{ recipe.author }}</p>
-                            <p class="card-text">{{ recipe.description|safe }}</p>
+                            <p class="card-text">{{ recipe.description|slice:":25"|safe }}</p>
                             </a>
                             <hr />
                             <p class="card-text text-muted h6">{{ recipe.published_on}} <i class="far fa-heart"></i>
