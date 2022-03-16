@@ -177,6 +177,18 @@
         })
     </script>
 
+    <script>
+        let heroImage = document.getElementById('hero-image')
+        window.addEventListener('resize', function () {
+        if (this.window.innerWidth < 991) {
+            heroImage.style.backgroundImage = 'url(/static/images/earl_grey_poached_pears_with_ice_cream-2.jpg)';
+            } else if(this.window.innerWidth > 991) {
+                heroImage.style.backgroundImage = 'url(/static/images/earl_grey_poached_pears_with_ice_cream.jpg)';
+
+            }
+        })
+    </script>
+
     <!-- Bootstrap scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">

@@ -36,7 +36,7 @@ a:hover {
 /* Index page */
 .callout-container {
     height: 100vh;
-    background: url("/static/images/earl_grey_poached_pears_with_ice_cream.jpg") no-repeat bottom right fixed; 
+    background: no-repeat bottom right fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -166,19 +166,6 @@ a:hover {
 @media screen and (max-width: 991px) {
     .feature-head {
         margin-top: 35px;
-    }
-
-    .callout-container {
-        height: 100vh;
-        background: url("/static/images/earl_grey_poached_pears_with_ice_cream-2.jpg") no-repeat bottom right fixed; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
     }
 
     .dietry-text {
