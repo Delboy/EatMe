@@ -71,31 +71,28 @@
                     </li>
                     {% endif %}
                 </ul>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                        {% if user.is_authenticated %}
-                        <li>
-                            <a class="nav-link" href="{% url 'your_recipes' %}"><em>Logged in as {{ user|title }}
-                                </em></a>
-                        </li>
-                        <li>
-                            <a class="nav-link {% if request.path == logout %} active {% endif %}"
-                                href="{% url 'account_logout' %}">| Log Out</a>
-                        </li>
-                        {% else %}
-                        <li>
-                            <a class="nav-link {% if request.path == signup %} active {% endif %}"
-                                href="{% url 'account_signup' %}">Register</a>
-                        </li>
-                        <li>
-                            <a class="nav-link {% if request.path == login %} active {% endif %}"
-                                href="{% url 'account_login' %}">Log In</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </div>
-
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a class="nav-link" href="{% url 'your_recipes' %}"><em>Logged in as {{ user|title }}
+                            </em></a>
+                    </li>
+                    <li>
+                        <a class="nav-link {% if request.path == logout %} active {% endif %}"
+                            href="{% url 'account_logout' %}">| Log Out</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a class="nav-link {% if request.path == signup %} active {% endif %}"
+                            href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li>
+                        <a class="nav-link {% if request.path == login %} active {% endif %}"
+                            href="{% url 'account_login' %}">Log In</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                
                 <!-- Search Bar -->
                 <form class="d-flex" method="POST" action="{% url 'search_recipes' %}">
                     {% csrf_token %}
