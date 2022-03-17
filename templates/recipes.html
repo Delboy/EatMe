@@ -34,13 +34,15 @@
                                     {% endif %}
                             </div>
                             <!-- Show dietry label if true -->
-                            {% if recipe.vegan %}
                             <div class="dietry-box">
-                                <p class="vegan-icon">Ve</p>
-                            </div>
-                            {% elif recipe.vegetarian %}
-                            <div class="dietry-box">
-                                <p class="vegetarian-icon">V</p>
+                                {% if recipe.vegan %}
+                                <div>
+                                    <p class="vegan-icon">Ve</p>
+                                </div>
+                                {% elif recipe.vegetarian %}
+                                <div>
+                                    <p class="vegetarian-icon">V</p>
+                                </div>
                             </div>
                             {% endif %}
                             <h2 class="card-title">{{ recipe.title }}</h2>

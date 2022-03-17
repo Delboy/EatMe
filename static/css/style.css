@@ -88,9 +88,9 @@ a:hover {
 
 /* Dietry Box's */
 .dietry-box {
-    position: absolute;
-    bottom: 40%;
-    left: 20px;
+    position: relative;
+    bottom: 35px;
+    left: 15px;
     background-color: rgb(156, 224, 190);
     opacity: 90%;
     padding: 5px;
