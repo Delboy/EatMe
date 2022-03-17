@@ -177,13 +177,14 @@
         })
     </script>
 
+    <!-- script for changing hero image depending on screen width -->
     <script>
         let heroImage = document.getElementById('hero-image')
         window.addEventListener('resize', function () {
         if (this.window.innerWidth < 991) {
-            heroImage.style.backgroundImage = 'url(/static/images/earl_grey_poached_pears_with_ice_cream-2.jpg)';
+            heroImage.style.backgroundImage = 'url(https://res.cloudinary.com/deyxatgs9/image/upload/v1647442777/static/images/earl_grey_poached_pears_with_ice_cream-2.jpg)';
             } else if(this.window.innerWidth > 991) {
-                heroImage.style.backgroundImage = 'url(/static/images/earl_grey_poached_pears_with_ice_cream.jpg)';
+                heroImage.style.backgroundImage = 'url(https://res.cloudinary.com/deyxatgs9/image/upload/v1647442777/static/images/earl_grey_poached_pears_with_ice_cream.jpg)';
 
             }
         })
