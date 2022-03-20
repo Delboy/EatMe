@@ -28,38 +28,38 @@
                 {% for recipe in page_obj %}
                 <div class="col-md-4 mb-1">
                     <div class="card mb-4">
-                        <a href="{% url 'recipe_detail' recipe.slug %}" class="no-deco text-black">
                             <div class="card-body">
-                                <div class="image-container">
-                                    <!-- 
-                                        Chooses image to display. User uploaded pic takes priority over URL link.
-                                        If niether added then the default image will be displayed. 
-                                    -->
-                                    {% if "placeholder" not in recipe.image.url %}
-                                    <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" height="300" alt="{{ recipe.title }}">
-                                    {% elif recipe.image_url %}
-                                    <img class="card-img-top img-fit" src="{{ recipe.image_url}}" height="300" alt="{{ recipe.title }}">
-                                    {% else %}
-                                    <img class="card-img-top img-fit" src="{% static 'images/food_default.jpg' %}" height="300">
+                                <a href="{% url 'recipe_detail' recipe.slug %}" class="no-deco text-black">
+                                    <div class="image-container">
+                                        <!-- 
+                                            Chooses image to display. User uploaded pic takes priority over URL link.
+                                            If niether added then the default image will be displayed. 
+                                        -->
+                                        {% if "placeholder" not in recipe.image.url %}
+                                        <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" height="300" alt="{{ recipe.title }}">
+                                        {% elif recipe.image_url %}
+                                        <img class="card-img-top img-fit" src="{{ recipe.image_url}}" height="300" alt="{{ recipe.title }}">
+                                        {% else %}
+                                        <img class="card-img-top img-fit" src="{% static 'images/food_default.jpg' %}" height="300">
+                                        {% endif %}
+                                    </div>
+                                    <!-- Show dietry label if true -->
+                                    {% if recipe.vegan %}
+                                    <div class="dietry-box">
+                                        <p class="vegan-icon">Ve</p>
+                                    </div>
+                                    {% elif recipe.vegetarian %}
+                                    <div class="dietry-box">
+                                        <p class="vegetarian-icon">V</p>
+                                    </div>
                                     {% endif %}
-                                </div>
-                                <!-- Show dietry label if true -->
-                                {% if recipe.vegan %}
-                                <div class="dietry-box">
-                                    <p class="vegan-icon">Ve</p>
-                                </div>
-                                {% elif recipe.vegetarian %}
-                                <div class="dietry-box">
-                                    <p class="vegetarian-icon">V</p>
-                                </div>
-                                {% endif %}
-                                    <h2 class="card-title">{{ recipe.title }}</h2>
-                                    <p class="text-muted">by {{ recipe.author }}</p>
-                                    <p class="card-text">{{ recipe.description|safe }} <!-- no closing p tag as one will exist at the end of the description template-->
-                                </a>
-                                <hr />
-                                <p class="card-text text-muted h6">{{ recipe.published_on}} <i class="far fa-heart"></i>
-                                    {{ recipe.number_of_likes }}</p>
+                                        <h2 class="card-title">{{ recipe.title }}</h2>
+                                        <p class="text-muted">by {{ recipe.author }}</p>
+                                        <p class="card-text">{{ recipe.description|safe }} <!-- no closing p tag as one will exist at the end of the description template-->
+                                    <hr />
+                                    <p class="card-text text-muted h6">{{ recipe.published_on}} <i class="far fa-heart"></i>
+                                        {{ recipe.number_of_likes }}</p>
+                                </a> 
                                 <!-- Edit and Delete buttons -->
                                 <div class="recipe-buttons mt-1">
                                     <a href="{% url 'edit_recipe' recipe.id %}"><button class="btn btn-success">Edit</button></a>
@@ -87,8 +87,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>   
+                            </div>  
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
