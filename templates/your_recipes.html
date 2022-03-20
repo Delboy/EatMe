@@ -34,12 +34,12 @@
                                 <!-- Chooses image to display. User uploaded pic takes priority over URL link.
                                     If niether added then the default image will be displayed. -->
                                 {% if "placeholder" not in recipe.image.url %}
-                                <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" height="300px">
+                                <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" height="300">
                                 {% elif recipe.image_url %}
-                                <img class="card-img-top img-fit" src="{{ recipe.image_url}}" height="300px">
+                                <img class="card-img-top img-fit" src="{{ recipe.image_url}}" height="300">
                                 {% else %}
                                 <img class="card-img-top img-fit"
-                                    src="{% static 'images/food_default.jpg' %}" height="300px">
+                                    src="{% static 'images/food_default.jpg' %}" height="300">
                                 {% endif %}
                             </div>
                             <!-- Show dietry label if true -->
