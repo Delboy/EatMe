@@ -104,10 +104,10 @@
                 <div class="lead">
                     <ol>
                         {% for top_recipe in top_recipes|slice:":5" %}
-                        <a href="{% url 'recipe_detail' top_recipe.slug %}" class="recipe-link">
-                            <li>{{ top_recipe.title}} by {{ top_recipe.author }}</li>
-                        </a>
-                        <hr />
+                            <li>
+                                <a href="{% url 'recipe_detail' top_recipe.slug %}" class="recipe-link">{{ top_recipe.title}} by {{ top_recipe.author }}</a>
+                                <hr />
+                            </li>
                         {% endfor %}
                     </ol>
                     <p class="lead text-center">
