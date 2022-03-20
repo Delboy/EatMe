@@ -28,8 +28,10 @@
             {% endif %}
         </div>
         <div class="d-md-block col-lg-6">
-            <!-- Chooses image to display. User uploaded pic takes priority over URL link. 
-                If niether added then the default image will be displayed. -->
+            <!-- 
+                Chooses image to display. User uploaded pic takes priority over URL link.
+                If niether added then the default image will be displayed. 
+            -->
             {% if "placeholder" not in recipe.image.url %}
             <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" alt="{{ recipe.title }}" width="100%">
             {% elif recipe.image_url %}

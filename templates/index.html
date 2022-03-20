@@ -63,6 +63,10 @@
                             <div class="carousel-item">
                             {% endif %}
                             <a href="{% url 'recipe_detail' recipe.slug %}">
+                                <!-- 
+                                    Chooses image to display. User uploaded pic takes priority over URL link.
+                                    If niether added then the default image will be displayed. 
+                                -->
                                 {% if "placeholder" not in recipe.image.url %}
                                 <img class="img-fit card-img-top" src=" {{ recipe.image.url }}" alt="{{ recipe.title }}"
                                     height="400" width="600">

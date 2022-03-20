@@ -21,16 +21,19 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                <!-- Chooses image to display. User uploaded pic takes priority over URL link.
-                                If niether added then the default image will be displayed. -->
+                                <!-- 
+                                    Chooses image to display. User uploaded pic takes priority over URL link.
+                                    If niether added then the default image will be displayed. 
+                                -->
                                 <a href="{% url 'recipe_detail' recipe.slug %}" class="no-deco text-black">
-                                {% if "placeholder" not in recipe.image.url %}
-                                <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" height="300" alt="{{ recipe.title }}">
-                                {% elif recipe.image_url %}
-                                <img class="card-img-top img-fit" src="{{ recipe.image_url}}" height="300" alt="{{ recipe.title }}">
-                                {% else %}
-                                <img class="card-img-top img-fit" src="{% static 'images/food_default.jpg' %}" height="300">
-                                {% endif %}
+                                    {% if "placeholder" not in recipe.image.url %}
+                                    <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" height="300" alt="{{ recipe.title }}">
+                                    {% elif recipe.image_url %}
+                                    <img class="card-img-top img-fit" src="{{ recipe.image_url}}" height="300" alt="{{ recipe.title }}">
+                                    {% else %}
+                                    <img class="card-img-top img-fit" src="{% static 'images/food_default.jpg' %}" height="300">
+                                    {% endif %}
+                                </a>
                             </div>
                             <!-- Show dietry label if true -->
                             {% if recipe.vegan %}
