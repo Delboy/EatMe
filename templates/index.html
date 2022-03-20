@@ -5,67 +5,70 @@
 {% load static %}
 
 <!-- Hero Image -->
-<div id="hero-image" class="container-fluid callout-container"
-    style="background-image: url(https://res.cloudinary.com/deyxatgs9/image/upload/v1647442778/static/images/earl_grey_poached_pears_with_ice_cream.jpg)">
-    <div class="row">
-        <div class="col-12">
-            <div class="text-center">
-                <h1 class="text-center logo-hero">Eat Me!</h1>
-                <h2 class="display-6 text-light">A place to create and share your most loved recipes.</h2>
-                <hr>
-                {% if user.is_authenticated %}
-                <p class="lead text-light"> Welcome back {{ user | title }}
+<section>
+    <div id="hero-image" class="container-fluid callout-container"
+        style="background-image: url(https://res.cloudinary.com/deyxatgs9/image/upload/v1647442778/static/images/earl_grey_poached_pears_with_ice_cream.jpg)">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <h1 class="text-center logo-hero">Eat Me!</h1>
+                    <h2 class="display-6 text-light">A place to create and share your most loved recipes.</h2>
+                    <hr>
+                    {% if user.is_authenticated %}
+                    <p class="lead text-light"> Welcome back {{ user | title }}</p>
                     <form action="{% url 'recipes' %}" method="get">
                         <button class="btn btn-dark">View Recipes</button>
                     </form>
-                </p>
-                {% else %}
-                <p class="lead text-light">Sign up today to start sharing your creations with the world!</p>
-                <form action="{% url 'account_signup' %}" method="get">
-                    <button class="btn btn-dark">Sign
-                        up!</button>
-                </form>
-                <p class="text-muted"><small>By signing up you agree to our terms and service.</small></p>
-                {% endif %}
+                    {% else %}
+                    <p class="lead text-light">Sign up today to start sharing your creations with the world!</p>
+                    <form action="{% url 'account_signup' %}" method="get">
+                        <button class="btn btn-dark">Sign
+                            up!</button>
+                    </form>
+                    <p class="text-muted"><small>By signing up you agree to our terms and service.</small></p>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 <br>
-
-<div class="container pe-0">
-    <div class="row ge-1">
-        <div class="col-sm-7">
-            <!-- Carousel -->
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <h3 class="h3 display-6 text-center">Featured Recipes</h3>
-                <br>
-                <div class="col-6 offset-3">
-                    <hr>
+<!-- Main Section -->
+<section>
+    <div class="container pe-0">
+        <div class="row ge-1">
+            <div class="col-sm-7">
+                <!-- Carousel -->
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <!-- Featured Recipes -->
+                    <h3 class="h3 display-6 text-center">Featured Recipes</h3>
                     <br>
-                </div>
-                <div class="carousel-inner">
-                    {% for recipe in recipes %}
-                    {% if forloop.first %}
-                    <div class="carousel-item active">
-                        {% else %}
-                        <div class="carousel-item">
+                    <div class="col-6 offset-3">
+                        <hr>
+                        <br>
+                    </div>
+                    <div class="carousel-inner">
+                        {% for recipe in recipes %}
+                            {% if forloop.first %}
+                            <div class="carousel-item active">
+                            {% else %}
+                            <div class="carousel-item">
                             {% endif %}
                             <a href="{% url 'recipe_detail' recipe.slug %}">
                                 {% if "placeholder" not in recipe.image.url %}
-                                <img class="img-fit card-img-top" src=" {{ recipe.image.url }}" alt='recipe image' height="400"
-                                    width="600">
+                                <img class="img-fit card-img-top" src=" {{ recipe.image.url }}" alt='recipe image'
+                                    height="400" width="600">
                                 {% elif recipe.image_url %}
-                                <img class="img-fit card-img-top" src="{{ recipe.image_url}}" alt='recipe image' height="400"
-                                    width="600">
+                                <img class="img-fit card-img-top" src="{{ recipe.image_url}}" alt='recipe image'
+                                    height="400" width="600">
                                 {% else %}
                                 <img class="img-fit card-img-top" src="{% static 'images/food_default.jpg' %}"
                                     alt="A Table of food" height="400" width="600">
@@ -75,7 +78,7 @@
                                     <p> by {{ recipe.author }}</p>
                                 </div>
                             </a>
-                        </div>
+                            </div>
                         {% endfor %}
                     </div>
                     <!-- Controls for carousel -->
@@ -101,31 +104,30 @@
                     <hr>
                     <br>
                 </div>
-                <div class="lead">
-                    <ol>
-                        {% for top_recipe in top_recipes|slice:":5" %}
-                            <li>
-                                <a href="{% url 'recipe_detail' top_recipe.slug %}" class="recipe-link">{{ top_recipe.title}} by {{ top_recipe.author }}</a>
-                                <hr />
-                            </li>
-                        {% endfor %}
-                    </ol>
-                    <p class="lead text-center">
-                        <a href="{% url 'recipes' %}" class="recipe-link link-secondary">View all recipes</a>
-                    </p>
-                </div>
+                <ol class="lead">
+                    {% for top_recipe in top_recipes|slice:":5" %}
+                    <li>
+                        <a href="{% url 'recipe_detail' top_recipe.slug %}"
+                            class="recipe-link">{{ top_recipe.title}} by {{ top_recipe.author }}</a>
+                        <hr />
+                    </li>
+                    {% endfor %}
+                </ol>
+                <p class="lead text-center">
+                    <a href="{% url 'recipes' %}" class="recipe-link link-secondary">View all recipes</a>
+                </p>
             </div>
         </div>
     </div>
-</div>
+</section>
 <br>
 <!-- Features -->
-<div class="container-wrapper container-wrapper--red">
+<section>
     <div class="container features-container content-container">
-        <section class="features mb-4">
+        <div class="features mb-4">
             <div class="row">
                 <div class="col-12 page-header">
-                    <h3 class="h3 display-6 text-center">Features</h2>
+                    <h3 class="h3 display-6 text-center">Features</h3>
                 </div>
                 <div class="col-6 offset-3">
                     <hr>
@@ -176,7 +178,7 @@
                     <img src="{% static 'images/tea_and_cake.jpg' %}" class="img-fluid" alt="Tea and Cake">
                 </div>
             </div>
-        </section>
+        </div>
     </div>
-</div>
+</section>
 {% endblock %}
