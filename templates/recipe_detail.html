@@ -52,10 +52,10 @@
                 <p>{{ recipe.description|striptags }}</p>
                 <hr />
                 <h3>Ingredients:</h3>
-                <p class="card-text ">{{ recipe.ingredients | safe }}</p>
+                <p class="card-text ">{{ recipe.ingredients | safe }} <!--no closing tag needed as it would clash with the one provided by the template-->
                 <hr />
                 <h3>Method:</h3>
-                <p class="card-text ">{{ recipe.method | safe }}</p>
+                <p class="card-text ">{{ recipe.method | safe }} <!--no closing tag needed as it would clash with the one provided by the template-->
             </div>
         </div>
     </div>
@@ -66,7 +66,7 @@
     <div class="row">
         <!-- Like counter -->
         <div class="col-2 col-md-1" >
-            <strong>
+            
                 {% if user.is_authenticated %}
                 <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="POST">
                     {% csrf_token %}
@@ -82,8 +82,7 @@
                 {% else %}
                 <span class="text-secondary"><i class="far fa-heart"></i></span>
                 {% endif %}
-                {{ recipe.number_of_likes }}
-            </strong>
+                <strong>{{ recipe.number_of_likes }}</strong>
         </div>
         <!-- Comment Counter -->
         <div class="col-2 col-md-1">
