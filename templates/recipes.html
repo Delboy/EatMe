@@ -19,9 +19,9 @@
                 {% for recipe in page_obj %}
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <a href="{% url 'recipe_detail' recipe.slug %}" class="no-deco text-black">
+                        <a href="{% url 'recipe_detail' recipe.slug %}" class="no-deco text-black">
+                            <div class="card-body">
+                                <div class="image-container">
                                 <!-- 
                                     Chooses image to display. User uploaded pic takes priority over URL link.
                                     If niether added then the default image will be displayed. 
@@ -33,26 +33,25 @@
                                     {% else %}
                                     <img class="card-img-top img-fit" src="{% static 'images/food_default.jpg' %}" height="300" alt="A table of food">
                                     {% endif %}
-                                </a>
+                                </div>
+                                <!-- Show dietry label if true -->
+                                {% if recipe.vegan %}
+                                <div class="dietry-box">
+                                    <p class="vegan-icon">Ve</p>
+                                </div>
+                                {% elif recipe.vegetarian %}
+                                <div class="dietry-box">
+                                    <p class="vegetarian-icon">V</p>
+                                </div>
+                                {% endif %}
+                                <h2 class="card-title">{{ recipe.title }}</h2>
+                                <p class="text-muted">by {{ recipe.author }}</p>
+                                <p class="card-text">{{ recipe.description|safe }} <!-- no closing p tag as one will exist at the end of the description template--> 
+                                <hr />
+                                <p class="card-text text-muted h6">{{ recipe.published_on}} <i class="far fa-heart"></i>
+                                    {{ recipe.number_of_likes }}</p>
                             </div>
-                            <!-- Show dietry label if true -->
-                            {% if recipe.vegan %}
-                            <div class="dietry-box">
-                                <p class="vegan-icon">Ve</p>
-                            </div>
-                            {% elif recipe.vegetarian %}
-                            <div class="dietry-box">
-                                <p class="vegetarian-icon">V</p>
-                            </div>
-                            {% endif %}
-                            <h2 class="card-title">{{ recipe.title }}</h2>
-                            <p class="text-muted">by {{ recipe.author }}</p>
-                            <p class="card-text">{{ recipe.description|safe }}</p>
-                            </a>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ recipe.published_on}} <i class="far fa-heart"></i>
-                                {{ recipe.number_of_likes }}</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
             {% if forloop.counter|divisibleby:3 %}
