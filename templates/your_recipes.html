@@ -40,7 +40,7 @@
                                         {% elif recipe.image_url %}
                                         <img class="card-img-top img-fit" src="{{ recipe.image_url}}" height="300" alt="{{ recipe.title }}">
                                         {% else %}
-                                        <img class="card-img-top img-fit" src="{% static 'images/food_default.jpg' %}" height="300">
+                                        <img class="card-img-top img-fit" src="{% static 'images/food_default.jpg' %}" height="300" alt="A table of food">
                                         {% endif %}
                                     </div>
                                     <!-- Show dietry label if true -->
@@ -59,7 +59,7 @@
                                     <hr />
                                     <p class="card-text text-muted h6">{{ recipe.published_on}} <i class="far fa-heart"></i>
                                         {{ recipe.number_of_likes }}</p>
-                                </a> 
+                                </a>
                                 <!-- Edit and Delete buttons -->
                                 <div class="recipe-buttons mt-1">
                                     <a href="{% url 'edit_recipe' recipe.id %}"><button class="btn btn-success">Edit</button></a>
