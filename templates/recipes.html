@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col-8 offset-2">
-        <h1 class="h1 display-2 text-center">All Recipes </h1>
+        <h1 class="h1 display-2 text-center">All Recipes</h1>
         <hr>
     </div>
 </div>
@@ -34,15 +34,13 @@
                                     {% endif %}
                             </div>
                             <!-- Show dietry label if true -->
+                            {% if recipe.vegan %}
                             <div class="dietry-box">
-                                {% if recipe.vegan %}
-                                <div>
-                                    <p class="vegan-icon">Ve</p>
-                                </div>
-                                {% elif recipe.vegetarian %}
-                                <div>
-                                    <p class="vegetarian-icon">V</p>
-                                </div>
+                                <p class="vegan-icon">Ve</p>
+                            </div>
+                            {% elif recipe.vegetarian %}
+                            <div class="dietry-box">
+                                <p class="vegetarian-icon">V</p>
                             </div>
                             {% endif %}
                             <h2 class="card-title">{{ recipe.title }}</h2>
