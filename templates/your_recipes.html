@@ -63,16 +63,16 @@
                                 <!-- Edit and Delete buttons -->
                                 <div class="recipe-buttons mt-1">
                                     <form class="me-1" action="{% url 'edit_recipe' recipe.id %}" method="get"><button class="btn btn-success">Edit</button></form>
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button>
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target=".staticBackdrop">Delete</button>
                                 </div>
                                 <!-- Modal for Deleting Recipe -->
-                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                <div class="modal fade staticBackdrop" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1"
                                     aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="staticBackdropLabel">Delete Recipe</h5>
+                                                <h5 class="modal-title staticBackdropLabel">Delete Recipe</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
@@ -82,7 +82,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
-                                                    <a href="{% url 'delete_recipe' recipe.id %}"><button type="submit" class="btn btn-danger">Delete</button></a>
+                                                    <form action="{% url 'delete_recipe' recipe.id %}" method="get"><button type="submit" class="btn btn-danger">Delete</button></form>
                                             </div>
                                         </div>
                                     </div>
