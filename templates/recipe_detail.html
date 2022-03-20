@@ -31,12 +31,12 @@
             <!-- Chooses image to display. User uploaded pic takes priority over URL link. 
                 If niether added then the default image will be displayed. -->
             {% if "placeholder" not in recipe.image.url %}
-            <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" width="100%">
+            <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" alt="{{ recipe.title }}" width="100%">
             {% elif recipe.image_url %}
-            <img class="card-img-top img-fit" src="{{ recipe.image_url}}" width="100%">
+            <img class="card-img-top img-fit" src="{{ recipe.image_url}}" alt="{{ recipe.title }}" width="100%">
             {% else %}
             <img class="card-img-top img-fit"
-                src="{% static 'images/food_default.jpg' %}" width="100%">
+                src="{% static 'images/food_default.jpg' %}" width="100%" alt="A table of food">
             {% endif %}
         </div>
     </div>
