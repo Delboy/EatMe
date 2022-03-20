@@ -61,14 +61,14 @@
                             {% endif %}
                             <a href="{% url 'recipe_detail' recipe.slug %}">
                                 {% if "placeholder" not in recipe.image.url %}
-                                <img class="img-fit card-img-top" src=" {{ recipe.image.url }}" height="400px"
-                                    width="600px">
+                                <img class="img-fit card-img-top" src=" {{ recipe.image.url }}" alt='recipe image' height="400"
+                                    width="600">
                                 {% elif recipe.image_url %}
-                                <img class="img-fit card-img-top" src="{{ recipe.image_url}}" height="400px"
-                                    width="600px">
+                                <img class="img-fit card-img-top" src="{{ recipe.image_url}}" alt='recipe image' height="400"
+                                    width="600">
                                 {% else %}
                                 <img class="img-fit card-img-top" src="{% static 'images/food_default.jpg' %}"
-                                    alt="A Table of food" height="400px" width="600px">
+                                    alt="A Table of food" height="400" width="600">
                                 {% endif %}
                                 <div class="carousel-caption d-md-block">
                                     <h5>{{ recipe.title }}</h5>
