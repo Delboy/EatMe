@@ -62,7 +62,7 @@
                                 </a>
                                 <!-- Edit and Delete buttons -->
                                 <div class="recipe-buttons mt-1">
-                                    <a href="{% url 'edit_recipe' recipe.id %}"><button class="btn btn-success">Edit</button></a>
+                                    <form class="me-1" action="{% url 'edit_recipe' recipe.id %}" method="get"><button class="btn btn-success">Edit</button></form>
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button>
                                 </div>
                                 <!-- Modal for Deleting Recipe -->

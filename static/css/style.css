@@ -20,6 +20,12 @@ a:hover {
     color: darkgray;
 }
 
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+
 /* Logo */
 .logo {
     font-family: 'Imbue', sans-serif;
@@ -76,6 +82,7 @@ a:hover {
 
 .recipe-buttons {
     position: absolute;
+    display: inline-flex;
 }
 
 /* Like button */
