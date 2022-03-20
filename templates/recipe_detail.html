@@ -11,7 +11,7 @@
     <div class="row g-0 recipe-card-head">
         <div class="col-md-6 my-auto">
             <h1 class="recipe-title text-light"> {{ recipe.title }}</h1>
-            <p class="recipe-subtitle">by {{ recipe.author }} | <em>{{ recipe.published_on }}</em></p>
+            <p class="recipe-subtitle mb-3 mb-lg-0">by {{ recipe.author }} | <em>{{ recipe.published_on }}</em></p>
             <!-- Dietry labels if any -->
             {% if recipe.vegan %}
             <br>
@@ -33,12 +33,12 @@
                 If niether added then the default image will be displayed. 
             -->
             {% if "placeholder" not in recipe.image.url %}
-            <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" alt="{{ recipe.title }}" width="100%">
+            <img class="card-img-top img-fit" src=" {{ recipe.image.url }}" alt="{{ recipe.title }}">
             {% elif recipe.image_url %}
-            <img class="card-img-top img-fit" src="{{ recipe.image_url}}" alt="{{ recipe.title }}" width="100%">
+            <img class="card-img-top img-fit" src="{{ recipe.image_url}}" alt="{{ recipe.title }}">
             {% else %}
             <img class="card-img-top img-fit"
-                src="{% static 'images/food_default.jpg' %}" width="100%" alt="A table of food">
+                src="{% static 'images/food_default.jpg' %}" alt="A table of food">
             {% endif %}
         </div>
     </div>
