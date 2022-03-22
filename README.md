@@ -172,14 +172,14 @@ Wireframes for each page are linked here:
     - Changing the content and hitting save at the bottom of the page saves the recipe.
     - If a user tries to access this page without being signed in they will recieve a forbidden access error.
 
-### Languages used
+## Languages used
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 - [Python](https://www.python.org/)
 
-### Libraries and Programs Used
+## Libraries and Programs Used
 
 - [Git](https://git-scm.com/)
     - Version control.
@@ -221,4 +221,47 @@ Wireframes for each page are linked here:
     - Used to add a WYSIWYG text box to the add recipe page.
 - [Heroku](https://www.heroku.com/)
     - To deploy project.
+
+## Testing 
+
+Testing and results can be found [here](TESTING.md)
+
+## Deployment
+
+This project was deployed using Github and Heroku.
+
+- ### Github 
+
+    To create a new repository I took the following steps:
+
+    1. Logged into Github.
+    2. Clicked over to the ‘repositories’ section.
+    3. Clicked the green ‘new’ button. This takes you to the create new repository page.
+    4. Once there under ‘repository template’ I chose the code institute template from the dropdown menu.
+    5. I input a repository name then clicked the green ‘create repository button’ at the bottom of the page.
+    6. Once created I opened the new repository and clicked the green ‘Gitpod’ button to create a workspace in Gitpod for editing.
+
+- ### Django & Heroku
+
+    To get the Django framework installed and set up I followed the Code institutes [Django Blog cheatsheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf).
+
+    
+- ### Forking
+
+    To fork my project you must;
+    1. Sign in to Github and go to my [repository](https://github.com/Delboy/Colour-Type)
+    2. Locate the Fork button at the top right of the page.
+    3. Select this. 
+    4. The fork is now in your repositories.
+
+- ### Clone
+    To clone my project you must;
+
+    1. Sign in to Github and go to my [repository](https://github.com/Delboy/Colour-Type)
+    2. Above the list of files click the green ‘code’ button.
+    3. This will bring up a few options as to how you would like to clone. You can select HTTPS, SSH or Github CLI, then click the clipboard icon to copy the URL.
+    4. Open git bash
+    5. Type ‘git clone’ and then paste the URL you copied. Press Enter.
+
+    For more information on cloning check out the github documentation [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
