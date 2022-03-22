@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<!--Box shown for 500 error  -->
+<div class="container log-box">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 mt-4 text-center">
+            <h1>500 error</h1>
+            <br>
+            <h3>Whoops! Something went wrong.</h3>
+            <br>
+            <p>Due to an internal error we are unable to process this request. Try refreshing or return to the home page <a href="{% url 'home' %}" class="link-secondary"><u>here</u></a>.
+        </div>
+    </div>
+</div>
+
+{% endblock %}

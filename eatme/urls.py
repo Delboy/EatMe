@@ -22,3 +22,6 @@ urlpatterns = [
     path('', include('recipes.urls'), name='recipes_urls'),
     path('accounts/', include('allauth.urls')),
 ]
+
+handler404 = 'recipes.views.error_404'
+handler500 = 'recipes.views.error_500'
