@@ -2,13 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@100&family=Imbue:wght@700&display=swap');
 
 /* Defaults */
+
+html, body {
+    overflow-x: hidden;
+  }
+
+body {
+    position: relative
+  }
+
 .no-deco {
     text-decoration: none;
     
-}
-
-.row {
-    margin-right: 1px;
 }
 
 a {
