@@ -165,19 +165,19 @@
         let vegBox = document.getElementById('id_vegetarian');
         veganBox.addEventListener('click', function () {
             if (vegBox.checked == false) {
-                vegBox.checked = true
+                vegBox.checked = true;
             }
-        })
+        });
         vegBox.addEventListener('click', function () {
             if (veganBox.checked == true) {
-                veganBox.checked = false
+                veganBox.checked = false;
             }
-        })
+        });
     </script>
 
     <!-- script for changing hero image depending on screen width -->
     <script>
-        let heroImage = document.getElementById('hero-image')
+        let heroImage = document.getElementById('hero-image');
         window.addEventListener('resize', function () {
         if (this.window.innerWidth < 991) {
             heroImage.style.backgroundImage = 'url(https://res.cloudinary.com/deyxatgs9/image/upload/v1647442777/static/images/earl_grey_poached_pears_with_ice_cream-2.jpg)';
@@ -185,7 +185,7 @@
                 heroImage.style.backgroundImage = 'url(https://res.cloudinary.com/deyxatgs9/image/upload/v1647442777/static/images/earl_grey_poached_pears_with_ice_cream.jpg)';
 
             }
-        })
+        });
     </script>
 
     <!-- Bootstrap scripts -->
