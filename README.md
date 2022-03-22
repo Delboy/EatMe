@@ -117,6 +117,7 @@ Wireframes for each page are linked here:
 
 - #### Favourite Recipes
     - This page shows only recipes that the user has liked.
+    - If a user tries to access this page without being signed in they will recieve a not logged in error.
 
 ### Your Recipes Page
 
@@ -126,6 +127,7 @@ Wireframes for each page are linked here:
     - Each recipe will have two buttons, an edit and a delete button.
     - The edit button will take users to the edit recipe page for that particular recipe.
     - Clicking the delete button will bring up a modal which asks the user if they are sure they want to delete that particular recipe.
+    - If a user tries to access this page without being signed in they will recieve a not logged in error. 
 
 ### Searched Recipes Page
 
@@ -160,10 +162,12 @@ Wireframes for each page are linked here:
     - Clicking the vegan checkbox automatically checks the vegetarian checkbox and subsequently unchcecking the vegetarian box unchecks the vegan box.
     - The user has two options to upload an image of their recipe. They can either choose a file to upload or simply put in the URL address of the image. 
     - If neither of the image options are used a default image will be generated.
-    - An add Recipe button is present at the bottom of the page once the form is ready to send.  
+    - An add Recipe button is present at the bottom of the page once the form is ready to send.
+    - If a user tries to access this page without being signed in they will recieve a not logged in error.  
 
 ### Edit Recipe Page
 
 - #### Editing Recipes
     - Editing a recipe brings up the form that was filled in when the recipe was created and has all the fields filled out with the orginal content.
     - Changing the content and hitting save at the bottom of the page saves the recipe.
+    - If a user tries to access this page without being signed in they will recieve a forbidden access error.
