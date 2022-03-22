@@ -171,3 +171,54 @@ Wireframes for each page are linked here:
     - Editing a recipe brings up the form that was filled in when the recipe was created and has all the fields filled out with the orginal content.
     - Changing the content and hitting save at the bottom of the page saves the recipe.
     - If a user tries to access this page without being signed in they will recieve a forbidden access error.
+
+### Languages used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://www.python.org/)
+
+### Libraries and Programs Used
+
+- [Git](https://git-scm.com/)
+    - Version control.
+- [GitHub](https://github.com/)
+    - For storing code and deploying the site.
+- [Gitpod](https://www.gitpod.io/)
+    - Used for building and editing my code.
+- [Django](https://www.djangoproject.com/)
+    - A python based framework that was used to develop the site.
+- [Bootstrap](https://getbootstrap.com/)
+    - For help designing the html templates.
+- [Google Fonts](https://fonts.google.com/)
+    - Used to style the websites logo.
+- [Font Awesome](https://fontawesome.com/)
+    - Used to obtain the icons used.
+- [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+    - Used as help fix problem areas and identify bugs.
+- [Cloudinary](https://cloudinary.com/)
+    - Used to store static files and images.
+- [Favicon.io](https://favicon.io/)
+    - Used to generate the sites favicon.
+- [SQlite](https://www.sqlite.org/index.html)
+    - Used when performing unit tests.
+- [PostgreSQL](https://www.postgresql.org/)
+    - Database used through heroku.
+- [SmartDraw](https://cloud.smartdraw.com/)
+    - To draw out the database schemea.
+- [Balsamiq](https://balsamiq.com/)
+    - To create the wireframes.
+- [W3C Markup Validation Service](https://validator.w3.org/) 
+    - Used to validate HTML code.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
+    - Used to validate CSS code.
+- [Pep8](http://pep8online.com/)
+    - Used to validate Python code.
+- [JSHint](https://jshint.com/)
+    - Used to validate JS code.
+- [Summernote](https://summernote.org/)
+    - Used to add a WYSIWYG text box to the add recipe page.
+- [Heroku](https://www.heroku.com/)
+    - To deploy project.
+
