@@ -104,6 +104,17 @@ Wireframes for each page are linked here:
     - The footer rests at the bottom of each page and has links to all socail media accounts.
     - Clicking the links in the footer opens a seperate browser to avoid pulling the user away from the site.
 
+### Accounts
+- #### Register Page
+    - The register page is used to create an account.
+
+- #### Log in Page
+    - The log in page is used to log in users with an existing account.
+    - A success message will appear once a user successfully logs in.
+
+- #### Log out Page
+    - The log out page is used to log out users who are signed in.
+    - A success message will appear once a user successfully logs out.
 
 ### All Recipes Page
 
@@ -127,6 +138,7 @@ Wireframes for each page are linked here:
     - Each recipe will have two buttons, an edit and a delete button.
     - The edit button will take users to the edit recipe page for that particular recipe.
     - Clicking the delete button will bring up a modal which asks the user if they are sure they want to delete that particular recipe.
+    - A success message appears if a recipe is deleted successfully. 
     - If a user tries to access this page without being signed in they will recieve a not logged in error. 
 
 ### Searched Recipes Page
@@ -150,7 +162,11 @@ Wireframes for each page are linked here:
     - At the bottom of the page is the comment section. Here you can view all comments left users.
     - Only signed in users can leave a comment.
     - Comments with profanity automatically fail and will not upload.
-    - Any comments left by the user that is currently signed in can be edited or deleted.  
+    - Any comments left by the user that is currently signed in can be edited or deleted.
+    - A success message appears once comments are left.
+    - A success message appears once comments are deleted.
+    - If a user tries to edit a comment without being signed in they recieve a not logged in error.
+    - If a user tries to edit a comment that does not belong to them they recieve a foribiddn access error. 
 
 ### Add Recipe Page
 
@@ -163,14 +179,17 @@ Wireframes for each page are linked here:
     - The user has two options to upload an image of their recipe. They can either choose a file to upload or simply put in the URL address of the image. 
     - If neither of the image options are used a default image will be generated.
     - An add Recipe button is present at the bottom of the page once the form is ready to send.
-    - If a user tries to access this page without being signed in they will recieve a not logged in error.  
+    - If a user tries to access this page without being signed in they will recieve a not logged in error.
+    - A success message appears once a recipe is added successfully.  
 
 ### Edit Recipe Page
 
 - #### Editing Recipes
     - Editing a recipe brings up the form that was filled in when the recipe was created and has all the fields filled out with the orginal content.
     - Changing the content and hitting save at the bottom of the page saves the recipe.
-    - If a user tries to access this page without being signed in they will recieve a forbidden access error.
+    - A success message appears once a recipe is edited successfully.
+    - If a user tries to access this page without being signed in they will recieve a not logged in error.
+    - If a user tries to edit a recipe that does not belong to them they recieve a forbidden access error.
 
 ## Languages used
 

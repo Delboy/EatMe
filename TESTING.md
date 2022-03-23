@@ -124,4 +124,193 @@
 
 ## Feature Testing
 
+### Home Page
+
+- #### Navigation bar
+    - Checked all the links on the navbar render the correct page and darken the active page's link.
+    - Checked that clicking the logo returns to the home page.
+    - Checked that clicking your log in status takes you to your recipes page.
+
+    ![link check](assets/images/link-check.gif) 
+
+- #### Hero Image
+    - Checked that the sign up button takes you to the sign up page.
+    - Checked the view recipes takes you to the all recipes page. 
+
+    ![sign up button](assets/images/sign-up-btn.gif) 
+
+    ![view recipe button](assets/images/view-recipes-btn.gif) 
+
+- #### Carousel
+    - Checked that featured recipes appear in the carousel.
+    - Checked that clicking the image takes you to the correct recipe's detail page.
+    - Checked that the buttons on the edge of the carrousel scroll through all the featured recipes.
+
+    ![featured recipe list](assets/images/featured-list.png) 
+
+    ![carousel](assets/images/carousel.gif) 
+
+- #### Most Loved Recipes
+    - Checked that the list is no longer then 5.
+    - Checked that clicking each recipe takes you to the correct recipe's detail page.
+    - Checked that the all recipes link can takes you to the all recipes page.
+
+    ![most loved](assets/images/most-loved.gif) 
+
+- #### Footer
+    - Checked that clicking the links in the footer takes you to the correct page in a seperate browser.
+
+    ![footer](assets/images/footer-links.gif)
+
+### Accounts
+- #### Register Page
+    - Checked that using the register page creates an account.
+
+    ![sign up](assets/images/sign-up.gif)
+
+- #### Log in Page
+    - Checked that the log in page logs you in.
+    - Checked that a success message will appear once you successfully log in.
+
+    ![log in](assets/images/log-in.gif)
+
+- #### Log out Page
+    - Checked that the log out page logs you out.
+    - Checked that a success message will appear once you successfully log out.
+
+    ![log out](assets/images/log-in.gif)
+
+### All Recipes Page
+
+- #### Recipe Cards
+    - Checked that the site will paginate 6 recipe cards to a page.
+    - Checked that each card displays the recipes image, Title, Author, Description, Published date and how many likes it has recieved.
+    - Checked that if the recipe is vegetarian or vegan a small green corosponding label is present in the bottom left corner.
+    - Checked that clicking anywhere inside the recipes card takes you to the correct recipe's detail page.
+
+    ![recipe cards](assets/images/recipe-cards.gif)
+
+### Favourite Recipes Page
+
+- #### Favourite Recipes
+    - Checked that this page shows only recipes that the user has liked.
+
+    ![favourite recipes](assets/images/fav-recipes.gif)
+
+    - Checked that if a user tries to access this page without being signed in they recieve a not logged in error.
+
+    ![favourite recipes error](assets/images/fav-recipes-error.gif)
+
+### Your Recipes Page
+
+- #### Your Recipes
+    - Checked that this page displays only the recipes that the user has created. 
+    - Checked that at the 'Add Recipe' button takes the user to the add recipe page.
+    - Checked that each recipe has two buttons, an edit and a delete button.
+    - Checked that the edit button takes the user to the edit recipe page for that particular recipe.
+    - Checked that clicking the delete button brings up a modal which asks the user if they are sure they want to delete that particular recipe.
+    - Checked that confirming to delete a recipe removes the recipe.
+    - Checked that a success message appears when a recipe is deleted successfully.
+
+    ![your recipes](assets/images/your-recipes.gif)
+
+    - Checked that if a user tries to access the page without being signed in they will recieve a not logged in error. 
+
+    ![your recipes error](assets/images/your-recipes-error.gif)
+
+### Searched Recipes Page
+
+- #### Searched Recipes
+    - Checked that whatever is searched in the search bar displays correct results.
+
+    ![search bar](assets/images/search.gif)
+
+    - Checked that if the word vegetarian, or vegan is entered into the search bar it will result in all vegetarian or vegan recipes and not just ones with those words in the title. 
+
+    ![vegan search](assets/images/vegan-search.gif)
+
+### Recipe Deatail Page
+
+- #### Recipe Card
+    - Checked that at the top of the page the recipe card will show the image, title, author, published date and any dietry information.
+
+    ![recipe card top](assets/images/recipe-card-top.png)
+
+- #### Main Section
+    - Checked that the main body of the page consists of the decription, ingredients, and method.
+    - Checked that the bottom section has an icon and counter for both likes and comments.
+    - Checked that clicking the outlined heart fills in the heart, adds 1 to the counter, and adds the recipe to the users favourite recipes page.
+    - Checked that clicking a filled in heart changes the heart back to an outline, reduces the counter by 1 and removes the recipe from the users favourite recipe page.
+
+    ![recipe main section](assets/images/recipe-main-section.gif)
+
+- #### Comments
+    - Checked that you can view comments left.
+
+    ![comments](assets/images/comment.png)
+
+    - Checked that only signed in users can leave a comment.
+    - Checked that comments with profanity automatically fail and do not upload.
+    - Checked that any comments left by the user that is currently signed in can be edited or deleted.
+    - Checked that a success message appears once a comment is left.
+    - Checked that a success message appears once a comment is deleted.
+
+    ![comments test](assets/images/comments-test.gif)
+
+    - Checked that if a user tries to edit a comment without being signed in they recieve a not logged in error.
+
+    ![edit comment error](assets/images/edit-comment-error.gif)
+
+    - Checked that if a user tries to edit a comment that does not belong to them they recieve a foribiddn access error.  
+
+    ![edit comment error](assets/images/edit-comment-error2.gif)
+
+### Add Recipe Page
+
+- #### Adding Recipes
+    - Checked that failing to fill out either the recipes Title, Description, Ingredients, or Method results in the form failing and renders a message stating which fields you have missed.
+
+    ![missing field](assets/images/missing-field.gif)
+
+    - Checked that the form has two checkbox's that toggle wether the recipe is suitable for vegetarians or vegans. 
+    - Checked that clicking the vegan checkbox automatically checks the vegetarian checkbox and subsequently unchcecking the vegetarian box unchecks the vegan box.
+
+    ![dietry checkbox](assets/images/dietry-checkbox.gif)
+
+    - Checked that the user can uplaod an image by either uploading an image or by using the image's URL address.
+
+    ![image upload](assets/images/img-upload.gif)
+
+    ![image url](assets/images/img-url.gif)
+
+    - Checked that a default image is used if neither of the image options are used.
+
+    ![image default](assets/images/img-default.gif)
+
+    - Checked that the add Recipe button uploads the recipe.
+    - Checked that a success message appears once a recipe is added successfully.
+
+    ![upload recipe](assets/images/upload-recipe.gif)
+
+    - Checked that if a user tries to access this page without being signed in they will recieve a not logged in error.
+
+    ![add recipe error](assets/images/add-recipe-error.gif)  
+
+### Edit Recipe Page
+
+- #### Editing Recipes
+    - Checked that editing a recipe brings up the form that was filled in when the recipe was created, and has all the fields filled out with the orginal content.
+    - Checked that changing the content and hitting save at the bottom of the page saves the recipe.
+    - Checked that a success message appears once a recipe is edited successfully.
+
+    ![check edit recipe](assets/images/edit-recipe-check.gif)  
+
+    - Checked that if a user tries to access this page without being signed in they will recieve a not logged in error.
+
+    ![edit recipe error](assets/images/edit-recipe-error.gif)  
+
+    - Checked that if a user tries to edit a recipe that does not belong to them they recieve a forbidden access error.
+
+    ![edit recipe error2](assets/images/edit-recipe-error2.gif)
+
 ## Bugs
