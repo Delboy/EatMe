@@ -16,65 +16,111 @@
 *As a User I can immediately understand the websites purpose so that I know if its what im looking for.*
 - As soon as a user arrives on the home page they are welcomed by a brief message explaining the sites purpose.
 
+![hero image](assets/images/hero.png)
+
 *As a User I can navigate around the site so that I can easily view desired content.*
 - A navigation bar sits at the top of every page with the current page's link darkened.
+
+![nav-bar](assets/images/navbar.png)
 
 *As a User I can view a list of recipes so that I can choose one to read.*
 - The all recipes page shows a list of every page on the site.
 
+![all recipes](assets/images/all-recipes.png)
+
 *As a User I can click on a recipe so that I can read the recipe details.*
 - Clicking anywhere inseide a recipes card will take you directly to the recipes page.
+
+![open recipes](assets/images/open-recipe.gif)
 
 *As a User I can search recipes so that I can find specific recipes im looking for.*
 - In the top righthand corner of the navigation bar is a search bar.
 
+![search recipes](assets/images/search.gif)
+
 ### EPIC | User's Recipes
 *As a User I can create recipes so that other users can view them.*
-- Once a user has created an account they can navigate to 'Your Recipes' and from there can add there own recipes. Once created they will appear on the All Recipes page.
+- Once a user has created an account they can navigate to 'Your Recipes' and from there can enter a recipe by clicking the add recipe button and filling out the subsequent form. Once created they will appear on the All Recipes page.
+
+![add recipes](assets/images/add-recipe.gif)
 
 *As a User I can view my recipes so that I can see and manage all recipes I have created.*
 - All the users created recipes are available to see and manage on the 'Your Recipes' page.
 
+![your recipes](assets/images/your-recipes.png)
+
 *As a User I can edit recipes so that I can update any changes or mistakes to my recipes.*
 - On the 'Your Recipes' page each recipe will have a 'Edit' button which can be used to edit the recipe.
+
+![edit recipes](assets/images/edit-recipe.gif)
 
 *As a User I can delete recipes so that I can remove any unwanted recipes I have made.*
 - On the 'Your Recipes' page each recipe will have a 'Delete' button which can be used to delete the recipe.
 
+![add recipes](assets/images/delete-recipe.gif)
+
 *As a User I can view all my liked recipes so that I can return to them with ease.*
 - All recipes that the user has liked will appear in the 'Favourite Recipes' page.
+
+![favourite recipes](assets/images/fav-recipes.png)
 
 ### EPIC | User Interaction
 *As a User I can like/unlike recipes so that I can mark which recipes I enjoyed.*
 - Each recipe has a heart button which can be toggled by signed in users to like/unlike the recipe.
 
+![like/unlike](assets/images/like.gif)
+
 *As a User I can comment on recipes so that I can give my feedback to others.*
 - Each recipe has a comment section that can be used by users that are signed in.
 
+![comment](assets/images/comment.gif)
+
 *As a User I can view the number of likes on a recipe so that I can see which is most popular.*
 - Each recipe has a counter next to the like button which displays the total likes.
+
+![like counter](assets/images/like-counter.png)
+
 - The home page also has a Most Loved section that displays the most liked recipes.
+
+![most loved](assets/images/most-loved.png)
 
 *As a User I can view comments on recipes so that I can read other user's feedback.*
 - Every comment left is displayed at the bottom of the recipes page.
 
+![comment](assets/images/comment.png)
+
 ### EPIC | Sign in
 *As a User I can register for an account so that I can begin to use the services afforded to members.*
-- In the navbar is a register link that takes you to the sign up page. 
+- In the navbar is a register link that takes you to the sign up page.
+
+![register link](assets/images/register-nav.png)
+
 - There is also a sign up button located on the index page which also takes you to the sign up page.
+
+![sign up button](assets/images/sign-up.png)
+
+![sign up page](assets/images/sign-up-page.png)
 
 *As a User I can log in/out so that I can like recipes, comment on recipes and manage my recipes.*
 - In the navbar there is a link to log in or log out.
 
+![log out link](assets/images/log-out.png)
+
 *As a User I can see my login status so that I know if i'm logged in or out.*
 - If logged in a message will appear in the navbar stating what account is logged in.
+
+![log status](assets/images/log-status.png)
 
 ### EPIC | Admin
 *As a Admin I can view, create, edit and delete all recipes and comments so that I can control the websites content.*
 - Admins have full access to CRUD functionallity for both recipes and comments in the admins page.
 
+![admin](assets/images/admin.png)
+
 *As a Admin I can feature recipes so that I can highlight them on the home page.*
 - Admins can select any recipe to be featured form the admins page.
+
+![featured](assets/images/featured.gif)
 
 ## Feature Testing
 
