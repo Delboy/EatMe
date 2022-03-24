@@ -82,39 +82,58 @@ Wireframes for each page are linked here:
     - A search bar is nested in the navbar to find recipes quickly.
     - The navbar is fully responsive, collapsing into a hamburger menu when the screen size becomes to small. 
 
+    ![Navbar](assets/images/navbar.png)
+
+
 - #### Hero Image
     - The hero image welcomes the user with a short message advertising what the sites about.
     - A button to sign up and a short message is present in the image. Clicking this takes you to the register an account page.
-    - If a user is already signed the message changed to 'welcome back' and the sign up button changes to a 'view recipes' button, which takes you to the all recipes page. 
+    - If a user is already signed the message changed to 'welcome back' and the sign up button changes to a 'view recipes' button, which takes you to the all recipes page.
+
+    ![Hero image](assets/images/hero.png)
 
 - #### Carousel
     - The carousel displays any recipes that the admin has selected to be featured.
     - Clicking the image will take you to that recipe's detail page.
     - Buttons on the edge if the carrousel scroll through all the featured recipes.
 
+    ![carousel](assets/images/carousel.png)
+
 - #### Most Loved Recipes
     - The most loved recipes section displays the top 5 recipes with the most likes.
     - Clicking each recipe takes you to its detail page.
     - A link to all recipes can be found at the bottom of the list.
 
+    ![most loved](assets/images/most-loved.png)
+
 - #### Features
     - This section displays a couple short messages with images to showcase the sites basic features.
+
+    ![features](assets/images/features.png)
 
 - #### Footer
     - The footer rests at the bottom of each page and has links to all socail media accounts.
     - Clicking the links in the footer opens a seperate browser to avoid pulling the user away from the site.
 
+    ![footer](assets/images/footer.png)
+
 ### Accounts
 - #### Register Page
     - The register page is used to create an account.
+
+    ![sign up page](assets/images/sign-up-page.png)
 
 - #### Log in Page
     - The log in page is used to log in users with an existing account.
     - A success message will appear once a user successfully logs in.
 
+    ![sign in page](assets/images/sign-in-page.png)
+
 - #### Log out Page
     - The log out page is used to log out users who are signed in.
     - A success message will appear once a user successfully logs out.
+
+    ![log out page](assets/images/sign-out-page.png)
 
 ### All Recipes Page
 
@@ -124,11 +143,15 @@ Wireframes for each page are linked here:
     - If the recipe is vegetarian or vegan a small green corosponding label will be present in the bottom left corner.
     - Clicking anywhere inside the recipes card will take you directly to that recipes detail page.
 
+    ![all recipes page](assets/images/all-recipes.png)
+
 ### Favourite Recipes Page
 
 - #### Favourite Recipes
     - This page shows only recipes that the user has liked.
     - If a user tries to access this page without being signed in they will recieve a not logged in error.
+
+    ![favourite recipes](assets/images/fav-recipes.png)
 
 ### Your Recipes Page
 
@@ -141,22 +164,30 @@ Wireframes for each page are linked here:
     - A success message appears if a recipe is deleted successfully. 
     - If a user tries to access this page without being signed in they will recieve a not logged in error. 
 
+    ![your recipes](assets/images/your-recipes.png)
+
 ### Searched Recipes Page
 
 - #### Searched Recipes
     - Anything entered into the search bar in the navigation bar displays results here.
     - If the word vegetarian, or vegan is entered into the search bar it will result in all vegetarian or vegan recipes and not just ones with those words in the title. 
 
+    ![search page](assets/images/searched-page.png)
+
 ### Recipe Deatail Page
 
 - #### Recipe Card
     - At the top of the page the recipe card will show the image, title, author, published date and any dietry information.
+
+    ![recipe card top](assets/images/recipe-card-top.png)
 
 - #### Main Section
     - The main body of the page consists of the decription, ingredients, and method. These combined is what creates the whole recipe.
     - At the bottom of the section is an icon and counter for both likes and comments.
     - Clicking the outlined heart renders the recipe 'liked' by the user which will fill in the heart, add 1 to the counter, and add the recipe to the users favourite recipes page.
     - Alternatively, clicking a filled in heart renders the recipe 'unliked' which will change the heart back to an outline, reduce the counter by 1 and remove the recipe from the users favourite recipe page.
+
+    ![recipe main section](assets/images/recipe-main-section.png)
 
 - #### Comments
     - At the bottom of the page is the comment section. Here you can view all comments left users.
@@ -167,6 +198,8 @@ Wireframes for each page are linked here:
     - A success message appears once comments are deleted.
     - If a user tries to edit a comment without being signed in they recieve a not logged in error.
     - If a user tries to edit a comment that does not belong to them they recieve a foribiddn access error. 
+
+    ![comment section](assets/images/comment.png)
 
 ### Add Recipe Page
 
@@ -182,6 +215,8 @@ Wireframes for each page are linked here:
     - If a user tries to access this page without being signed in they will recieve a not logged in error.
     - A success message appears once a recipe is added successfully.  
 
+    ![add recipe page](assets/images/add-recipe-page.png)
+
 ### Edit Recipe Page
 
 - #### Editing Recipes
@@ -190,6 +225,8 @@ Wireframes for each page are linked here:
     - A success message appears once a recipe is edited successfully.
     - If a user tries to access this page without being signed in they will recieve a not logged in error.
     - If a user tries to edit a recipe that does not belong to them they recieve a forbidden access error.
+
+    ![edit recipe page](assets/images/edit-recipe-page.png)
 
 ## Languages used
 
