@@ -207,6 +207,7 @@ Wireframes for each page are linked here:
     - The adding recipe page is where users upload thier creations.
     - Each recipe is uploaded by filling out a form.
     - Failing to fill out either the recipes Title, Description, Ingredients, or Method results in the form failing and rendering a message stating which fields you have missed.
+    - Using profanity will result in the form failing and the relevant section will be flagged with a message.
     - The form has two checkbox's that toggle wether the recipe is suitable for vegetarians or vegans. 
     - Clicking the vegan checkbox automatically checks the vegetarian checkbox and subsequently unchcecking the vegetarian box unchecks the vegan box.
     - The user has two options to upload an image of their recipe. They can either choose a file to upload or simply put in the URL address of the image. 

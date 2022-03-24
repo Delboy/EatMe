@@ -274,6 +274,10 @@
 
     ![missing field](assets/images/missing-field.gif)
 
+    - Checked that using profanity results in the form failing and the relevant section is flagged with a message.
+
+    ![recipe profanity](assets/images/recipe-profanity.gif)
+
     - Checked that the form has two checkbox's that toggle wether the recipe is suitable for vegetarians or vegans. 
     - Checked that clicking the vegan checkbox automatically checks the vegetarian checkbox and subsequently unchcecking the vegetarian box unchecks the vegan box.
 
