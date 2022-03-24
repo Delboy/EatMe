@@ -9,7 +9,9 @@
     - No errors were found when passing through [Jshint](https://jshint.com/)
 - Python
     - No errors were found when passing through [PEP8](http://pep8online.com/)
+- Lighthouse
 
+    ![lighthouse](assets/images/lighthouse.png)
 ## User Story Testing
 
 ### EPIC | Navigation
@@ -314,3 +316,24 @@
     ![edit recipe error2](assets/images/edit-recipe-error2.gif)
 
 ## Bugs
+
+### Fixed 
+
+- I had a problem where I couldnt get the proper image to display when uploading a recipe. I was originally tryin an if else statement that ran, if image, else if image_url, else default. This didnt work because cloudinary recognises the default image as an image present. I fixed this by changing the if statement to, if placeholder does not exist, use uploaded image, else if image url exists, use that, else use the default image.
+
+- I had a bug that would change the width of the pages content when typing in the search bar. It only happened on pages that had paginated recipes with only 3 or less results. Using chrome dev tools I found the culprit to be a function of bootstrap. It had something to do with the way it was calculating the padding. I tried over riding the padding but nothing seemed to work. I found that if I added padding-right of 1px to every row class it fixed the issue. This however as you can imagine through off my margins every so slightly. It wasn't untill I was fixing another bug which was causing side scrolling to happen on phones that I fixed the issue without needing the row padding. It was as simple as hidding the overflow on the x axis.
+
+- Log in/out options were not appearing in navbar hamburger menu. Needed to change the divs ID to include the options.
+
+- When creating a recipe you could tick the checkbox to label the recipe vegan, which would automaticlly check the vegetarian checkbox, but you could then uncheck the vegetarian checkbox leaving the impossible situation of having a recipe not suitable for vegetarians but suitable for vegans. I fixed this by creating some script that unchecks the vegan box if unchecking the vegetarian box.
+
+- No recipes were showing on the all recipes page when not logged in. This is because I accidently had if.user_authenticated written in my views for that function. Once removed all was working correctly.
+
+- Pagination was not working. Upon checking the django documents I realised I hadnt coded correctly for class views. 
+
+- An issue arrised where an author would have a duplicate slug if creating a recipe with the same title. This was becuase the slug was simply there author ID followed by the recipes title. To fix this I added the published date and time to the slug rendering every recipe slug unique.
+
+
+- I couldnt get the hero image to render on heroku. I moved from css to html then linked the URL from cloudinary.
+
+- Dietary labels were moving depending on the description length of each recipe. Changing the labels to relative postiton fixed this.
