@@ -275,6 +275,12 @@ Wireframes for each page are linked here:
     - Used to validate JS code.
 - [Summernote](https://summernote.org/)
     - Used to add a WYSIWYG text box to the add recipe page.
+- [Profanity Filter](https://github.com/ReconCubed/django-profanity-filter)
+    - App used to remove profanity from recipes and comments.
+- [Tinyjpg](https://tinyjpg.com/)
+    - Used to compress images.
+- [Screen to Gif](https://www.screentogif.com/)
+    - Used to create gifs for my readme.
 - [Heroku](https://www.heroku.com/)
     - To deploy project.
 
@@ -320,4 +326,21 @@ This project was deployed using Github and Heroku.
     5. Type ‘git clone’ and then paste the URL you copied. Press Enter.
 
     For more information on cloning check out the github documentation [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+
+## Credits
+
+### Code
+
+ -  I learnt how to change the fields label inside forms from this thread on [stackoverflow.com](https://stackoverflow.com/questions/636905/django-form-set-label).
+
+ - I learnt how to reflect the active page in the navbar here on [tekshinobi.com](https://tekshinobi.com/setting-active-navbar-link-in-django-template/).
+
+ ### Media
+
+ - The hero image was taken from [coop.co.uk](https://www.coop.co.uk/recipes/earl-grey-poached-pears-with-ice-cream).
+ - All other food images were taken from [bbc.co.uk/food](https://www.bbc.co.uk/food).
+
+
+
+
 

@@ -34,6 +34,7 @@ class RecipeForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(RecipeForm, self).__init__(*args, **kwargs)
+        # Code to change fields labels learnt from https://stackoverflow.com/questions/636905/django-form-set-label
         self.fields[
             'vegetarian'
             ].label = "Is the recipe suitable for vegetarians?"

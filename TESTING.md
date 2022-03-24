@@ -337,3 +337,7 @@
 - I couldnt get the hero image to render on heroku. I moved from css to html then linked the URL from cloudinary.
 
 - Dietary labels were moving depending on the description length of each recipe. Changing the labels to relative postiton fixed this.
+
+### Unfixed
+
+- Theres a pylint error in models.py that states 'User model imported from django.contrib.auth.models'. Nothing I tried could rectify this.
