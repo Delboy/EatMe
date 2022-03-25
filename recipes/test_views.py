@@ -109,6 +109,14 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'edit_recipe.html')
 
+    def test_404_error_page(self):
+        """
+        Test to ensure 404 error page is displayed
+        """
+        response = self.client.get('/xxx/')
+        self.assertEqual(response.status_code, 404)
+        self.assertTemplateUsed('404.html')
+
     # Testing page functionality
 
     def test_can_add_recipe(self):
