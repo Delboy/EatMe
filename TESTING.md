@@ -124,6 +124,12 @@
 
 ![featured](assets/images/featured.gif)
 
+## Unit testing
+
+Unit tests were written for forms, models, and views with the coverage report showing 100%.
+
+![Coverage](assets/images/coverage.png)
+
 ## Feature Testing
 
 ### Home Page
