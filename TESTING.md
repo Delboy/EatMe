@@ -1,5 +1,22 @@
 # Eat Me! - Testing
 
+## Contents 
+
+- [Validators](#validators)
+- [User story testing](#user-story-testing)
+- [Unit Testing](#unit-testing)
+- [Feature Testing](#feature-testing)
+    * [Home page](#home-page)
+    * [Accounts](#accounts)
+    * [All Recipes page](#all-recipes-page)
+    * [Favourite Recipes](#favourite-recipes)
+    * [Your Recipes](#your-recipes)
+    * [Searched Recipes](#searched-recipes)
+    * [Recipe Detail page](#recipe-detail-page)
+    * [Add Recipe page](#add-recipe-page)
+    * [Edit Recipe page](#edit-recipe-page)
+- [Bugs](#bugs)
+
 ## Validators
 - HTML
     - No errors were returned when passing through the official[W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Featmeproject.herokuapp.com%2F)
@@ -12,6 +29,7 @@
 - Lighthouse
 
     ![lighthouse](assets/images/lighthouse.png)
+
 ## User Story Testing
 
 ### EPIC | Navigation
@@ -237,7 +255,7 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![vegan search](assets/images/vegan-search.gif)
 
-### Recipe Deatail Page
+### Recipe Detail Page
 
 - #### Recipe Card
     - Checked that at the top of the page the recipe card will show the image, title, author, published date and any dietry information.
