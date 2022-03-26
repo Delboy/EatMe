@@ -2,7 +2,48 @@
 
 Here is a link to the live project. (https://eatmeproject.herokuapp.com/)
 
-Eat me! is a website where users come together to share their favourite created recipes. It is built using the Django Framework in python. 
+Eat me! is a website where users come together to share their favourite created recipes. It is built using the Django Framework in python.
+
+![responsive](assets/images/responsive.png)
+
+## Contents 
+
+- [User Experience (UX)](#user-experience-ux)
+   * [User Stories](#user-stories)
+   
+- [Design](#design)
+   * [Colour Scheme](#colour-scheme)
+   * [Typography](#typography)
+   * [Imagery](#imagery)
+   * [Wireframes](#wireframes)
+   * [Database Schema](#database-schema)
+
+- [Features](#features)
+   * [Home page](#home-page)
+   * [Accounts](#accounts)
+   * [All Recipes page](#all-recipes-page)
+   * [Favourite Recipes](#favourite-recipes)
+   * [Your Recipes](#your-recipes)
+   * [Searched Recipes](#searched-recipes)
+   * [Recipe Detail page](#recipe-detail-page)
+   * [Add Recipe page](#add-recipe-page)
+   * [Edit Recipe page](#edit-recipe-page)
+
+- [Technologies](#technologies)
+   * [Languages used](#languages-used)
+   * [Libraries & Programs Used](#libraries-and-programs-used)
+
+- [Testing](#testing)
+  
+- [Deployment](#deployment)
+   * [Github pages](#github)
+   * [Django and Heroku](#django-and-heroku)
+   * [Forking](#forking)
+   * [Clone](#clone)
+
+- [Credits](#credits)
+   * [Code](#code)
+   * [Media](#media)
 
 ## User Experience (UX)
 
@@ -174,7 +215,7 @@ Wireframes for each page are linked here:
 
     ![search page](assets/images/searched-page.png)
 
-### Recipe Deatail Page
+### Recipe Detail Page
 
 - #### Recipe Card
     - At the top of the page the recipe card will show the image, title, author, published date and any dietry information.
@@ -229,14 +270,16 @@ Wireframes for each page are linked here:
 
     ![edit recipe page](assets/images/edit-recipe-page.png)
 
-## Languages used
+## Technologies
+
+### Languages used
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 - [Python](https://www.python.org/)
 
-## Libraries and Programs Used
+### Libraries and Programs Used
 
 - [Git](https://git-scm.com/)
     - Version control.
@@ -304,7 +347,7 @@ This project was deployed using Github and Heroku.
     5. I input a repository name then clicked the green ‘create repository button’ at the bottom of the page.
     6. Once created I opened the new repository and clicked the green ‘Gitpod’ button to create a workspace in Gitpod for editing.
 
-- ### Django & Heroku
+- ### Django and Heroku
 
     To get the Django framework installed and set up I followed the Code institutes [Django Blog cheatsheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf).
 
