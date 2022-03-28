@@ -33,8 +33,8 @@
 ## User Story Testing
 
 ### EPIC | Navigation
-*As a User I can immediately understand the websites purpose so that I know if its what im looking for.*
-- As soon as a user arrives on the home page they are welcomed by a brief message explaining the sites purpose.
+*As a User I can immediately understand the website's purpose so that I know if it's what I'm looking for.*
+- As soon as a user arrives on the home page they are welcomed by a brief message explaining the site's purpose.
 
 ![hero image](assets/images/hero.png)
 
@@ -49,12 +49,12 @@
 ![all recipes](assets/images/all-recipes.png)
 
 *As a User I can click on a recipe so that I can read the recipe details.*
-- Clicking anywhere inseide a recipes card will take you directly to the recipes page.
+- Clicking anywhere inside a recipes card will take you directly to the recipes page.
 
 ![open recipes](assets/images/open-recipe.gif)
 
-*As a User I can search recipes so that I can find specific recipes im looking for.*
-- In the top righthand corner of the navigation bar is a search bar.
+*As a User I can search recipes so that I can find specific recipes I'm looking for.*
+- In the top right hand corner of the navigation bar is a search bar.
 
 ![search recipes](assets/images/search.gif)
 
@@ -70,7 +70,7 @@
 ![your recipes](assets/images/your-recipes.png)
 
 *As a User I can edit recipes so that I can update any changes or mistakes to my recipes.*
-- On the 'Your Recipes' page each recipe will have a 'Edit' button which can be used to edit the recipe.
+- On the 'Your Recipes' page each recipe will have an 'Edit' button which can be used to edit the recipe.
 
 ![edit recipes](assets/images/edit-recipe.gif)
 
@@ -132,13 +132,13 @@
 ![log status](assets/images/log-status.png)
 
 ### EPIC | Admin
-*As a Admin I can view, create, edit and delete all recipes and comments so that I can control the websites content.*
-- Admins have full access to CRUD functionallity for both recipes and comments in the admins page.
+*As an Admin I can view, create, edit and delete all recipes and comments so that I can control the website's content.*
+- Admins have full access to CRUD functionality for both recipes and comments in the admins page.
 
 ![admin](assets/images/admin.png)
 
-*As a Admin I can feature recipes so that I can highlight them on the home page.*
-- Admins can select any recipe to be featured form the admins page.
+*As an Admin I can feature recipes so that I can highlight them on the home page.*
+- Admins can select any recipe to be featured from the admins page.
 
 ![featured](assets/images/featured.gif)
 
@@ -153,15 +153,25 @@ Unit tests were written for forms, models, and views with the coverage report sh
 ### Home Page
 
 - #### Navigation bar
-    - Checked all the links on the navbar render the correct page and darken the active page's link.
+    - Checked that all the links on the navbar darken when hovering over and render the correct page when clicked, keeping the active page's link dark and bold.
     - Checked that clicking the logo returns to the home page.
-    - Checked that clicking your log in status takes you to your recipes page.
+    - Checked that clicking your login status takes you to your recipes page.
 
-    ![link check](assets/images/link-check.gif) 
+    ![link check](assets/images/link-check.gif)
+
+    - Checked that the option to Register or Log in changes to the option to log out once a user has logged in.
+    - Checked that once a user has signed in more options such as 'Your Recipes' and 'Favourite Recipes' become available.
+    - Checked that text appears in the bar stating which user is signed.
+
+    ![nav bar change](assets/images/navbar-change.gif)
+
+    - Checked that the navbar is fully responsive, collapsing into a hamburger menu when the screen size becomes too small.
+
+     ![responsive nav bar](assets/images/responsive-navbar.gif)
 
 - #### Hero Image
     - Checked that the sign up button takes you to the sign up page.
-    - Checked the view recipes takes you to the all recipes page. 
+    - Checked the view recipes button takes you to the all recipes page. 
 
     ![sign up button](assets/images/sign-up-btn.gif) 
 
@@ -170,21 +180,21 @@ Unit tests were written for forms, models, and views with the coverage report sh
 - #### Carousel
     - Checked that featured recipes appear in the carousel.
     - Checked that clicking the image takes you to the correct recipe's detail page.
-    - Checked that the buttons on the edge of the carrousel scroll through all the featured recipes.
+    - Checked that the buttons on the edge of the carousel scroll through all the featured recipes.
 
     ![featured recipe list](assets/images/featured-list.png) 
 
     ![carousel](assets/images/carousel.gif) 
 
 - #### Most Loved Recipes
-    - Checked that the list is no longer then 5.
+    - Checked that the list is no longer than 5.
     - Checked that clicking each recipe takes you to the correct recipe's detail page.
-    - Checked that the all recipes link can takes you to the all recipes page.
+    - Checked that the all recipes link takes you to the all recipes page.
 
     ![most loved](assets/images/most-loved.gif) 
 
 - #### Footer
-    - Checked that clicking the links in the footer takes you to the correct page in a seperate browser.
+    - Checked that clicking the links in the footer takes you to the correct page in a separate browser.
 
     ![footer](assets/images/footer-links.gif)
 
@@ -194,15 +204,15 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![sign up](assets/images/sign-up.gif)
 
-- #### Log in Page
-    - Checked that the log in page logs you in.
-    - Checked that a success message will appear once you successfully log in.
+- #### Login Page
+    - Checked that the login page logs you in.
+    - Checked that a success message appears once you successfully log in.
 
     ![log in](assets/images/log-in.gif)
 
 - #### Log out Page
     - Checked that the log out page logs you out.
-    - Checked that a success message will appear once you successfully log out.
+    - Checked that a success message appears once you successfully log out.
 
     ![log out](assets/images/log-in.gif)
 
@@ -210,8 +220,8 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
 - #### Recipe Cards
     - Checked that the site will paginate 6 recipe cards to a page.
-    - Checked that each card displays the recipes image, Title, Author, Description, Published date and how many likes it has recieved.
-    - Checked that if the recipe is vegetarian or vegan a small green corosponding label is present in the bottom left corner.
+    - Checked that each card displays the recipes image, Title, Author, Description, Published date and how many likes it has received.
+    - Checked that if the recipe is vegetarian or vegan a small green corresponding label is present in the bottom left corner.
     - Checked that clicking anywhere inside the recipes card takes you to the correct recipe's detail page.
 
     ![recipe cards](assets/images/recipe-cards.gif)
@@ -223,7 +233,7 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![favourite recipes](assets/images/fav-recipes.gif)
 
-    - Checked that if a user tries to access this page without being signed in they recieve a not logged in error.
+    - Checked that if a user tries to access this page without being signed in they receive a not logged in error.
 
     ![favourite recipes error](assets/images/fav-recipes-error.gif)
 
@@ -231,7 +241,7 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
 - #### Your Recipes
     - Checked that this page displays only the recipes that the user has created. 
-    - Checked that at the 'Add Recipe' button takes the user to the add recipe page.
+    - Checked that the 'Add Recipe' button takes the user to the add recipe page.
     - Checked that each recipe has two buttons, an edit and a delete button.
     - Checked that the edit button takes the user to the edit recipe page for that particular recipe.
     - Checked that clicking the delete button brings up a modal which asks the user if they are sure they want to delete that particular recipe.
@@ -240,7 +250,7 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![your recipes](assets/images/your-recipes.gif)
 
-    - Checked that if a user tries to access the page without being signed in they will recieve a not logged in error. 
+    - Checked that if a user tries to access the page without being signed in they will receive a not logged in error. 
 
     ![your recipes error](assets/images/your-recipes-error.gif)
 
@@ -258,12 +268,12 @@ Unit tests were written for forms, models, and views with the coverage report sh
 ### Recipe Detail Page
 
 - #### Recipe Card
-    - Checked that at the top of the page the recipe card will show the image, title, author, published date and any dietry information.
+    - Checked that at the top of the page the recipe card will show the image, title, author, published date and any dietary information.
 
     ![recipe card top](assets/images/recipe-card-top.png)
 
 - #### Main Section
-    - Checked that the main body of the page consists of the decription, ingredients, and method.
+    - Checked that the main body of the page consists of the description, ingredients, and method.
     - Checked that the bottom section has an icon and counter for both likes and comments.
     - Checked that clicking the outlined heart fills in the heart, adds 1 to the counter, and adds the recipe to the users favourite recipes page.
     - Checked that clicking a filled in heart changes the heart back to an outline, reduces the counter by 1 and removes the recipe from the users favourite recipe page.
@@ -271,7 +281,7 @@ Unit tests were written for forms, models, and views with the coverage report sh
     ![recipe main section](assets/images/recipe-main-section.gif)
 
 - #### Comments
-    - Checked that you can view comments left.
+    - Checked that users can view comments left.
 
     ![comments](assets/images/comment.png)
 
@@ -283,11 +293,11 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![comments test](assets/images/comments-test.gif)
 
-    - Checked that if a user tries to edit a comment without being signed in they recieve a not logged in error.
+    - Checked that if a user tries to edit a comment without being signed in they receive a not logged in error.
 
     ![edit comment error](assets/images/edit-comment-error.gif)
 
-    - Checked that if a user tries to edit a comment that does not belong to them they recieve a foribiddn access error.  
+    - Checked that if a user tries to edit a comment that does not belong to them they receive a forbidden access error.  
 
     ![edit comment error](assets/images/edit-comment-error2.gif)
 
@@ -302,12 +312,12 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![recipe profanity](assets/images/recipe-profanity.gif)
 
-    - Checked that the form has two checkbox's that toggle wether the recipe is suitable for vegetarians or vegans. 
-    - Checked that clicking the vegan checkbox automatically checks the vegetarian checkbox and subsequently unchcecking the vegetarian box unchecks the vegan box.
+    - Checked that the form has two checkbox's that toggle whether the recipe is suitable for vegetarians or vegans. 
+    - Checked that clicking the vegan checkbox automatically checks the vegetarian checkbox and subsequently unchecking the vegetarian box unchecks the vegan box.
 
-    ![dietry checkbox](assets/images/dietry-checkbox.gif)
+    ![dietary checkbox](assets/images/dietary-checkbox.gif)
 
-    - Checked that the user can uplaod an image by either uploading an image or by using the image's URL address.
+    - Checked that the user can upload an image by either uploading an image or by using the image's URL address.
 
     ![image upload](assets/images/img-upload.gif)
 
@@ -322,24 +332,24 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![upload recipe](assets/images/upload-recipe.gif)
 
-    - Checked that if a user tries to access this page without being signed in they will recieve a not logged in error.
+    - Checked that if a user tries to access this page without being signed in they will receive a not logged in error.
 
     ![add recipe error](assets/images/add-recipe-error.gif)  
 
 ### Edit Recipe Page
 
 - #### Editing Recipes
-    - Checked that editing a recipe brings up the form that was filled in when the recipe was created, and has all the fields filled out with the orginal content.
+    - Checked that editing a recipe brings up the form that was filled in when the recipe was created, and has all the fields filled out with the original content.
     - Checked that changing the content and hitting save at the bottom of the page saves the recipe.
     - Checked that a success message appears once a recipe is edited successfully.
 
     ![check edit recipe](assets/images/edit-recipe-check.gif)  
 
-    - Checked that if a user tries to access this page without being signed in they will recieve a not logged in error.
+    - Checked that if a user tries to access this page without being signed in they will receive a not logged in error.
 
     ![edit recipe error](assets/images/edit-recipe-error.gif)  
 
-    - Checked that if a user tries to edit a recipe that does not belong to them they recieve a forbidden access error.
+    - Checked that if a user tries to edit a recipe that does not belong to them they receive a forbidden access error.
 
     ![edit recipe error2](assets/images/edit-recipe-error2.gif)
 
@@ -347,24 +357,23 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
 ### Fixed 
 
-- I had a problem where I couldnt get the proper image to display when uploading a recipe. I was originally tryin an if else statement that ran, if image, else if image_url, else default. This didnt work because cloudinary recognises the default image as an image present. I fixed this by changing the if statement to, if placeholder does not exist, use uploaded image, else if image url exists, use that, else use the default image.
+- I had a problem where I couldn't get the proper image to display when uploading a recipe. I was originally tryin an if else statement that ran, if image, else if image_url, else default. This didn't work because cloudinary recognises the default image as an image present. I fixed this by changing the if statement to, if placeholder does not exist, use uploaded image, else if image url exists, use that, else use the default image.
 
-- I had a bug that would change the width of the pages content when typing in the search bar. It only happened on pages that had paginated recipes with only 3 or less results. Using chrome dev tools I found the culprit to be a function of bootstrap. It had something to do with the way it was calculating the padding. I tried over riding the padding but nothing seemed to work. I found that if I added padding-right of 1px to every row class it fixed the issue. This however as you can imagine through off my margins every so slightly. It wasn't untill I was fixing another bug which was causing side scrolling to happen on phones that I fixed the issue without needing the row padding. It was as simple as hidding the overflow on the x axis.
+- I had a bug that would change the width of the page's content when typing in the search bar. It only happened on pages that had paginated recipes with only 3 or less results. Using chrome dev tools I found the culprit to be a function of bootstrap. It had something to do with the way it was calculating the padding. I tried over-riding the padding but nothing seemed to work. I found that if I added padding-right of 1px to every row class it fixed the issue. This however as you can imagine, threw off my margins ever so slightly. It wasn't until I was fixing another bug which was causing side scrolling to happen on phones that I fixed the issue without needing the row padding. It was as simple as hiding the overflow on the x axis.
 
-- Log in/out options were not appearing in navbar hamburger menu. Needed to change the divs ID to include the options.
+- Log in/out options were not appearing in the navbar hamburger menu. Needed to change the div's ID to include the options.
 
-- When creating a recipe you could tick the checkbox to label the recipe vegan, which would automaticlly check the vegetarian checkbox, but you could then uncheck the vegetarian checkbox leaving the impossible situation of having a recipe not suitable for vegetarians but suitable for vegans. I fixed this by creating some script that unchecks the vegan box if unchecking the vegetarian box.
+- When creating a recipe you could tick the checkbox to label the recipe vegan, which would automatically check the vegetarian checkbox, but you could then uncheck the vegetarian checkbox leaving the impossible situation of having a recipe not suitable for vegetarians but suitable for vegans. I fixed this by creating some script that unchecks the vegan box if unchecking the vegetarian box.
 
 - No recipes were showing on the all recipes page when not logged in. This is because I accidently had if.user_authenticated written in my views for that function. Once removed all was working correctly.
 
-- Pagination was not working. Upon checking the django documents I realised I hadnt coded correctly for class views. 
+- Pagination was not working. Upon checking the django documents I realised I hadn't coded correctly for class views. 
 
-- An issue arrised where an author would have a duplicate slug if creating a recipe with the same title. This was becuase the slug was simply there author ID followed by the recipes title. To fix this I added the published date and time to the slug rendering every recipe slug unique.
+- An issue arrises where an author would have a duplicate slug if creating a recipe with the same title. This was because the slug was simply their author ID followed by the recipes title. To fix this I added the published date and time to the slug rendering every recipe slug unique.
 
+- I couldn't get the hero image to render on heroku. I moved from css to html then linked the URL from cloudinary.
 
-- I couldnt get the hero image to render on heroku. I moved from css to html then linked the URL from cloudinary.
-
-- Dietary labels were moving depending on the description length of each recipe. Changing the labels to relative postiton fixed this.
+- Dietary labels were moving depending on the description length of each recipe. Changing the labels to relative position fixed this.
 
 ### Unfixed
 

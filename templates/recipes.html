@@ -34,13 +34,13 @@
                                     <img class="card-img-top img-fit" src="{% static 'images/food_default.jpg' %}" height="300" alt="A table of food">
                                     {% endif %}
                                 </div>
-                                <!-- Show dietry label if true -->
+                                <!-- Show dietary label if true -->
                                 {% if recipe.vegan %}
-                                <div class="dietry-box">
+                                <div class="dietary-box">
                                     <p class="vegan-icon">Ve</p>
                                 </div>
                                 {% elif recipe.vegetarian %}
-                                <div class="dietry-box">
+                                <div class="dietary-box">
                                     <p class="vegetarian-icon">V</p>
                                 </div>
                                 {% endif %}

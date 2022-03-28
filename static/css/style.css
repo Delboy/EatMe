@@ -98,8 +98,8 @@ a:hover {
     margin-left: 20px;
 }
 
-/* Dietry Box's */
-.dietry-box {
+/* Dietary Box's */
+.dietary-box {
     position: relative;
     bottom: 35px;
     left: 15px;
@@ -113,7 +113,7 @@ a:hover {
     border-radius: 50%;
 }
 
-.dietry-box-detail {
+.dietary-box-detail {
     position: relative;
     top: 25px;
     left: 20px;
@@ -139,7 +139,7 @@ a:hover {
     left: 28%;
 }
 
-.dietry-text {
+.dietary-text {
     position: relative;
     bottom: 79%;
     left: 10%;
@@ -162,7 +162,7 @@ a:hover {
         margin-top: 60px;
     }
 
-    .dietry-text {
+    .dietary-text {
         margin-left: 5px;
     }
 
@@ -180,7 +180,7 @@ a:hover {
         margin-top: 35px;
     }
 
-    .dietry-text {
+    .dietary-text {
         margin-left: 15px;
     }
 }
