@@ -14,6 +14,18 @@ class RecipeAdmin(SummernoteModelAdmin):
     list_filter = ('published_on', 'author', 'featured', 'vegetarian', 'vegan')
     summernote_fields = ('ingredients', 'method')
 
+    @admin.action(description='Mark selected recipes as featured')
+    def make_featured(self, request, queryset):
+        """Updates featured field to true"""
+        queryset.update(featured=True)
+
+    @admin.action(description='Mark selected recipes as unfeatured')
+    def unfeature(self, request, queryset):
+        """Updates featured field to false"""
+        queryset.update(featured=False)
+
+    actions = [make_featured, unfeature]
+
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
