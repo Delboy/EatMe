@@ -377,4 +377,4 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
 ### Unfixed
 
-- Theres a pylint error in models.py that states 'User model imported from django.contrib.auth.models'. Nothing I tried could rectify this.
+- Theres a pylint error in models.py and test_admin.py that states 'User model imported from django.contrib.auth.models'. Nothing I tried could rectify this.

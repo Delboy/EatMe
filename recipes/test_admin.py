@@ -6,6 +6,9 @@ from django.contrib.admin.sites import AdminSite
 from .models import Recipe
 from .admin import RecipeAdmin
 
+# Used this page on google groups to help me create this page
+# (https://groups.google.com/g/django-users/c/2zN3BlFLIFE)
+
 
 class MockRequest(object):
     """setup mock request"""

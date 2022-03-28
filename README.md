@@ -384,6 +384,8 @@ This project was deployed using Github and Heroku.
 
  - I learnt how to reflect the active page in the navbar here on [tekshinobi.com](https://tekshinobi.com/setting-active-navbar-link-in-django-template/).
 
+ - I used this page to help me write unit tests for my admin functions [Google Groups](https://groups.google.com/g/django-users/c/2zN3BlFLIFE).
+
  ### Media
 
  - The hero image was taken from [coop.co.uk](https://www.coop.co.uk/recipes/earl-grey-poached-pears-with-ice-cream).
