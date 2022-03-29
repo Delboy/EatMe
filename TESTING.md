@@ -145,6 +145,9 @@
 
 ![featured](assets/images/featured.gif)
 
+![featured bulk](assets/images/featured-group.gif)
+
+
 ## Unit testing
 
 Unit tests were written for forms, models, and views with the coverage report showing 100%.
