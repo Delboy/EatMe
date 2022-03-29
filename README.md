@@ -114,6 +114,8 @@ Wireframes for each page are linked here:
 ![Database Schemas can be found here](assets/images/eat-me-schema.png)
 *<i>note</i> - I forgot to add a Body section to the Comment table when designing. By the time I realised that I left it out my trial period for the schema creator website had expired so could not rectify the mistake.
 
+I ended up removing the email field from the comment model in the final build of the site, as I didn't like the overall look of the comment box when it featured the user's email.
+
 ## Features
 
 ### Home Page
@@ -331,7 +333,7 @@ Wireframes for each page are linked here:
 - [Screen to Gif](https://www.screentogif.com/)
     - Used to create gifs for my readme.
 - [Heroku](https://www.heroku.com/)
-    - To deploy project.
+    - To deploy the project.
 
 ## Testing 
 
@@ -391,7 +393,7 @@ This project was deployed using Github and Heroku.
  - The hero image was taken from [coop.co.uk](https://www.coop.co.uk/recipes/earl-grey-poached-pears-with-ice-cream).
  - All other food images were taken from [bbc.co.uk/food](https://www.bbc.co.uk/food).
 
+ ### Other
 
-
-
-
+ - [The code insitutes](https://codeinstitute.net/) 'I think therefore I blog' project which inspired the overall feel of the paginated pages.
+ - The [Django documentation](https://docs.djangoproject.com/en/4.0/) which was instrumental in helping me solve problems.
