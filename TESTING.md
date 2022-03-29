@@ -378,6 +378,8 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
 - Dietary labels were moving depending on the description length of each recipe. Changing the labels to relative position fixed this.
 
+- My script was causing a couple console errors which read 'Uncaught Type Error: Cannot read properties of null'. This was happening because the script was running on every page and searching for elements that only existed on a couple. I fixed this by wrapping the script in an if statement that made sure the elements were present before running the rest of the script.
+
 ### Unfixed
 
-- Theres a pylint error in models.py and test_admin.py that states 'User model imported from django.contrib.auth.models'. Nothing I tried could rectify this.
+- There's a pylint error in models.py and test_admin.py that states 'User model imported from django.contrib.auth.models'. I couldn't find a way to rectify this or understand the cause.
