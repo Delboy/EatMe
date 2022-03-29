@@ -65,8 +65,7 @@
 <div class="container">
     <div class="row">
         <!-- Like counter -->
-        <div class="col-3 col-sm-2 col-md-1" >
-            
+        <div class="col-4 col-sm-2 col-xl-1" >
                 {% if user.is_authenticated %}
                 <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="POST">
                     {% csrf_token %}
@@ -85,7 +84,7 @@
                 <strong>{{ recipe.number_of_likes }}</strong>
         </div>
         <!-- Comment Counter -->
-        <div class="col-3 col-sm-2 col-md-1">
+        <div class="col-4">
             {% with comments.count as total_comments %}
             <strong class="text-secondary"><i class="far fa-comments"></i>
                 {{ total_comments }}
