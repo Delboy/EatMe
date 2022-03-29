@@ -24,6 +24,9 @@
      - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Featmeproject.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 - JavaScript
     - No errors were found when passing through [Jshint](https://jshint.com/)
+
+    ![jshint](assets/images/jshint.png)
+
 - Python
     - No errors were found when passing through [PEP8](http://pep8online.com/)
 - Lighthouse

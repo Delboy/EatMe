@@ -153,27 +153,31 @@
 
     <!-- Script to manage alerts -->
     <script>
-        setTimeout(function () {
-            let messages = document.getElementById("msg");
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
-        }, 3000);
+        let messages = document.getElementById("msg");
+        if (messages){
+            setTimeout(function () {
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }, 3000);
+        }
     </script>
 
     <!-- Script to manage checkboxes when adding or editing recipes -->
     <script>
         let veganBox = document.getElementById('id_vegan');
         let vegBox = document.getElementById('id_vegetarian');
-        veganBox.addEventListener('click', function () {
-            if (vegBox.checked == false) {
-                vegBox.checked = true;
-            }
-        });
-        vegBox.addEventListener('click', function () {
-            if (veganBox.checked == true) {
-                veganBox.checked = false;
-            }
-        });
+        if (veganBox && vegBox) {
+            veganBox.addEventListener('click', function () {
+                if (vegBox.checked == false) {
+                    vegBox.checked = true;
+                }
+            });
+            vegBox.addEventListener('click', function () {
+                if (veganBox.checked == true) {
+                    veganBox.checked = false;
+                }
+            });
+        }
     </script>
 
     <!-- script for changing hero image depending on screen width -->
