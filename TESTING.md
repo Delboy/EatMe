@@ -324,12 +324,15 @@ Unit tests were written for forms, models, and views with the coverage report sh
     ![comments](assets/images/comment.png)
 
     - Checked that only signed in users can leave a comment.
-    - Checked that comments with profanity automatically fail and do not upload.
     - Checked that any comments left by the user that is currently signed in can be edited or deleted.
     - Checked that a success message appears once a comment is left.
     - Checked that a success message appears once a comment is deleted.
 
-    ![comments test](assets/images/comments-test.gif)
+    ![comments test](assets/images/comment-test.gif)
+
+    - Checked that comments with profanity automatically fail and do not upload.
+
+    ![profanity test](assets/images/comment-profanity.gif)
 
     - Checked that if a user tries to edit a comment without being signed in they receive a not logged in error.
 
