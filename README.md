@@ -33,7 +33,7 @@ Eat me! is a website where users come together to share their favourite created 
    * [Languages used](#languages-used)
    * [Libraries & Programs Used](#libraries-and-programs-used)
 
-- [Testing](#testing)
+- [Testing](#eat-me)
   
 - [Deployment](#deployment)
    * [Github pages](#github)
@@ -82,6 +82,8 @@ A list of my user stories and their tasks can be found [here](https://github.com
 - As an Admin I can view, create, edit and delete all recipes and comments so that I can control the website's content.
 - As an Admin I can feature recipes so that I can highlight them on the home page.
 
+[Back to top ⇧](#eat-me)
+
 ## Design
 
 The look of this website was based loosely around The Code Institute's 'I think therefore I Blog' project.  
@@ -115,6 +117,8 @@ Wireframes for each page are linked here:
 *<i>note</i> - I forgot to add a Body section to the Comment table when designing. By the time I realised that I left it out my trial period for the schema creator website had expired so could not rectify the mistake.
 
 I ended up removing the email field from the comment model in the final build of the site, as I didn't like the overall look of the comment box when it featured the user's email.
+
+[Back to top ⇧](#eat-me)
 
 ## Features
 
@@ -165,6 +169,8 @@ I ended up removing the email field from the comment model in the final build of
 
     ![footer](assets/images/footer.png)
 
+[Back to top ⇧](#eat-me)
+
 ### Accounts
 - #### Register Page
     - The register page is used to create an account.
@@ -182,6 +188,8 @@ I ended up removing the email field from the comment model in the final build of
     - A success message will appear once a user successfully logs out.
 
     ![log out page](assets/images/sign-out-page.png)
+
+[Back to top ⇧](#eat-me)
 
 ### All Recipes Page
 
@@ -221,6 +229,8 @@ I ended up removing the email field from the comment model in the final build of
     - If the word vegetarian, or vegan is entered into the search bar it will result in all vegetarian or vegan recipes and not just ones with those words in the title. 
 
     ![search page](assets/images/searched-page.png)
+
+[Back to top ⇧](#eat-me)
 
 ### Recipe Detail Page
 
@@ -276,6 +286,8 @@ I ended up removing the email field from the comment model in the final build of
     - If a user tries to edit a recipe that does not belong to them they receive a forbidden access error.
 
     ![edit recipe page](assets/images/edit-recipe-page.png)
+
+[Back to top ⇧](#eat-me)
 
 ## Technologies
 
@@ -334,6 +346,8 @@ I ended up removing the email field from the comment model in the final build of
     - Used to create gifs for my readme.
 - [Heroku](https://www.heroku.com/)
     - To deploy the project.
+
+[Back to top ⇧](#eat-me)
 
 ## Testing 
 
@@ -397,3 +411,5 @@ This project was deployed using Github and Heroku.
 
  - [The code insitutes](https://codeinstitute.net/) 'I think therefore I blog' project which inspired the overall feel of the paginated pages.
  - The [Django documentation](https://docs.djangoproject.com/en/4.0/) which was instrumental in helping me solve problems.
+
+[Back to top ⇧](#eat-me)

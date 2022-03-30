@@ -20,6 +20,7 @@
 ## Validators
 - HTML
     - No errors were returned when passing through the official[W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Featmeproject.herokuapp.com%2F)
+    *<i>note</i> - On pages where a form the validator throws a host of errors. These errors are caused by the installed Summernot library and as such are unable to be rectified. 
 - CSS 
      - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Featmeproject.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 - JavaScript
@@ -61,6 +62,8 @@
 
 ![search recipes](assets/images/search.gif)
 
+[Back to top ⇧](#eat-me---testing)
+
 ### EPIC | User's Recipes
 *As a User I can create recipes so that other users can view them.*
 - Once a user has created an account they can navigate to 'Your Recipes' and from there can enter a recipe by clicking the add recipe button and filling out the subsequent form. Once created they will appear on the All Recipes page.
@@ -87,6 +90,8 @@
 
 ![favourite recipes](assets/images/fav-recipes.png)
 
+[Back to top ⇧](#eat-me---testing)
+
 ### EPIC | User Interaction
 *As a User I can like/unlike recipes so that I can mark which recipes I enjoyed.*
 - Each recipe has a heart button which can be toggled by signed in users to like/unlike the recipe.
@@ -112,6 +117,8 @@
 
 ![comment](assets/images/comment.png)
 
+[Back to top ⇧](#eat-me---testing)
+
 ### EPIC | Sign in
 *As a User I can register for an account so that I can begin to use the services afforded to members.*
 - In the navbar is a register link that takes you to the sign up page.
@@ -134,6 +141,8 @@
 
 ![log status](assets/images/log-status.png)
 
+[Back to top ⇧](#eat-me---testing)
+
 ### EPIC | Admin
 *As an Admin I can view, create, edit and delete all recipes and comments so that I can control the website's content.*
 - Admins have full access to CRUD functionality for both recipes and comments in the admins page.
@@ -147,6 +156,7 @@
 
 ![featured bulk](assets/images/featured-group.gif)
 
+[Back to top ⇧](#eat-me---testing)
 
 ## Unit testing
 
@@ -175,13 +185,17 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
      ![responsive nav bar](assets/images/responsive-navbar.gif)
 
+[Back to top ⇧](#eat-me---testing)
+
 - #### Hero Image
     - Checked that the sign up button takes you to the sign up page.
     - Checked the view recipes button takes you to the all recipes page. 
 
     ![sign up button](assets/images/sign-up-btn.gif) 
 
-    ![view recipe button](assets/images/view-recipes-btn.gif) 
+    ![view recipe button](assets/images/view-recipes-btn.gif)
+
+[Back to top ⇧](#eat-me---testing) 
 
 - #### Carousel
     - Checked that featured recipes appear in the carousel.
@@ -190,14 +204,18 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![featured recipe list](assets/images/featured-list.png) 
 
-    ![carousel](assets/images/carousel.gif) 
+    ![carousel](assets/images/carousel.gif)
+
+[Back to top ⇧](#eat-me---testing) 
 
 - #### Most Loved Recipes
     - Checked that the list is no longer than 5.
     - Checked that clicking each recipe takes you to the correct recipe's detail page.
     - Checked that the all recipes link takes you to the all recipes page.
 
-    ![most loved](assets/images/most-loved.gif) 
+    ![most loved](assets/images/most-loved.gif)
+
+[Back to top ⇧](#eat-me---testing) 
 
 - #### Footer
     - Checked that clicking the links in the footer takes you to the correct page in a separate browser.
@@ -222,6 +240,8 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![log out](assets/images/log-in.gif)
 
+[Back to top ⇧](#eat-me---testing)
+
 ### All Recipes Page
 
 - #### Recipe Cards
@@ -231,6 +251,8 @@ Unit tests were written for forms, models, and views with the coverage report sh
     - Checked that clicking anywhere inside the recipes card takes you to the correct recipe's detail page.
 
     ![recipe cards](assets/images/recipe-cards.gif)
+
+[Back to top ⇧](#eat-me---testing)
 
 ### Favourite Recipes Page
 
@@ -242,6 +264,8 @@ Unit tests were written for forms, models, and views with the coverage report sh
     - Checked that if a user tries to access this page without being signed in they receive a not logged in error.
 
     ![favourite recipes error](assets/images/fav-recipes-error.gif)
+
+[Back to top ⇧](#eat-me---testing)
 
 ### Your Recipes Page
 
@@ -260,6 +284,8 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![your recipes error](assets/images/your-recipes-error.gif)
 
+[Back to top ⇧](#eat-me---testing)
+
 ### Searched Recipes Page
 
 - #### Searched Recipes
@@ -271,12 +297,16 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![vegan search](assets/images/vegan-search.gif)
 
+[Back to top ⇧](#eat-me---testing)
+
 ### Recipe Detail Page
 
 - #### Recipe Card
     - Checked that at the top of the page the recipe card will show the image, title, author, published date and any dietary information.
 
     ![recipe card top](assets/images/recipe-card-top.png)
+
+[Back to top ⇧](#eat-me---testing)
 
 - #### Main Section
     - Checked that the main body of the page consists of the description, ingredients, and method.
@@ -285,6 +315,8 @@ Unit tests were written for forms, models, and views with the coverage report sh
     - Checked that clicking a filled in heart changes the heart back to an outline, reduces the counter by 1 and removes the recipe from the users favourite recipe page.
 
     ![recipe main section](assets/images/recipe-main-section.gif)
+
+[Back to top ⇧](#eat-me---testing)
 
 - #### Comments
     - Checked that users can view comments left.
@@ -306,6 +338,8 @@ Unit tests were written for forms, models, and views with the coverage report sh
     - Checked that if a user tries to edit a comment that does not belong to them they receive a forbidden access error.  
 
     ![edit comment error](assets/images/edit-comment-error2.gif)
+
+[Back to top ⇧](#eat-me---testing)
 
 ### Add Recipe Page
 
@@ -340,7 +374,9 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     - Checked that if a user tries to access this page without being signed in they will receive a not logged in error.
 
-    ![add recipe error](assets/images/add-recipe-error.gif)  
+    ![add recipe error](assets/images/add-recipe-error.gif)
+
+[Back to top ⇧](#eat-me---testing)  
 
 ### Edit Recipe Page
 
@@ -358,6 +394,8 @@ Unit tests were written for forms, models, and views with the coverage report sh
     - Checked that if a user tries to edit a recipe that does not belong to them they receive a forbidden access error.
 
     ![edit recipe error2](assets/images/edit-recipe-error2.gif)
+
+[Back to top ⇧](#eat-me---testing)
 
 ## Bugs
 
@@ -386,3 +424,9 @@ Unit tests were written for forms, models, and views with the coverage report sh
 ### Unfixed
 
 - There's a pylint error in models.py and test_admin.py that states 'User model imported from django.contrib.auth.models'. I couldn't find a way to rectify this or understand the cause.
+
+- The W3C validators show errors on pages using a form. This is because of the installed Summernote library and as such are unable to be rectified.
+
+- A few pylint errors show in the settings.py file but can be ignored as they are unavoidable.
+
+[Back to top ⇧](#eat-me---testing)
