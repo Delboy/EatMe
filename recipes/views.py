@@ -80,6 +80,7 @@ class RecipeDetail(View):
             messages.success(request, 'Comment added successfully')
         else:
             comment_form = CommentForm()
+            messages.error(request, 'Error posting comment. Check for profanity')
 
         return render(
             request,
