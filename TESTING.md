@@ -20,7 +20,7 @@
 ## Validators
 - HTML
     - No errors were returned when passing through the official[W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Featmeproject.herokuapp.com%2F)
-    *<i>note</i> - On pages where a form the validator throws a host of errors. These errors are caused by the installed Summernot library and as such are unable to be rectified. 
+    *<i>note</i> - When validating the add recipe and edit recipe pages the validator throws a host of errors. These errors are caused by the installed Summernote library which runs when using the form on these pages, and as such are unable to be rectified.
 - CSS 
      - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Featmeproject.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 - JavaScript
@@ -48,12 +48,12 @@
 ![nav-bar](assets/images/navbar.png)
 
 *As a User I can view a list of recipes so that I can choose one to read.*
-- The all recipes page shows a list of every page on the site.
+- The all recipes page shows a list of every recipe on the site.
 
 ![all recipes](assets/images/all-recipes.png)
 
 *As a User I can click on a recipe so that I can read the recipe details.*
-- Clicking anywhere inside a recipes card will take you directly to the recipes page.
+- Clicking anywhere inside a recipe card will take you directly to that recipe's page.
 
 ![open recipes](assets/images/open-recipe.gif)
 
@@ -71,7 +71,7 @@
 ![add recipes](assets/images/add-recipe.gif)
 
 *As a User I can view my recipes so that I can see and manage all recipes I have created.*
-- All the users created recipes are available to see and manage on the 'Your Recipes' page.
+- All the user's created recipes are available to see and manage on the 'Your Recipes' page.
 
 ![your recipes](assets/images/your-recipes.png)
 
@@ -160,7 +160,7 @@
 
 ## Unit testing
 
-Unit tests were written for forms, models, and views with the coverage report showing 100%.
+Unit tests were written for forms, models, views and admin, with the coverage report showing 100%.
 
 ![Coverage](assets/images/coverage.png)
 
@@ -171,13 +171,13 @@ Unit tests were written for forms, models, and views with the coverage report sh
 - #### Navigation bar
     - Checked that all the links on the navbar darken when hovering over and render the correct page when clicked, keeping the active page's link dark and bold.
     - Checked that clicking the logo returns to the home page.
-    - Checked that clicking your login status takes you to your recipes page.
+    - Checked that clicking your login status takes you to 'Your Recipes' page.
 
     ![link check](assets/images/link-check.gif)
 
     - Checked that the option to Register or Log in changes to the option to log out once a user has logged in.
-    - Checked that once a user has signed in more options such as 'Your Recipes' and 'Favourite Recipes' become available.
-    - Checked that text appears in the bar stating which user is signed.
+    - Checked that once a user has signed in, more options such as 'Your Recipes' and 'Favourite Recipes' become available.
+    - Checked that text appears in the navbar stating which user is signed in.
 
     ![nav bar change](assets/images/navbar-change.gif)
 
@@ -211,7 +211,7 @@ Unit tests were written for forms, models, and views with the coverage report sh
 - #### Most Loved Recipes
     - Checked that the list is no longer than 5.
     - Checked that clicking each recipe takes you to the correct recipe's detail page.
-    - Checked that the all recipes link takes you to the all recipes page.
+    - Checked that the all recipes link takes you to the 'All Recipes' page.
 
     ![most loved](assets/images/most-loved.gif)
 
@@ -271,9 +271,9 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
 - #### Your Recipes
     - Checked that this page displays only the recipes that the user has created. 
-    - Checked that the 'Add Recipe' button takes the user to the add recipe page.
+    - Checked that the 'Add Recipe' button takes the user to the 'Add Recipe' page.
     - Checked that each recipe has two buttons, an edit and a delete button.
-    - Checked that the edit button takes the user to the edit recipe page for that particular recipe.
+    - Checked that the edit button takes the user to the 'Edit Recipe' page for that particular recipe.
     - Checked that clicking the delete button brings up a modal which asks the user if they are sure they want to delete that particular recipe.
     - Checked that confirming to delete a recipe removes the recipe.
     - Checked that a success message appears when a recipe is deleted successfully.
@@ -289,11 +289,11 @@ Unit tests were written for forms, models, and views with the coverage report sh
 ### Searched Recipes Page
 
 - #### Searched Recipes
-    - Checked that whatever is searched in the search bar displays correct results.
+    - Checked that whatever is searched in the search bar displays the correct results.
 
     ![search bar](assets/images/search.gif)
 
-    - Checked that if the word vegetarian, or vegan is entered into the search bar it will result in all vegetarian or vegan recipes and not just ones with those words in the title. 
+    - Checked that if the word vegetarian, or vegan, is entered into the search bar it will result in all vegetarian or vegan recipes and not just ones with those words in the title. 
 
     ![vegan search](assets/images/vegan-search.gif)
 
@@ -311,8 +311,8 @@ Unit tests were written for forms, models, and views with the coverage report sh
 - #### Main Section
     - Checked that the main body of the page consists of the description, ingredients, and method.
     - Checked that the bottom section has an icon and counter for both likes and comments.
-    - Checked that clicking the outlined heart fills in the heart, adds 1 to the counter, and adds the recipe to the users favourite recipes page.
-    - Checked that clicking a filled in heart changes the heart back to an outline, reduces the counter by 1 and removes the recipe from the users favourite recipe page.
+    - Checked that clicking the outlined heart fills in the heart, adds 1 to the counter, and adds the recipe to the users 'Favourite Recipes' page.
+    - Checked that clicking a filled in heart changes the heart back to an outline, reduces the counter by 1 and removes the recipe from the users 'Favourite Recipes' page.
 
     ![recipe main section](assets/images/recipe-main-section.gif)
 
@@ -355,12 +355,12 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![recipe profanity](assets/images/recipe-profanity.gif)
 
-    - Checked that the form has two checkbox's that toggle whether the recipe is suitable for vegetarians or vegans. 
-    - Checked that clicking the vegan checkbox automatically checks the vegetarian checkbox and subsequently unchecking the vegetarian box unchecks the vegan box.
+    - Checked that the form has two checkboxes that toggle whether the recipe is suitable for vegetarians or vegans. 
+    - Checked that clicking the vegan checkbox automatically checks the vegetarian checkbox, and unchecking the vegetarian box unchecks the vegan box.
 
     ![dietary checkbox](assets/images/dietary-checkbox.gif)
 
-    - Checked that the user can upload an image by either uploading an image or by using the image's URL address.
+    - Checked that the user can upload an image by either uploading the image directly or by using the image's URL address.
 
     ![image upload](assets/images/img-upload.gif)
 
@@ -370,7 +370,7 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
     ![image default](assets/images/img-default.gif)
 
-    - Checked that the add Recipe button uploads the recipe.
+    - Checked that the 'Add Recipe' button uploads the recipe.
     - Checked that a success message appears once a recipe is added successfully.
 
     ![upload recipe](assets/images/upload-recipe.gif)
@@ -404,33 +404,33 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
 ### Fixed 
 
-- I had a problem where I couldn't get the proper image to display when uploading a recipe. I was originally tryin an if else statement that ran, if image, else if image_url, else default. This didn't work because cloudinary recognises the default image as an image present. I fixed this by changing the if statement to, if placeholder does not exist, use uploaded image, else if image url exists, use that, else use the default image.
+- I had a problem where I couldn't get the proper image to display when uploading a recipe. I was originally tryin an 'if/else' statement that first asked if an image is present, and if not asked if an image url was input, and if neither of those were satisfied to use the default image. This didn't work because cloudinary recognises the default image as an image present, which would then fulfil the if statement. I fixed this by having a default of 'placeholder' in the models image field, and changed the if statement to, if placeholder does not exist, use uploaded image, else if image url exists, use that, else use the default image.
 
-- I had a bug that would change the width of the page's content when typing in the search bar. It only happened on pages that had paginated recipes with only 3 or less results. Using chrome dev tools I found the culprit to be a function of bootstrap. It had something to do with the way it was calculating the padding. I tried over-riding the padding but nothing seemed to work. I found that if I added padding-right of 1px to every row class it fixed the issue. This however as you can imagine, threw off my margins ever so slightly. It wasn't until I was fixing another bug which was causing side scrolling to happen on phones that I fixed the issue without needing the row padding. It was as simple as hiding the overflow on the x axis.
+- I had a bug that would change the width of the page's content when typing in the search bar. It only happened on pages that had paginated recipes with only 3 or less results. Using chrome dev tools I found the culprit to be a function of bootstrap. It had something to do with the way it was calculating the padding. I tried over-riding the padding but nothing seemed to work. I found that if I added padding-right of 1px to every row class it fixed the issue. This however as you can imagine, threw off my margins ever so slightly. It wasn't until I was fixing another bug which was causing side scrolling to happen on phones, that I fixed the issue without needing the row padding. It was as simple as hiding the overflow on the x axis.
 
 - Log in/out options were not appearing in the navbar hamburger menu. Needed to change the div's ID to include the options.
 
 - When creating a recipe you could tick the checkbox to label the recipe vegan, which would automatically check the vegetarian checkbox, but you could then uncheck the vegetarian checkbox leaving the impossible situation of having a recipe not suitable for vegetarians but suitable for vegans. I fixed this by creating some script that unchecks the vegan box if unchecking the vegetarian box.
 
-- No recipes were showing on the all recipes page when not logged in. This is because I accidently had if.user_authenticated written in my views for that function. Once removed all was working correctly.
+- No recipes were showing on the 'All Recipes' page when not logged in. This is because I accidently had 'if.user_authenticated' written in my views.py for that function. Once removed all was working correctly.
 
-- Pagination was not working. Upon checking the django documents I realised I hadn't coded correctly for class views. 
+- Pagination was not working. Upon checking the django documents I realised I hadn't coded pagination correctly for Class views. Using the documentation I corrected the mistake. 
 
-- An issue arrises where an author would have a duplicate slug if creating a recipe with the same title. This was because the slug was simply their author ID followed by the recipes title. To fix this I added the published date and time to the slug rendering every recipe slug unique.
+- An issue arises where an author would have a duplicate slug if creating a recipe with the same title. This was because the slug was simply their author ID followed by the recipe's title. To fix this I added the published date and time to the slug, rendering every recipe's slug unique.
 
-- I couldn't get the hero image to render on heroku. I moved from css to html then linked the URL from cloudinary.
+- I couldn't get the hero image to render on heroku. I think it had something to do with rendering static files. So I moved the image source from my CSS file to the home page template and linked the images URL from cloudinary.
 
 - Dietary labels were moving depending on the description length of each recipe. Changing the labels to relative position fixed this.
 
 - My script was causing a couple console errors which read 'Uncaught Type Error: Cannot read properties of null'. This was happening because the script was running on every page and searching for elements that only existed on a couple. I fixed this by wrapping the script in an if statement that made sure the elements were present before running the rest of the script.
 
-- The carousel on the home page was getting stuck on the last recipe if the amount of featured recipes exceeded 3. This was because I had only coded up to 3 positions for the carousel’s controls. I fixed it by changing the controls to a for loop that iterates through the recipes and uses the {{ forloop.counter }} and {{ forloop.counter0 }} templates to work out its positioning. 
+- The carousel on the home page was getting stuck on the last recipe if the amount of featured recipes exceeded 3. This was because I had only coded up to 3 positions for the carousel’s controls. I fixed it by changing the controls to a for loop that iterates through the recipes and uses the {{ forloop.counter }} and {{ forloop.counter0 }} templates to work out their positioning. 
  
 ### Unfixed
 
 - There's a pylint error in models.py and test_admin.py that states 'User model imported from django.contrib.auth.models'. I couldn't find a way to rectify this or understand the cause.
 
-- The W3C validators show errors on pages using a form. This is because of the installed Summernote library and as such are unable to be rectified.
+- The W3C validators show errors on the add and edit recipe pages. This is because of the installed Summernote library and as such are unable to be rectified.
 
 - A few pylint errors show in the settings.py file but can be ignored as they are unavoidable.
 

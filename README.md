@@ -114,7 +114,7 @@ Wireframes for each page are linked here:
 ### Database Schema 
 
 ![Database Schemas can be found here](assets/images/eat-me-schema.png)
-*<i>note</i> - I forgot to add a Body section to the Comment table when designing. By the time I realised that I left it out my trial period for the schema creator website had expired so could not rectify the mistake.
+*<i>note</i> - I forgot to add a Body section to the Comment table when designing. By the time I realised that I left it out my trial period for the schema creator website had expired so I could not rectify the mistake.
 
 I ended up removing the email field from the comment model in the final build of the site, as I didn't like the overall look of the comment box when it featured the user's email.
 
@@ -139,15 +139,15 @@ I ended up removing the email field from the comment model in the final build of
 
 - #### Hero Image
     - The hero image welcomes the user with a short message advertising what the website is about.
-    - A button to sign up and a short message is present in the image. Clicking this takes you to the register an account page.
-    - If a user is already signed the message changes to 'welcome back' and the sign up button changes to a 'view recipes' button, which takes you to the all recipes page.
+    - A button to sign up and a short message is present in the image. Clicking this takes you to the register page.
+    - If a user is already signed in the message changes to 'welcome back' and the sign up button changes to a 'view recipes' button, which takes you to the all recipes page.
 
     ![Hero image](assets/images/hero.png)
 
 - #### Carousel
     - The carousel displays any recipes that the admin has selected to be featured.
     - Clicking the image will take you to that recipe's detail page.
-    - Buttons on the edge if the carousel scroll through all the featured recipes.
+    - Buttons on the edge of the carousel scroll through all the featured recipes.
 
     ![carousel](assets/images/carousel.png)
 
@@ -226,7 +226,7 @@ I ended up removing the email field from the comment model in the final build of
 
 - #### Searched Recipes
     - Anything entered into the search bar in the navigation bar displays results here.
-    - If the word vegetarian, or vegan is entered into the search bar it will result in all vegetarian or vegan recipes and not just ones with those words in the title. 
+    - If the word vegetarian or vegan is entered into the search bar, it will result in all vegetarian or vegan recipes, not just ones with those words in the title. 
 
     ![search page](assets/images/searched-page.png)
 
@@ -242,8 +242,8 @@ I ended up removing the email field from the comment model in the final build of
 - #### Main Section
     - The main body of the page consists of the description, ingredients, and method. These combined is what creates the whole recipe.
     - At the bottom of the section is an icon and counter for both likes and comments.
-    - Clicking the outlined heart renders the recipe 'liked' by the user which will fill in the heart, add 1 to the counter, and add the recipe to the users favourite recipes page.
-    - Alternatively, clicking a filled in heart renders the recipe 'unliked' which will change the heart back to an outline, reduce the counter by 1 and remove the recipe from the users favourite recipe page.
+    - Clicking the outlined heart renders the recipe 'liked' by the user which will then fill in the heart, add 1 to the counter, and add the recipe to the users favourite recipes page.
+    - Alternatively, clicking a filled in heart renders the recipe 'unliked' which will then change the heart back to an outline, reduce the counter by 1 and remove the recipe from the user's favourite recipe page.
 
     ![recipe main section](assets/images/recipe-main-section.png)
 
@@ -264,7 +264,7 @@ I ended up removing the email field from the comment model in the final build of
 - #### Adding Recipes
     - The adding recipe page is where users upload their creations.
     - Each recipe is uploaded by filling out a form.
-    - Failing to fill out either the recipes Title, Description, Ingredients, or Method results in the form failing and rendering a message stating which fields you have missed.
+    - Failing to fill out either the recipes Title, Description, Ingredients, or Method, results in the form failing and rendering a message stating which fields you have missed.
     - Using profanity will result in the form failing and the relevant section will be flagged with a message.
     - The form has two checkbox's that toggle whether the recipe is suitable for vegetarians or vegans. 
     - Clicking the vegan checkbox automatically checks the vegetarian checkbox and subsequently unchecking the vegetarian box unchecks the vegan box.
@@ -396,7 +396,7 @@ This project was deployed using Github and Heroku.
 
 ### Code
 
- -  I learnt how to change the fields label inside forms from this thread on [stackoverflow.com](https://stackoverflow.com/questions/636905/django-form-set-label).
+ -  I learnt how to change the form's field's label in this thread [stackoverflow.com](https://stackoverflow.com/questions/636905/django-form-set-label).
 
  - I learnt how to reflect the active page in the navbar here on [tekshinobi.com](https://tekshinobi.com/setting-active-navbar-link-in-django-template/).
 
@@ -409,7 +409,7 @@ This project was deployed using Github and Heroku.
 
  ### Other
 
- - [The code insitutes](https://codeinstitute.net/) 'I think therefore I blog' project which inspired the overall feel of the paginated pages.
+ - [The code insitutes](https://codeinstitute.net/) 'I think therefore I blog' project which inspired the overall feel of the paginated and recipe detail pages.
  - The [Django documentation](https://docs.djangoproject.com/en/4.0/) which was instrumental in helping me solve problems.
 
 [Back to top ⇧](#eat-me)
