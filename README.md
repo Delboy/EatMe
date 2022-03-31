@@ -28,6 +28,7 @@ Eat me! is a website where users come together to share their favourite created 
    * [Recipe Detail page](#recipe-detail-page)
    * [Add Recipe page](#add-recipe-page)
    * [Edit Recipe page](#edit-recipe-page)
+   * [Features to add](#features-to-add)
 
 - [Technologies](#technologies)
    * [Languages used](#languages-used)
@@ -286,6 +287,11 @@ I ended up removing the email field from the comment model in the final build of
     - If a user tries to edit a recipe that does not belong to them they receive a forbidden access error.
 
     ![edit recipe page](assets/images/edit-recipe-page.png)
+
+- #### Features to add
+    - A star rating system to replace the like button. Users would score each recipe out of 5 with the average reflected as filled stars.
+    - Submenus for All Recipes. Sections such as breakfast, lunch, dinner, dessert, or cultural sections such as mediterranean, asian, spanish etc.
+    - Option to share recipes on social media.
 
 [Back to top ⇧](#eat-me)
 
