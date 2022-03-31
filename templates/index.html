@@ -41,12 +41,10 @@
                 <!-- Carousel -->
                 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
-                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
+                        {% for recipe in recipes %}
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ forloop.counter0 }}"
+                            class="active" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+                        {% endfor %}
                     </div>
                     <!-- Featured Recipes -->
                     <h3 class="h3 display-6 text-center">Featured Recipes</h3>

@@ -424,6 +424,8 @@ Unit tests were written for forms, models, and views with the coverage report sh
 
 - My script was causing a couple console errors which read 'Uncaught Type Error: Cannot read properties of null'. This was happening because the script was running on every page and searching for elements that only existed on a couple. I fixed this by wrapping the script in an if statement that made sure the elements were present before running the rest of the script.
 
+- The carousel on the home page was getting stuck on the last recipe if the amount of featured recipes exceeded 3. This was because I had only coded up to 3 positions for the carousel’s controls. I fixed it by changing the controls to a for loop that iterates through the recipes and uses the {{ forloop.counter }} and {{ forloop.counter0 }} templates to work out its positioning. 
+ 
 ### Unfixed
 
 - There's a pylint error in models.py and test_admin.py that states 'User model imported from django.contrib.auth.models'. I couldn't find a way to rectify this or understand the cause.
