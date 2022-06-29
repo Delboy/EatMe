@@ -390,7 +390,7 @@ This project was deployed using Github and Heroku.
 - ### Clone
     To clone my project you must;
 
-    1. Sign in to Github and go to my [repository](https://github.com/Delboy/Colour-Type)
+    1. Sign in to Github and go to my [repository](https://github.com/Delboy/eatme)
     2. Above the list of files click the green ‘code’ button.
     3. This will bring up a few options as to how you would like to clone. You can select HTTPS, SSH or Github CLI, then click the clipboard icon to copy the URL.
     4. Open git bash
