@@ -1,6 +1,6 @@
 # Eat Me!
 
-Here is a link to the live project. (https://eatmeproject.herokuapp.com/)
+Here is a link to the live project. (https://eat-me.onrender.com/)
 
 Eat me! is a website where users come together to share their favourite created recipes. It is built using the Django Framework in python.
 
